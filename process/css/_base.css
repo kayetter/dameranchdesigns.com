@@ -1,0 +1,40 @@
+
+/*====================MAIN PAGE STYLES============*/
+html {
+  /*---sets font size using rem to exact pixel. for example 1.8rem = 18 px.*/
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  padding: 0;
+  color: black;
+  font-family: $font-main;
+  font-size: 1.8rem;
+  line-height: 160%;
+  font-weight: $fwt-thin;
+
+}
+
+
+/*--adds .4 rem to each heading fz and character spacing 1-6---*/
+$size: 2.4rem;
+$spacing: 7px;
+@for $i from 6 through 1 {
+  h$i {
+    font-size: resolve($size);
+    line-height: 1.5;
+    /*color: color($DRDyellow shade(30%));*/
+    /*background-color: color($DRDblue a(80%));*/
+    letter-spacing: resolve($spacing);
+    text-align: center;
+  }
+  $size: ($size + .4rem);
+  $spacing: $spacing * 1.2;
+  }
