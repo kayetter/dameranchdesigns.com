@@ -8,14 +8,14 @@ $DRDyellow: rgb(255, 173, 66);
 
 
 
-$font-main: 'Open Sans', sans-serif;
+$font-main:'Open Sans', sans-serif;
 $font-heading: 'Roboto Slab', serif;
 $font-cursive: 'Dancing Script', cursive;
 
 $fwt-thin: 300;
 $fwt-bold: 700;
 
-$xsmall: screen and (min-width: 350px);
+$xsmall: screen and (min-width: 395px);
 $small: screen and (min-width: 600px);
 $medium: screen and (min-width: 900px);
 $large: screen and (min-width: 1200px);

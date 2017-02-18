@@ -1,14 +1,11 @@
 /*-----------Header Styles--------------------*/
 
 #headerImage {
-    @mixin backImage ../images/backgrounds/glacier2_500.jpg, 200px, transparent, transparent, center top, cover;
-    /* > 600 px */
-    @media $small {
-        @mixin backImage ../images/backgrounds/glacier2_500.jpg, 250px, transparent, transparent, center top, cover;
-    }
+
+    @mixin backImage ../images/backgrounds/glacier2_500.jpg, 250px, transparent, color($DRDblue a(.5)), center top, cover;
     /*> 900px*/
     @media $medium {
-        @mixin backImage ../images/backgrounds/glacier2_800.jpg, 300px, transparent, transparent, center center, cover;
+        @mixin backImage ../images/backgrounds/glacier2_800.jpg, 300px, transparent, $DRDyellow, center center, cover;
     }
     @media $large {
         @mixin backImage ../images/backgrounds/glacier2_1600.jpg, 350px, transparent, transparent, center -50px, cover;
@@ -16,25 +13,19 @@
     @media $xlarge {
         @mixin backImage ../images/backgrounds/glacier2_1600.jpg, 350px, transparent, transparent, center -100px, cover;
     }
-    .nav {
-        .nav-elements {
-            display: block;
-            .nav-bar {
-              li{
-                text-align: center;
-                a {
-                  color: white;
-                  text-align: center;
-                }
-              }/* li */
-
-            }/*nav-bar*/
-        }/*nav-elements*/
-    }/*nav*/
-}/*headerImage*/
+}
 
 #drd {
     background-color: $DRDblue;
+
+    #logo {
+      display: block;
+        width: 100px;
+        margin: 1rem auto 0;
+        padding: 1rem;
+        background-color: white;
+    }
+
     h2 {
         padding-top: 0;
     }

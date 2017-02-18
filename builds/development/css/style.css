@@ -91,7 +91,7 @@ h4 {
     font-size: 0.5999999999999999rem;
     letter-spacing: 0.625px;
 }
-@media screen and (min-width: 350px) {
+@media screen and (min-width: 395px) {
     h1 {
         font-size: 2.2rem;
         letter-spacing: 7px;
@@ -163,51 +163,96 @@ h4 {
         letter-spacing: 1.875px;
     }
 }
+.nav-elements {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0;
+    margin: 0;
+    /*nav-bar*/
+}
+/*end of $small media query*/
+.nav-elements .nav-bar {
+    display: block;
+    width: 100%;
+    margin-top: 1%;
+    text-align: center;
+    /*end of anchor tags*/
+}
+.nav-elements .nav-bar a {
+    color: white;
+    width: 100%;
+    font-weight: 400;
+    text-align: center;
+    -webkit-transition: .3s ease-out;
+    transition: .3s ease-out;
+}
+.nav-elements .nav-bar a:after {
+    display: block;
+    content: '';
+    background-color: rgb(255, 189, 104);
+    width: 0;
+    height: 3px;
+    margin-bottom: .3rem;
+    -webkit-transition: width .3s ease-out, background-color .3s ease-in;
+    transition: width .3s ease-out, background-color .3s ease-in;
+}
+.nav-elements .nav-bar a:hover {
+    color: rgb(255, 189, 104);
+}
+.nav-elements .nav-bar a:hover:after {
+    content: '';
+    background-color: rgb(255, 189, 104);
+    width: 100%;
+}
+@media screen and (min-width: 600px) {
+    .nav-elements {
+        height: 100%;
+    }
+    .nav-elements .nav-bar {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
+        -ms-flex-item-align: end;
+            align-self: flex-end;
+    }
+    .nav-elements .nav-bar a {
+        padding: 0 .25rem ;
+    }
+}
+/*nav-elements*/
 /*-----------Header Styles--------------------*/
 #headerImage {
-    background: -webkit-linear-gradient( top, transparent, transparent), url(../images/backgrounds/glacier2_500.jpg);
-    background: linear-gradient( to bottom, transparent, transparent), url(../images/backgrounds/glacier2_500.jpg);
+    background: -webkit-linear-gradient( top, transparent, rgba(0, 181, 197, 0.5)), url(../images/backgrounds/glacier2_500.jpg);
+    background: linear-gradient( to bottom, transparent, rgba(0, 181, 197, 0.5)), url(../images/backgrounds/glacier2_500.jpg);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
     height: 100vh;
-    max-height: 200px;
-    /* > 600 px */
-    /*nav*/
-}
-/*> 900px*/
-#headerImage .nav {
-    /*nav-elements*/
-}
-#headerImage .nav .nav-elements {
-    display: block;
-    /*nav-bar*/
-}
-#headerImage .nav .nav-elements .nav-bar {
-    /* li */
-}
-#headerImage .nav .nav-elements .nav-bar li {
-    text-align: center;
-}
-#headerImage .nav .nav-elements .nav-bar li a {
-    color: white;
-    text-align: center;
-}
-@media screen and (min-width: 600px) {
-    #headerImage {
-        background: -webkit-linear-gradient( top, transparent, transparent), url(../images/backgrounds/glacier2_500.jpg);
-        background: linear-gradient( to bottom, transparent, transparent), url(../images/backgrounds/glacier2_500.jpg);
-        background-repeat: no-repeat;
-        background-position: center top;
-        background-size: cover;
-        height: 100vh;
-        max-height: 250px;
-    }
+    max-height: 250px;
+    /*> 900px*/
 }
 @media screen and (min-width: 900px) {
     #headerImage {
-        background: -webkit-linear-gradient( top, transparent, transparent), url(../images/backgrounds/glacier2_800.jpg);
-        background: linear-gradient( to bottom, transparent, transparent), url(../images/backgrounds/glacier2_800.jpg);
+        background: -webkit-linear-gradient( top, transparent, rgb(255, 173, 66)), url(../images/backgrounds/glacier2_800.jpg);
+        background: linear-gradient( to bottom, transparent, rgb(255, 173, 66)), url(../images/backgrounds/glacier2_800.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -237,9 +282,15 @@ h4 {
         max-height: 350px;
     }
 }
-/*headerImage*/
 #drd {
     background-color: rgb(0, 181, 197);
+}
+#drd #logo {
+    display: block;
+    width: 100px;
+    margin: 1rem auto 0;
+    padding: 1rem;
+    background-color: white;
 }
 #drd h2 {
     padding-top: 0;
@@ -250,7 +301,7 @@ h4 {
     padding: 4% 0 1%;
     font-size: 1.6rem;
 }
-@media screen and (min-width: 350px) {
+@media screen and (min-width: 395px) {
     #drd p {
         font-size: 2rem;
     }

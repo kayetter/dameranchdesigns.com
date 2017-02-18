@@ -2,4 +2,5 @@
 @import "reset";
 @import "mixins";
 @import "base";
+@import "sections/navigation";
 @import "sections/header";
