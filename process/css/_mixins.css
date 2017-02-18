@@ -1,21 +1,14 @@
-@define-mixin backImage
-  $image,
-  $height: 100vh,
-  $grstart: rgba(0,0,0,.2),
-  $grend: rgba(0,0,0,.5),
-  $bgPos: center center,
-  $bgSize: 100% {
-  background: linear-gradient( to bottom, $grstart, $grend), url($image);
-  background-repeat: no-repeat;
-  background-position: $bgPos;
-  background-size: $bgSize;
-  height: 100vh;
-  max-height: $height;
+@define-mixin backImage $image, $height: 100vh, $grstart: rgba(0, 0, 0, .2), $grend: rgba(0, 0, 0, .5), $bgPos: center center, $bgSize: 100% {
+    background: linear-gradient( to bottom, $grstart, $grend), url($image);
+    background-repeat: no-repeat;
+    background-position: $bgPos;
+    background-size: $bgSize;
+    height: 100vh;
+    max-height: $height;
 }
 
 @define-mixin clearfix {
-    &:before,
-    &:after {
+    &:before, &:after {
         content: '';
         display: table;
     }
@@ -23,3 +16,17 @@
         clear: both;
     }
 }
+
+/*@mixin break($args...) {
+    @if length($args) == 1 {
+        @media (min-width: nth($args, 1)) {
+            @content;
+        }
+    } @else {
+        @media (min-width: nth($args, 1))
+            and (max-width: nth($args, 2)) {
+            @content;
+        }
+    }
+
+}*/

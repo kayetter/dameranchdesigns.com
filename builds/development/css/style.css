@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script|Roboto+Slab:300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,600,700);
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -31,8 +33,6 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-@import url(https://fonts.googleapis.com/css?family=Dancing+Script|Roboto+Slab:300,400);
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,600,700);
 /*====================MAIN PAGE STYLES============*/
 html {
     /*---sets font size using rem to exact pixel. for example 1.8rem = 18 px.*/
@@ -56,65 +56,115 @@ body {
 h6 {
     font-size: 2.4rem;
     line-height: 1.5;
-    /*color: color($DRDyellow shade(30%));*/
-    /*background-color: color($DRDblue a(80%));*/
     letter-spacing: 7px;
     text-align: center;
+    word-wrap: break-word;
+    color: $black;
 }
 h5 {
-    font-size: 2.8rem;
+    font-size: 2.4rem;
     line-height: 1.5;
-    /*color: color($DRDyellow shade(30%));*/
-    /*background-color: color($DRDblue a(80%));*/
-    letter-spacing: 8.4px;
+    letter-spacing: 7px;
     text-align: center;
+    word-wrap: break-word;
+    color: $black;
 }
 h4 {
-    font-size: 3.1999999999999997rem;
+    font-size: 2.4rem;
     line-height: 1.5;
-    /*color: color($DRDyellow shade(30%));*/
-    /*background-color: color($DRDblue a(80%));*/
-    letter-spacing: 10.08px;
+    letter-spacing: 7px;
     text-align: center;
+    word-wrap: break-word;
+    color: $black;
 }
 h3 {
-    font-size: 3.5999999999999996rem;
+    font-size: 2.4rem;
     line-height: 1.5;
-    /*color: color($DRDyellow shade(30%));*/
-    /*background-color: color($DRDblue a(80%));*/
-    letter-spacing: 12.096px;
+    letter-spacing: 7px;
     text-align: center;
+    word-wrap: break-word;
+    color: $black;
 }
 h2 {
-    font-size: 3.9999999999999996rem;
+    font-size: 2.4rem;
     line-height: 1.5;
-    /*color: color($DRDyellow shade(30%));*/
-    /*background-color: color($DRDblue a(80%));*/
-    letter-spacing: 14.5152px;
+    letter-spacing: 7px;
     text-align: center;
+    word-wrap: break-word;
+    color: $black;
 }
 h1 {
-    font-size: 4.3999999999999995rem;
+    font-size: 2.4rem;
     line-height: 1.5;
-    /*color: color($DRDyellow shade(30%));*/
-    /*background-color: color($DRDblue a(80%));*/
-    letter-spacing: 17.41824px;
+    letter-spacing: 7px;
     text-align: center;
+    word-wrap: break-word;
+    color: $black;
 }
+/*-----------Header Styles--------------------*/
 #headerImage {
-    height: 400px;
-    background: -webkit-linear-gradient( top, transparent, center -175px), url(../image_src/glacier2_1600.jpg);
-    background: linear-gradient( to bottom, transparent, center -175px), url(../image_src/glacier2_1600.jpg);
+    background: -webkit-linear-gradient( top, transparent, transparent), url(../image_src/glacier2_1600.jpg);
+    background: linear-gradient( to bottom, transparent, transparent), url(../image_src/glacier2_1600.jpg);
     background-repeat: no-repeat;
-    background-position: 100vw;
-    background-size: 100%;
+    background-position: center top;
+    background-size: cover;
     height: 100vh;
-    max-height: transparent;
+    max-height: 200px;
 }
 #drd {
     background-color: rgb(0, 181, 197);
 }
-#drd p {
-    font-family: 'Dancing Script';
+#drd h6 {
+    font-size: 5rem;
+    line-height: 1.5;
+    letter-spacing: 2px;
     text-align: center;
+    word-wrap: break-word;
+    color: $black;
+}
+#drd h5 {
+    font-size: 5rem;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    text-align: center;
+    word-wrap: break-word;
+    color: $black;
+}
+#drd h4 {
+    font-size: 5rem;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    text-align: center;
+    word-wrap: break-word;
+    color: $black;
+}
+#drd h3 {
+    font-size: 5rem;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    text-align: center;
+    word-wrap: break-word;
+    color: $black;
+}
+#drd h2 {
+    font-size: 5rem;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    text-align: center;
+    word-wrap: break-word;
+    color: $black;
+}
+#drd h1 {
+    font-size: 5rem;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    text-align: center;
+    word-wrap: break-word;
+    color: $black;
+}
+#drd p {
+    font-family: 'Dancing Script',cursive;
+    text-align: center;
+    font-size: 2rem;
+    padding: 2rem 0;
 }

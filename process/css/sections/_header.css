@@ -1,16 +1,17 @@
-#headerImage {
+/*-----------Header Styles--------------------*/
 
-  height: 400px;
-  @mixin backImage ../image_src/glacier2_1600.jpg, transparent, transparent, center -175px, 100vw;
+#headerImage {
+    @mixin backImage ../image_src/glacier2_1600.jpg, 200px, transparent, transparent, center top, cover;
 }
 
 #drd {
-
     background-color: $DRDblue;
 
-    p {
-      font-family: $font-cursive;
-      text-align: center;
-    }
 
+    p {
+        font-family: $font-cursive;
+        text-align: center;
+        font-size: 2rem;
+        padding: 2rem 0;
+    }
 }

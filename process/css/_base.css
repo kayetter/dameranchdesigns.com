@@ -24,17 +24,17 @@ body {
 
 
 /*--adds .4 rem to each heading fz and character spacing 1-6---*/
-$size: 2.4rem;
-$spacing: 7px;
 @for $i from 6 through 1 {
-  h$i {
-    font-size: resolve($size);
-    line-height: 1.5;
-    /*color: color($DRDyellow shade(30%));*/
-    /*background-color: color($DRDblue a(80%));*/
-    letter-spacing: resolve($spacing);
-    text-align: center;
-  }
-  $size: ($size + .4rem);
-  $spacing: $spacing * 1.2;
-  }
+  $size = 1.8rem,
+  $spacing = 7px
+    h$i {
+        font-size: resolve($size);
+        line-height: 1.5;
+        letter-spacing: resolve($spacing);
+        text-align: center;
+        word-wrap: break-word;
+        color: black;
+      }
+        /*$size: $size + .4rem;*/
+        /*$spacing: $spacing * 1.2;*/
+    }
