@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Dancing+Script|Roboto+Slab:300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script|Roboto+Slab:300,400,700|Open+Sans:300,400,700);
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,600,700);
 
 
@@ -8,7 +8,8 @@ $DRDyellow: rgb(255, 173, 66);
 
 
 
-$font-main: 'Roboto Slab', sans-serif;
+$font-main: 'Open Sans', sans-serif;
+$font-heading: 'Roboto Slab', serif;
 $font-cursive: 'Dancing Script', cursive;
 
 $fwt-thin: 300;
@@ -18,3 +19,4 @@ $xsmall: screen and (min-width: 350px);
 $small: screen and (min-width: 600px);
 $medium: screen and (min-width: 900px);
 $large: screen and (min-width: 1200px);
+$xlarge: screen and (min-width: 1400px);

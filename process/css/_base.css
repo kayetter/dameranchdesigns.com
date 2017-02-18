@@ -1,40 +1,98 @@
+    /*====================MAIN PAGE STYLES============*/
 
-/*====================MAIN PAGE STYLES============*/
-html {
-  /*---sets font size using rem to exact pixel. for example 1.8rem = 18 px.*/
-  font-size: 62.5%;
-  box-sizing: border-box;
-}
+    html {
+        /*---sets font size using rem to exact pixel. for example 1.8rem = 18 px.*/
+        font-size: 62.5%;
+        box-sizing: border-box;
+    }
 
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-body {
-  margin: 0;
-  height: 100vh;
-  padding: 0;
-  color: black;
-  font-family: $font-main;
-  font-size: 1.8rem;
-  line-height: 160%;
-  font-weight: $fwt-thin;
-
-}
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
 
 
-/*--adds .4 rem to each heading fz and character spacing 1-6---*/
-@for $i from 6 through 1 {
-  $size = 1.8rem,
-  $spacing = 7px
-    h$i {
-        font-size: resolve($size);
-        line-height: 1.5;
-        letter-spacing: resolve($spacing);
-        text-align: center;
-        word-wrap: break-word;
+
+    body {
+        margin: 0;
+        height: 100vh;
+        padding: 0;
         color: black;
-      }
-        /*$size: $size + .4rem;*/
-        /*$spacing: $spacing * 1.2;*/
+        font-family: $font-main;
+        font-size: 1.8rem;
+        line-height: 160%;
+        font-weight: $fwt-thin;
+    }
+
+    %heading {
+        font-family: $font-heading;
+        line-height: 1.5;
+        word-wrap: break-word;
+        text-align: center;
+        color: black;
+        padding-top: .5em;
+    }
+    /*--adds .4 rem to each heading fz and character spacing 1-6---*/
+
+    $size: 1.8rem;
+    $spacing: 5px;
+    @for $i from 1 through 4 {
+        h$i {
+            font-size: resolve($size);
+            letter-spacing: resolve($spacing);
+            @extend %heading;
+        }
+        $size: $size - .4rem;
+        $spacing: $spacing * .5;
+    }
+
+    @media $xsmall {
+        $size: 2.2rem;
+        $spacing: 7px;
+        @for $i from 1 through 4 {
+            h$i {
+                font-size: resolve($size);
+                letter-spacing: resolve($spacing);
+            }
+            $size: $size - .4rem;
+            $spacing: $spacing * .5;
+        }
+    }
+
+    @media $small {
+        $size: 2.8rem;
+        $spacing: 10px;
+        @for $i from 1 through 4 {
+            h$i {
+                font-size: resolve($size);
+                letter-spacing: resolve($spacing);
+            }
+            $size: $size - .4rem;
+            $spacing: $spacing * .5;
+        }
+    }
+
+    @media $medium {
+        $size: 2.8rem;
+        $spacing: 12px;
+        @for $i from 1 through 4 {
+            h$i {
+                font-size: resolve($size);
+                letter-spacing: resolve($spacing);
+            }
+            $size: $size - .4rem;
+            $spacing: $spacing * .5;
+        }
+    }
+
+    @media $large {
+        $size: 3.2rem;
+        $spacing: 15px;
+        @for $i from 1 through 4 {
+            h$i {
+                font-size: resolve($size);
+                letter-spacing: resolve($spacing);
+            }
+            $size: $size - .4rem;
+            $spacing: $spacing * .5;
+        }
     }
