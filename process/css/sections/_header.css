@@ -1,41 +1,31 @@
 /*-----------Header Styles--------------------*/
+/*.header {*/
+  /*min-height: 100vh;
+  position: relative;*/
 
-#headerImage {
+  #headerImage {
+    position:relative;
+    @mixin backImage ../images/backgrounds/lakeview_500.jpg, 200px, transparent, transparent, center top, cover, ;
+      /*> 900px*/
+      @media $xs395 {
+          @mixin backImage ../images/backgrounds/lakeview_500.jpg, 225px, transparent, transparent, center center, cover,;
+      }
+      @media $s600 {
+          @mixin backImage ../images/backgrounds/glacier2_800.jpg, 300px, transparent, transparent, center center, cover,;
+      }
+      @media $l1200 {
+          @mixin backImage ../images/backgrounds/glacier2_1600.jpg, 350px, transparent, transparent, center -50px, cover,;
+      }
+      @media $xl1400 {
+          @mixin backImage ../images/backgrounds/glacier2_1600.jpg, 350px, transparent, transparent, center -125px, cover,;
+      }
+  }/*end of #headerimage*/
+  h1 {
+    padding-top: 12rem;
+  }
+  h2 {
+      padding-top: 0;
+  }
 
-    @mixin backImage ../images/backgrounds/glacier2_500.jpg, 250px, transparent, color($DRDblue a(.5)), center top, cover;
-    /*> 900px*/
-    @media $medium {
-        @mixin backImage ../images/backgrounds/glacier2_800.jpg, 300px, transparent, $DRDyellow, center center, cover;
-    }
-    @media $large {
-        @mixin backImage ../images/backgrounds/glacier2_1600.jpg, 350px, transparent, transparent, center -50px, cover;
-    }
-    @media $xlarge {
-        @mixin backImage ../images/backgrounds/glacier2_1600.jpg, 350px, transparent, transparent, center -100px, cover;
-    }
-}
 
-#drd {
-    background-color: $DRDblue;
-
-    #logo {
-      display: block;
-        width: 100px;
-        margin: 1rem auto 0;
-        padding: 1rem;
-        background-color: white;
-    }
-
-    h2 {
-        padding-top: 0;
-    }
-    p {
-        font-family: $font-cursive;
-        text-align: center;
-        padding: 4% 0 1%;
-        font-size: 1.6rem;
-        @media $xsmall {
-            font-size: 2rem;
-        }
-    }
-}
+/*}/*end of .header*/

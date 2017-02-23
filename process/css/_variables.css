@@ -15,8 +15,8 @@ $font-cursive: 'Dancing Script', cursive;
 $fwt-thin: 300;
 $fwt-bold: 700;
 
-$xsmall: screen and (min-width: 395px);
-$small: screen and (min-width: 600px);
-$medium: screen and (min-width: 900px);
-$large: screen and (min-width: 1200px);
-$xlarge: screen and (min-width: 1400px);
+$xs395: screen and (min-width: 395px);
+$s600: screen and (min-width: 600px);
+$m800: screen and (min-width: 800px);
+$l1200: screen and (min-width: 1200px);
+$xl1400: screen and (min-width: 1400px);

@@ -34,6 +34,18 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+/*@define-mixin headingSize $size: 1.8rem, $spacing: 7px
+{
+  @for $i from 6 through 1{
+    h#{$i}{
+      @extend %heading;
+      font-size: $size;
+      letter-spacing: $spacing;
+    }
+    $size: $size + .4rem;
+    $spacing: $spacing * 1.2;
+  }
+}*/
 /*@mixin break($args...) {
     @if length($args) == 1 {
         @media (min-width: nth($args, 1)) {
@@ -127,7 +139,7 @@ h4 {
         letter-spacing: 1.25px;
     }
 }
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 800px) {
     h1 {
         font-size: 2.8rem;
         letter-spacing: 12px;
@@ -164,28 +176,14 @@ h4 {
     }
 }
 .nav-elements {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 0;
-    margin: 0;
+    padding: 2rem 0 0;
     /*nav-bar*/
 }
 /*end of $small media query*/
 .nav-elements .nav-bar {
     display: block;
-    width: 100%;
-    margin-top: 1%;
+    width: 80%;
+    margin: 0 auto;
     text-align: center;
     /*end of anchor tags*/
 }
@@ -217,46 +215,78 @@ h4 {
 }
 @media screen and (min-width: 600px) {
     .nav-elements {
-        height: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
     }
     .nav-elements .nav-bar {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
+        width: 100%;
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
             -ms-flex-direction: row;
                 flex-direction: row;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+        -webkit-box-align: end;
+            -ms-flex-align: end;
+                align-items: flex-end;
+    }
+    .nav-elements .nav-bar li {
+        max-height: 40px;
+    }
+    .nav-elements .nav-bar a {
+        padding: 0 .5rem ;
+    }
+}
+@media screen and (min-width: 800px) {
+    .nav-elements .nav-bar {
         -webkit-box-pack: end;
             -ms-flex-pack: end;
                 justify-content: flex-end;
-        -ms-flex-item-align: end;
-            align-self: flex-end;
     }
-    .nav-elements .nav-bar a {
-        padding: 0 .25rem ;
+    .nav-elements .nav-bar li {
+        padding-right: 3rem;
     }
 }
 /*nav-elements*/
 /*-----------Header Styles--------------------*/
+/*.header {*/
+/*min-height: 100vh;
+  position: relative;*/
 #headerImage {
-    background: -webkit-linear-gradient( top, transparent, rgba(0, 181, 197, 0.5)), url(../images/backgrounds/glacier2_500.jpg);
-    background: linear-gradient( to bottom, transparent, rgba(0, 181, 197, 0.5)), url(../images/backgrounds/glacier2_500.jpg);
+    position: relative;
+    background: -webkit-linear-gradient( top, transparent, transparent), url(../images/backgrounds/lakeview_500.jpg);
+    background: linear-gradient( to bottom, transparent, transparent), url(../images/backgrounds/lakeview_500.jpg);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
-    height: 100vh;
-    max-height: 250px;
+    height: 400px;
+    max-height: 200px;
     /*> 900px*/
 }
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 395px) {
     #headerImage {
-        background: -webkit-linear-gradient( top, transparent, rgb(255, 173, 66)), url(../images/backgrounds/glacier2_800.jpg);
-        background: linear-gradient( to bottom, transparent, rgb(255, 173, 66)), url(../images/backgrounds/glacier2_800.jpg);
+        background: -webkit-linear-gradient( top, transparent, transparent), url(../images/backgrounds/lakeview_500.jpg);
+        background: linear-gradient( to bottom, transparent, transparent), url(../images/backgrounds/lakeview_500.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
-        height: 100vh;
+        height: 400px;
+        max-height: 225px;
+    }
+}
+@media screen and (min-width: 600px) {
+    #headerImage {
+        background: -webkit-linear-gradient( top, transparent, transparent), url(../images/backgrounds/glacier2_800.jpg);
+        background: linear-gradient( to bottom, transparent, transparent), url(../images/backgrounds/glacier2_800.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        height: 400px;
         max-height: 300px;
     }
 }
@@ -267,7 +297,7 @@ h4 {
         background-repeat: no-repeat;
         background-position: center -50px;
         background-size: cover;
-        height: 100vh;
+        height: 400px;
         max-height: 350px;
     }
 }
@@ -276,29 +306,40 @@ h4 {
         background: -webkit-linear-gradient( top, transparent, transparent), url(../images/backgrounds/glacier2_1600.jpg);
         background: linear-gradient( to bottom, transparent, transparent), url(../images/backgrounds/glacier2_1600.jpg);
         background-repeat: no-repeat;
-        background-position: center -100px;
+        background-position: center -125px;
         background-size: cover;
-        height: 100vh;
+        height: 400px;
         max-height: 350px;
     }
 }
+/*end of #headerimage*/
+h1 {
+    padding-top: 12rem;
+}
+h2 {
+    padding-top: 0;
+}
+/*}/*end of .header*/
 #drd {
     background-color: rgb(0, 181, 197);
 }
 #drd #logo {
+    padding-top: 2rem;
+    position: relative;
+    background: url(../images/logos/DRD_notag.svg) no-repeat white;
+    background-size: 90%;
+    background-position: center center;
     display: block;
     width: 100px;
+    height: 100px;
     margin: 1rem auto 0;
-    padding: 1rem;
-    background-color: white;
-}
-#drd h2 {
-    padding-top: 0;
+    padding: 4.8rem 1rem;
+    border-radius: 50%;
 }
 #drd p {
     font-family: 'Dancing Script',cursive;
     text-align: center;
-    padding: 4% 0 1%;
+    padding: 1rem 0;
     font-size: 1.6rem;
 }
 @media screen and (min-width: 395px) {
@@ -306,3 +347,4 @@ h4 {
         font-size: 2rem;
     }
 }
+/*end of #DRD*/

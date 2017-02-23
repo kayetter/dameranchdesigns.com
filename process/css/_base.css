@@ -45,7 +45,7 @@
         $spacing: $spacing * .5;
     }
 
-    @media $xsmall {
+    @media $xs395 {
         $size: 2.2rem;
         $spacing: 7px;
         @for $i from 1 through 4 {
@@ -58,7 +58,7 @@
         }
     }
 
-    @media $small {
+    @media $s600 {
         $size: 2.8rem;
         $spacing: 10px;
         @for $i from 1 through 4 {
@@ -71,7 +71,7 @@
         }
     }
 
-    @media $medium {
+    @media $m800 {
         $size: 2.8rem;
         $spacing: 12px;
         @for $i from 1 through 4 {
@@ -84,7 +84,7 @@
         }
     }
 
-    @media $large {
+    @media $l1200 {
         $size: 3.2rem;
         $spacing: 15px;
         @for $i from 1 through 4 {
