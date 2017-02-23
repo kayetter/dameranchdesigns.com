@@ -29,6 +29,7 @@
         word-wrap: break-word;
         text-align: center;
         color: black;
+        font-weight: 700;
         padding-top: .5em;
     }
     /*--adds .4 rem to each heading fz and character spacing 1-6---*/

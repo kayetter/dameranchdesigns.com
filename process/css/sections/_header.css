@@ -5,16 +5,16 @@
 
   #headerImage {
     position:relative;
-    @mixin backImage ../images/backgrounds/lakeview_500.jpg, 200px, transparent, transparent, center top, cover, ;
+    @mixin backImage ../images/backgrounds/lakeview_500.jpg, 400px, transparent, transparent, center top, cover, ;
       /*> 900px*/
       @media $xs395 {
-          @mixin backImage ../images/backgrounds/lakeview_500.jpg, 225px, transparent, transparent, center center, cover,;
+          @mixin backImage ../images/backgrounds/lakeview_500.jpg, 400px, transparent, transparent, center center, cover,;
       }
       @media $s600 {
           @mixin backImage ../images/backgrounds/glacier2_800.jpg, 300px, transparent, transparent, center center, cover,;
       }
       @media $l1200 {
-          @mixin backImage ../images/backgrounds/glacier2_1600.jpg, 350px, transparent, transparent, center -50px, cover,;
+          @mixin backImage ../images/backgrounds/glacier2_1600.jpg, 400px, transparent, $DRDblue, center top, cover,;
       }
       @media $xl1400 {
           @mixin backImage ../images/backgrounds/glacier2_1600.jpg, 350px, transparent, transparent, center -125px, cover,;
