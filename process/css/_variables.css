@@ -6,6 +6,9 @@
 $DRDblue: rgb(0, 181, 197);
 $DRDorange:   rgb(230, 99, 41);
 $DRDyellow: rgb(255, 173, 66);
+$darkorange: color($DRDorange lightness(30%));
+$black-cvr: rgba(0,0,0,.3);
+$black-hvr: rgba(0,0,0,.4);
 
 
 
@@ -16,8 +19,8 @@ $font-cursive: 'Dancing Script', cursive;
 $fwt-thin: 300;
 $fwt-bold: 700;
 
-$xs395: screen and (min-width: 432px);
-$s600: screen and (min-width: 600px);
-$m800: screen and (min-width: 780px);
-$l1200: screen and (min-width: 1200px);
-$xl1400: screen and (min-width: 1400px);
+$xsmall: screen and (min-width: 380px);
+$small: screen and (min-width: 600px);
+$medium: screen and (min-width: 760px);
+$large: screen and (min-width: 1200px);
+$xlarge: screen and (min-width: 1400px);

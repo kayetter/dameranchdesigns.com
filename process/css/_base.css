@@ -34,7 +34,7 @@
     }
     /*--adds .4 rem to each heading fz and character spacing 1-6---*/
 
-    $size: 2.2rem;
+    $size: 2.1rem;
     $spacing: 7px;
     @for $i from 1 through 4 {
         h$i {
@@ -46,8 +46,8 @@
         $spacing: $spacing * .3;
     }
 
-    @media $xs395 {
-        $size: 2.2rem;
+    @media $xsmall {
+        $size: 2.5rem;
         $spacing: 10px;
         @for $i from 1 through 4 {
             h$i {
@@ -59,8 +59,8 @@
         }
     }
 
-    @media $s600 {
-        $size: 3.2rem;
+    @media $small {
+        $size: 4.0rem;
         $spacing: 12px;
         @for $i from 1 through 4 {
             h$i {
@@ -72,9 +72,9 @@
         }
     }
 
-    @media $m800 {
-        $size: 3.6rem;
-        $spacing: 12px;
+    @media $medium {
+        $size: 4.4rem;
+        $spacing: 18px;
         @for $i from 1 through 4 {
             h$i {
                 font-size: resolve($size);
@@ -84,3 +84,16 @@
             $spacing: $spacing * .3;
         }
     }
+
+    @media $large {
+            $size: 4.8rem;
+            $spacing: 22px;
+            @for $i from 1 through 4 {
+                h$i {
+                    font-size: resolve($size);
+                    letter-spacing: resolve($spacing);
+                }
+                $size: $size - .8rem;
+                $spacing: $spacing * .3;
+            }
+        }
