@@ -5,27 +5,65 @@
 
   #headerImage {
     position:relative;
-    @mixin backImage ../images/backgrounds/lakeview_500.jpg, 400px, transparent, transparent, center top, cover, ;
+    @mixin backImage ../images/backgrounds/lakeview_500.jpg, 400px, transparent, color($DRDyellow a(.8)), center top, cover, ;
       /*> 900px*/
       @media $xs395 {
-          @mixin backImage ../images/backgrounds/lakeview_500.jpg, 400px, transparent, transparent, center center, cover,;
+          @mixin backImage ../images/backgrounds/lakeview_500.jpg, 400px, transparent, color($DRDyellow a(.8)), center center, cover,;
+
+
       }
       @media $s600 {
-          @mixin backImage ../images/backgrounds/glacier2_800.jpg, 300px, transparent, transparent, center center, cover,;
+          @mixin backImage ../images/backgrounds/glacier2_800.jpg, 400px, transparent, color($DRDyellow a(.8)), center center, cover,;
       }
       @media $l1200 {
-          @mixin backImage ../images/backgrounds/glacier2_1600.jpg, 400px, transparent, $DRDblue, center top, cover,;
+          @mixin backImage ../images/backgrounds/glacier2_1600.jpg, 400px, transparent, transparent, center top, cover,;
       }
       @media $xl1400 {
-          @mixin backImage ../images/backgrounds/glacier2_1600.jpg, 350px, transparent, transparent, center -125px, cover,;
+          @mixin backImage ../images/backgrounds/glacier2_1600.jpg, 400px, transparent, color($DRDyellow a(.8)), center -125px, cover,;
       }
   }/*end of #headerimage*/
-  h1 {
-    padding-top: 12rem;
+
+.bg-wrapper {
+  padding: 1rem 0;
+
+  @media $s600 {
+    padding: 6rem 0 1rem;
   }
-  h2 {
+
+    #logo {
+      position: relative;
+      background: url(../images/logos/DRD_notag.svg) no-repeat white;
+      background-size: 90%;
+      background-position: center center;
+      display: block;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+      border-radius: 50%;
+    }
+  }/*end of .bg-wrapper*/
+
+
+  h3 {
       padding-top: 0;
+      padding-bottom: 1rem;
   }
 
 
 /*}/*end of .header*/
+
+#tagline {
+    background-color: color($DRDblue a(.6));
+    margin: 0 auto;
+    height: 400px;
+    p {
+        font-family: $font-cursive;
+        text-align: center;
+        color: white;
+        padding: 1rem;
+        font-size: 1.6rem;
+         @media $s600 {
+            font-size: 2.2rem;
+        }
+      }
+    }/*end of #tagline*/

@@ -28,14 +28,14 @@
         line-height: 1.5;
         word-wrap: break-word;
         text-align: center;
-        color: black;
-        font-weight: 700;
+        color: white;
         padding-top: .5em;
+        font-weight: 500;
     }
     /*--adds .4 rem to each heading fz and character spacing 1-6---*/
 
-    $size: 1.8rem;
-    $spacing: 5px;
+    $size: 2.2rem;
+    $spacing: 7px;
     @for $i from 1 through 4 {
         h$i {
             font-size: resolve($size);
@@ -43,24 +43,11 @@
             @extend %heading;
         }
         $size: $size - .4rem;
-        $spacing: $spacing * .5;
+        $spacing: $spacing * .3;
     }
 
     @media $xs395 {
         $size: 2.2rem;
-        $spacing: 7px;
-        @for $i from 1 through 4 {
-            h$i {
-                font-size: resolve($size);
-                letter-spacing: resolve($spacing);
-            }
-            $size: $size - .4rem;
-            $spacing: $spacing * .5;
-        }
-    }
-
-    @media $s600 {
-        $size: 2.8rem;
         $spacing: 10px;
         @for $i from 1 through 4 {
             h$i {
@@ -68,12 +55,12 @@
                 letter-spacing: resolve($spacing);
             }
             $size: $size - .4rem;
-            $spacing: $spacing * .5;
+            $spacing: $spacing * .3;
         }
     }
 
-    @media $m800 {
-        $size: 2.8rem;
+    @media $s600 {
+        $size: 3.2rem;
         $spacing: 12px;
         @for $i from 1 through 4 {
             h$i {
@@ -81,19 +68,19 @@
                 letter-spacing: resolve($spacing);
             }
             $size: $size - .4rem;
-            $spacing: $spacing * .5;
+            $spacing: $spacing * .3;
         }
     }
 
-    @media $l1200 {
-        $size: 3.2rem;
-        $spacing: 15px;
+    @media $m800 {
+        $size: 3.6rem;
+        $spacing: 12px;
         @for $i from 1 through 4 {
             h$i {
                 font-size: resolve($size);
                 letter-spacing: resolve($spacing);
             }
             $size: $size - .4rem;
-            $spacing: $spacing * .5;
+            $spacing: $spacing * .3;
         }
     }

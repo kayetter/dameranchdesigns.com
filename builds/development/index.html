@@ -16,28 +16,60 @@
 
     <header class='section'>
         <div id="headerImage">
-          <h1>dameranchdesigns</h1>
-          <h2>@ Sunday Lane</h2>
+
+          <section class='section' id='tagline'>
+            <div class='bg-wrapper'>
+                <div id='logo'> </div>
+            </div>
+                <h1>dameranchdesigns</h1>
+                <h3>@ Sunday Lane</h3>
+                <p>divinely inspired logo graphics and web design</p>
+            </section>
             <nav class="nav-elements" role='navigation'>
                 <ul class="nav-bar">
-                    <li><a href="">Home</a></li>
                     <li><a href="">Design</a></li>
+                    <i>&#x25CF</i>
                     <li><a href="">Gallery</a></li>
+                    <i>&#x25CF</i>
                     <li><a href="">Claim of Worth</a></li>
+                    <i>&#x25CF</i>
                     <li><a href="">About Us</a></li>
                 </ul>
             </nav>
         </div>
-      </header>
-      <section class='section' id='drd'>
-          <div id='logo'> </div>
-          <p id="tagline">divinely inspired logo graphics and web design</p>
-      </section>
+    </header>
 
-    <section id="design" class="section">Is it a content thing
+    <section id="design" class="section">
+        <h2>Our Design Philosophy</h2>
 
     </section>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script>
+        //calculates width of tagline
+        function textWidth(text) {
+            var calc = '<h1 style="display:none">' + text + '</h1>';
+            $('body').append(calc);
+            var width = $('body').find('h1:last').width();
+            $('body').find('h1:last').remove();
+            console.log(width);
+            width = width;
+            $('#tagline').css('width', width + 24 + 'px');
+        };
 
+        //functions called when document loads
+        $(document).ready(function() {
+            textWidth($('#tagline h1').text());
+        });
+
+        //functions called when document resizes
+        $(window).resize(function() {
+            if ($(window).width() > 360) {
+                textWidth($('#tagline h1').text());
+            } else {
+                $('#tagline').css('width', '100%');
+            }
+        });
+    </script>
 
 </body>
 
