@@ -8,7 +8,7 @@
     @mixin backImage ../images/backgrounds/lakeview_500.jpg, 400px, transparent, color($DRDyellow a(.8)), center top, cover, ;
       /*> 900px*/
       @media $xs395 {
-          @mixin backImage ../images/backgrounds/lakeview_500.jpg, 400px, transparent, color($DRDyellow a(.8)), center center, cover,;
+          @mixin backImage ../images/backgrounds/lakeview_500.jpg, 400px, transparent, color($DRDblue a(.8)), center center, cover,;
 
 
       }
