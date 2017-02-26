@@ -3,32 +3,22 @@
   /*min-height: 100vh;
   position: relative;*/
 
-  #headerImage {
-    position:relative;
-    @mixin backImage ../images/backgrounds/lakeview_500.jpg, 400px, transparent, color($DRDyellow a(.8)), center top, cover, ;
-      /*> 900px*/
-      @media $xs395 {
-          @mixin backImage ../images/backgrounds/lakeview_500.jpg, 400px, transparent, color($DRDyellow a(.8)), center center, cover,;
+#headerImage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @mixin backImage ../images/backgrounds/glacier2_800.jpg,100vh, color($DRDblue a(.7)),color($DRDyellow a(.7));
 
+  @media $small {
+    @mixin backImage ../images/backgrounds/glacier2_800.jpg,100vh, color($DRDblue a(.7)),color($DRDyellow a(.7));
+  }
 
-      }
-      @media $s600 {
-          @mixin backImage ../images/backgrounds/glacier2_800.jpg, 400px, transparent, color($DRDyellow a(.8)), center center, cover,;
-      }
-      @media $l1200 {
-          @mixin backImage ../images/backgrounds/glacier2_1600.jpg, 400px, transparent, transparent, center top, cover,;
-      }
-      @media $xl1400 {
-          @mixin backImage ../images/backgrounds/glacier2_1600.jpg, 400px, transparent, color($DRDyellow a(.8)), center -125px, cover,;
-      }
-  }/*end of #headerimage*/
+  @media $large {
+    @mixin backImage ../images/backgrounds/glacier2_1600.jpg,100vh, color($DRDblue a(.7)),color($DRDyellow a(.7));
+  }
 
 .bg-wrapper {
   padding: 1rem 0;
-
-  @media $s600 {
-    padding: 6rem 0 1rem;
-  }
 
     #logo {
       position: relative;
@@ -43,27 +33,28 @@
     }
   }/*end of .bg-wrapper*/
 
+  h1 {
+    color: $darkorange;
+  }
 
   h3 {
       padding-top: 0;
       padding-bottom: 1rem;
+      color: black;
   }
 
-
-/*}/*end of .header*/
-
-#tagline {
-    background-color: color($DRDblue a(.6));
-    margin: 0 auto;
-    height: 400px;
-    p {
-        font-family: $font-cursive;
-        text-align: center;
-        color: white;
-        padding: 1rem;
-        font-size: 1.6rem;
-         @media $s600 {
-            font-size: 2.2rem;
-        }
+  p {
+      font-family: $font-cursive;
+      text-align: center;
+      color: black;
+      padding: .5rem;
+      font-size: 1.8rem;
+       @media $small {
+          font-size: 2.2rem;
       }
-    }/*end of #tagline*/
+      @media $medium {
+         font-size: 2.8rem;
+     }
+    }
+
+} /*end of #headerImage*/

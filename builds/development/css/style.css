@@ -14,6 +14,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     vertical-align: baseline;
     text-decoration: none;
 }
+a {
+    display: inline-block;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block;
@@ -90,93 +93,112 @@ h1, h2, h3, h4 {
 }
 /*--adds .4 rem to each heading fz and character spacing 1-6---*/
 h1 {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
     letter-spacing: 7px;
 }
 h2 {
-    font-size: 1.8000000000000003rem;
+    font-size: 1.7000000000000002rem;
     letter-spacing: 2.1px;
 }
 h3 {
-    font-size: 1.4000000000000004rem;
+    font-size: 1.3000000000000003rem;
     letter-spacing: 0.63px;
 }
 h4 {
-    font-size: 1.0000000000000004rem;
+    font-size: 0.9000000000000002rem;
     letter-spacing: 0.189px;
 }
-@media screen and (min-width: 432px) {
+@media screen and (min-width: 380px) {
     h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
         letter-spacing: 10px;
     }
     h2 {
-        font-size: 1.8000000000000003rem;
+        font-size: 2.1rem;
         letter-spacing: 3px;
     }
     h3 {
-        font-size: 1.4000000000000004rem;
+        font-size: 1.7000000000000002rem;
         letter-spacing: 0.8999999999999999px;
     }
     h4 {
-        font-size: 1.0000000000000004rem;
+        font-size: 1.3000000000000003rem;
         letter-spacing: 0.26999999999999996px;
     }
 }
 @media screen and (min-width: 600px) {
     h1 {
-        font-size: 3.2rem;
+        font-size: 4rem;
         letter-spacing: 12px;
     }
     h2 {
-        font-size: 2.8000000000000003rem;
+        font-size: 3.6rem;
         letter-spacing: 3.5999999999999996px;
     }
     h3 {
-        font-size: 2.4000000000000004rem;
+        font-size: 3.2rem;
         letter-spacing: 1.0799999999999998px;
     }
     h4 {
-        font-size: 2.0000000000000004rem;
+        font-size: 2.8000000000000003rem;
         letter-spacing: 0.32399999999999995px;
     }
 }
-@media screen and (min-width: 780px) {
+@media screen and (min-width: 760px) {
     h1 {
-        font-size: 3.6rem;
-        letter-spacing: 12px;
+        font-size: 4.4rem;
+        letter-spacing: 18px;
     }
     h2 {
-        font-size: 3.2rem;
-        letter-spacing: 3.5999999999999996px;
+        font-size: 4rem;
+        letter-spacing: 5.3999999999999995px;
     }
     h3 {
-        font-size: 2.8000000000000003rem;
-        letter-spacing: 1.0799999999999998px;
+        font-size: 3.6rem;
+        letter-spacing: 1.6199999999999999px;
+    }
+    h4 {
+        font-size: 3.2rem;
+        letter-spacing: 0.48599999999999993px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    h1 {
+        font-size: 4.8rem;
+        letter-spacing: 22px;
+    }
+    h2 {
+        font-size: 4rem;
+        letter-spacing: 6.6px;
+    }
+    h3 {
+        font-size: 3.2rem;
+        letter-spacing: 1.9799999999999998px;
     }
     h4 {
         font-size: 2.4000000000000004rem;
-        letter-spacing: 0.32399999999999995px;
+        letter-spacing: 0.5939999999999999px;
     }
 }
 .nav-elements {
-    padding: .4rem 0;
+    padding: 2rem 0 1rem;
     width: 100%;
     /*nav-bar*/
-    /*end of $m800 media query*/
 }
 .nav-elements .nav-bar {
     display: block;
     width: 80%;
     margin: 0 auto;
     text-align: center;
+    /*end of anchor tags*/
 }
 .nav-elements .nav-bar li {
-    max-height: 40px;
+    margin: 2rem;
 }
 .nav-elements .nav-bar a {
-    color: white;
+    color: black;
     width: 100%;
+    font-size: 1.8rem;
     font-weight: 400;
     text-align: center;
     -webkit-transition: .3s ease-out;
@@ -186,7 +208,7 @@ h4 {
 .nav-elements .nav-bar a:after {
     display: block;
     content: '';
-    background-color: rgb(0, 145, 158);
+    background-color: rgb(255, 173, 66);
     width: 0;
     height: 3px;
     margin-bottom: .3rem;
@@ -194,49 +216,32 @@ h4 {
     transition: width .3s ease-out, background-color .3s ease-in;
 }
 .nav-elements .nav-bar a:hover {
-    color: rgb(0, 145, 158);
+    color: rgb(255, 173, 66);
 }
 .nav-elements .nav-bar a:hover:after {
     content: '';
-    background-color: rgb(0, 145, 158);
+    background-color: rgb(255, 173, 66);
     width: 100%;
 }
-/*end of anchor tags*/
-.nav-elements .nav-bar i {
-    display: none;
-}
-.nav-elements .nav-bar li:last-of-type {
-    padding-right: .4rem;
-}
-@media screen and (min-width: 600px) {
-    .nav-elements {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-                transform: translateX(-50%);
-    }
+@media screen and (min-width: 760px) {
     .nav-elements .nav-bar {
+        width: 100%;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        width: 100%;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
             -ms-flex-direction: row;
                 flex-direction: row;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
+        margin: 0;
     }
+}
+@media screen and (min-width: 380px) {
     .nav-elements .nav-bar a {
-        line-height: 1.5;
-    }
-    .nav-elements .nav-bar i {
-        display: block;
-        color: white;
-        font-size: 80%;
-        padding: 0 2rem;
+        font-size: 2.2rem;
     }
 }
 /*nav-elements*/
@@ -245,65 +250,28 @@ h4 {
 /*min-height: 100vh;
   position: relative;*/
 #headerImage {
-    position: relative;
-    background: -webkit-linear-gradient( bottom, transparent, rgba(255, 173, 66, 0.8)), url(../images/backgrounds/lakeview_500.jpg);
-    background: linear-gradient( to top, transparent, rgba(255, 173, 66, 0.8)), url(../images/backgrounds/lakeview_500.jpg);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background: -webkit-linear-gradient( bottom, rgba(0, 181, 197, 0.7), rgba(255, 173, 66, 0.7)), url(../images/backgrounds/glacier2_800.jpg);
+    background: linear-gradient( to top, rgba(0, 181, 197, 0.7), rgba(255, 173, 66, 0.7)), url(../images/backgrounds/glacier2_800.jpg);
     background-repeat: no-repeat;
-    background-position: center top;
+    background-position: center center;
     background-size: cover;
-    height: 400px;
-    max-height: 400px;
-    /*> 900px*/
+    height: 100vh;
+    max-height: 100vh;
 }
-@media screen and (min-width: 432px) {
-    #headerImage {
-        background: -webkit-linear-gradient( bottom, transparent, rgba(255, 173, 66, 0.8)), url(../images/backgrounds/lakeview_500.jpg);
-        background: linear-gradient( to top, transparent, rgba(255, 173, 66, 0.8)), url(../images/backgrounds/lakeview_500.jpg);
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-        height: 400px;
-        max-height: 400px;
-    }
-}
-@media screen and (min-width: 600px) {
-    #headerImage {
-        background: -webkit-linear-gradient( bottom, transparent, rgba(255, 173, 66, 0.8)), url(../images/backgrounds/glacier2_800.jpg);
-        background: linear-gradient( to top, transparent, rgba(255, 173, 66, 0.8)), url(../images/backgrounds/glacier2_800.jpg);
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-        height: 400px;
-        max-height: 400px;
-    }
-}
-@media screen and (min-width: 1200px) {
-    #headerImage {
-        background: -webkit-linear-gradient( bottom, transparent, transparent), url(../images/backgrounds/glacier2_1600.jpg);
-        background: linear-gradient( to top, transparent, transparent), url(../images/backgrounds/glacier2_1600.jpg);
-        background-repeat: no-repeat;
-        background-position: center top;
-        background-size: cover;
-        height: 400px;
-        max-height: 400px;
-    }
-}
-@media screen and (min-width: 1400px) {
-    #headerImage {
-        background: -webkit-linear-gradient( bottom, transparent, rgba(255, 173, 66, 0.8)), url(../images/backgrounds/glacier2_1600.jpg);
-        background: linear-gradient( to top, transparent, rgba(255, 173, 66, 0.8)), url(../images/backgrounds/glacier2_1600.jpg);
-        background-repeat: no-repeat;
-        background-position: center -125px;
-        background-size: cover;
-        height: 400px;
-        max-height: 400px;
-    }
-}
-/*end of #headerimage*/
-.bg-wrapper {
+#headerImage .bg-wrapper {
     padding: 1rem 0;
 }
-.bg-wrapper #logo {
+#headerImage .bg-wrapper #logo {
     position: relative;
     background: url(../images/logos/DRD_notag.svg) no-repeat white;
     background-size: 90%;
@@ -314,35 +282,55 @@ h4 {
     margin: 0 auto;
     border-radius: 50%;
 }
-@media screen and (min-width: 600px) {
-    .bg-wrapper {
-        padding: 6rem 0 1rem;
-    }
-}
 /*end of .bg-wrapper*/
-h3 {
+#headerImage h1 {
+    color: rgb(137, 52, 16);
+}
+#headerImage h3 {
     padding-top: 0;
     padding-bottom: 1rem;
+    color: black;
 }
-/*}/*end of .header*/
-#tagline {
-    background-color: rgba(0, 181, 197, 0.6);
-    margin: 0 auto;
-    height: 400px;
-}
-#tagline p {
+#headerImage p {
     font-family: 'Dancing Script',cursive;
     text-align: center;
-    color: white;
-    padding: 1rem;
-    font-size: 1.6rem;
+    color: black;
+    padding: .5rem;
+    font-size: 1.8rem;
 }
 @media screen and (min-width: 600px) {
-    #tagline p {
+    #headerImage {
+        background: -webkit-linear-gradient( bottom, rgba(0, 181, 197, 0.7), rgba(255, 173, 66, 0.7)), url(../images/backgrounds/glacier2_800.jpg);
+        background: linear-gradient( to top, rgba(0, 181, 197, 0.7), rgba(255, 173, 66, 0.7)), url(../images/backgrounds/glacier2_800.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        height: 100vh;
+        max-height: 100vh;
+    }
+}
+@media screen and (min-width: 1200px) {
+    #headerImage {
+        background: -webkit-linear-gradient( bottom, rgba(0, 181, 197, 0.7), rgba(255, 173, 66, 0.7)), url(../images/backgrounds/glacier2_1600.jpg);
+        background: linear-gradient( to top, rgba(0, 181, 197, 0.7), rgba(255, 173, 66, 0.7)), url(../images/backgrounds/glacier2_1600.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        height: 100vh;
+        max-height: 100vh;
+    }
+}
+@media screen and (min-width: 600px) {
+    #headerImage p {
         font-size: 2.2rem;
     }
 }
-/*end of #tagline*/
+@media screen and (min-width: 760px) {
+    #headerImage p {
+        font-size: 2.8rem;
+    }
+}
+/*end of #headerImage*/
 #design {
     background: rgb(0, 181, 197);
 }

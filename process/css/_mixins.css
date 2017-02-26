@@ -1,17 +1,19 @@
 @define-mixin backImage
 $image,
 $height: 100vh,
-$grstart: rgba(0, 0, 0, .2),
-$grend: rgba(0, 0, 0, .5),
+$grstart: $black-cvr,
+$grend: $black-cvr,
 $bgPos: center center,
-$bgSize: 100% {
+$bgSize: cover {
     background: linear-gradient( to top, $grstart, $grend), url($image);
     background-repeat: no-repeat;
     background-position: $bgPos;
     background-size: $bgSize;
-    height: 400px;
+    height: 100vh;
     max-height: $height;
 }
+
+
 
 @define-mixin clearfix {
     &:before, &:after {

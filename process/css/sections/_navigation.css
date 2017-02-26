@@ -1,71 +1,55 @@
 .nav-elements {
-    padding: .4rem 0;
+    padding: 2rem 0 1rem;
     width: 100%;
 
     .nav-bar {
         display: block;
         width: 80%;
+          @media $medium {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            margin: 0;
+          }
         margin: 0 auto;
         text-align: center;
         li {
-            max-height: 40px;
+            margin: 2rem;;
         }
         a {
-            color: white;
+            color: black;
             width: 100%;
+            font-size: 1.8rem;
             font-weight: 400;
             text-align: center;
             transition: .3s ease-out;
             padding: 0 .4rem;
+            @media $xsmall {
+              font-size: 2.2rem;
+            }
             &:after {
                 display: block;
                 content: '';
-                background-color: color($DRDblue shade(20%));
+                background-color: $DRDyellow;
                 width: 0;
                 height: 3px;
                 margin-bottom: .3rem;
                 transition: width .3s ease-out, background-color .3s ease-in;
             }
             &:hover {
-                color: color($DRDblue shade(20%));
+                color: $DRDyellow;
             }
             &:hover:after {
                 content: '';
-                background-color: color($DRDblue shade(20%));
+                background-color: $DRDyellow;
                 width: 100%;
             }
         }
         /*end of anchor tags*/
-        i {
-            display: none;
-        }
-        li:last-of-type {
-            padding-right: .4rem;
-        }
-    }
-    /*nav-bar*/
 
-    @media $s600 {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        .nav-bar {
-            display: flex;
-            width: 100%;
-            flex-direction: row;
-            justify-content: center;
-            a {
-                line-height: 1.5;
-            }
-            i {
-                display: block;
-                color: white;
-                font-size: 80%;
-                padding: 0 2rem;
-            }
-        }
-    }
-    /*end of $m800 media query*/
+  }  /*nav-bar*/
+
+
 
 }/*nav-elements*/
