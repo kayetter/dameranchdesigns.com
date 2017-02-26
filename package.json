@@ -21,6 +21,7 @@
     "autoprefixer": "^6.7.3",
     "cssnano": "^3.10.0",
     "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
     "gulp-postcss": "^6.3.0",
     "gulp-util": "^3.0.8",
     "gulp-webserver": "^0.9.1",

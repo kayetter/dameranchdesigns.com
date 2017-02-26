@@ -40,33 +40,6 @@
         <h2>Our Design Philosophy</h2>
 
     </section>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script>
-        //calculates width of tagline
-        function textWidth(text) {
-            var calc = '<h1 style="display:none">' + text + '</h1>';
-            $('body').append(calc);
-            var width = $('body').find('h1:last').width();
-            $('body').find('h1:last').remove();
-            console.log(width);
-            width = width;
-            $('#tagline').css('width', width + 24 + 'px');
-        };
-
-        //functions called when document loads
-        $(document).ready(function() {
-            textWidth($('#tagline h1').text());
-        });
-
-        //functions called when document resizes
-        $(window).resize(function() {
-            if ($(window).width() > 360) {
-                textWidth($('#tagline h1').text());
-            } else {
-                $('#tagline').css('width', '100%');
-            }
-        });
-    </script>
 
 </body>
 
