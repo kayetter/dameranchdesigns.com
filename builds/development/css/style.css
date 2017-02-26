@@ -181,8 +181,10 @@ h4 {
     }
 }
 .nav-elements {
-    padding: 2rem 0 1rem;
-    width: 100%;
+    padding: 0;
+    width: 70%;
+    background: black;
+    margin: 2rem 0 1rem;
     /*nav-bar*/
 }
 .nav-elements .nav-bar {
@@ -193,12 +195,12 @@ h4 {
     /*end of anchor tags*/
 }
 .nav-elements .nav-bar li {
-    margin: 2rem;
+    margin: 1rem 2rem;
 }
 .nav-elements .nav-bar a {
-    color: black;
+    color: white;
     width: 100%;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 400;
     text-align: center;
     -webkit-transition: .3s ease-out;
@@ -241,7 +243,7 @@ h4 {
 }
 @media screen and (min-width: 380px) {
     .nav-elements .nav-bar a {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
     }
 }
 /*nav-elements*/
@@ -260,6 +262,9 @@ h4 {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background: -webkit-linear-gradient( bottom, rgba(0, 181, 197, 0.7), rgba(255, 173, 66, 0.7)), url(../images/backgrounds/glacier2_800.jpg);
     background: linear-gradient( to top, rgba(0, 181, 197, 0.7), rgba(255, 173, 66, 0.7)), url(../images/backgrounds/glacier2_800.jpg);
     background-repeat: no-repeat;

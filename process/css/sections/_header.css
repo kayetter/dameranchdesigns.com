@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   @mixin backImage ../images/backgrounds/glacier2_800.jpg,100vh, color($DRDblue a(.7)),color($DRDyellow a(.7));
 
   @media $small {

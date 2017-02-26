@@ -7,9 +7,13 @@ var gulp = require('gulp'),
     postcss = require('gulp-postcss'),
     cssnano = require('cssnano'),
     math = require('postcss-math'),
+    uglify = require ('gulp-uglify'),
+    concat = require ('gulp-concat'),
+    browserify = require ('gulp-browserify'),
     animation = require('postcss-animation'),
 
     source = 'process/css/',
+    jssource = 'process/scripts/',
     dest = 'builds/development/';
 
 gulp.task('html', function() {
@@ -29,9 +33,18 @@ gulp.task('css', function() {
         .pipe(gulp.dest(dest + 'css'));
 });
 
+gulp.task('script', function(){
+  gulp.src(jssource + '*.js')
+  .pipe(concat('scripts.js'))
+  .pipe(browserify())
+  .on('error', gutil.log)
+  .pipe(gulp.dest(dest + 'scripts/'))
+})
+
 gulp.task('watch', function() {
     gulp.watch(source + '**/*.css', ['css']);
     gulp.watch(dest + '**/*.html', ['html']);
+    gulp.watch(jssource + '*.js'), ['script'];
 });
 
 gulp.task('webserver', function() {
@@ -42,4 +55,4 @@ gulp.task('webserver', function() {
         }));
 });
 
-gulp.task('default', ['html', 'css', 'webserver', 'watch']);
+gulp.task('default', ['html', 'css', 'script', 'webserver', 'watch']);
