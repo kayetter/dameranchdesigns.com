@@ -6,9 +6,11 @@
 $DRDblue: rgb(0, 181, 197);
 $DRDorange:   rgb(230, 99, 41);
 $DRDyellow: rgb(255, 173, 66);
-$darkorange: color($DRDorange lightness(30%));
-$black-cvr: rgba(0,0,0,.3);
-$black-hvr: rgba(0,0,0,.4);
+$brightblue: color($DRDblue lightness(40%));
+$brightyellow: color($DRDyellow lightness(40%));
+$brightorange: color($DRDorange lightness(40%));
+$black-cvr: rgba(0,0,0,.5);
+$black-hvr: rgba(0,0,0,.2);
 
 
 

@@ -2,6 +2,8 @@
 @import "reset";
 @import "mixins";
 @import "base";
+@import "modules/section";
+@import "modules/article";
 @import "sections/navigation";
 @import "sections/header";
 @import "sections/design";

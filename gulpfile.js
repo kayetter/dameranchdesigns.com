@@ -35,7 +35,7 @@ gulp.task('css', function() {
 
 gulp.task('script', function(){
   gulp.src(jssource + '*.js')
-  .pipe(concat('scripts.js'))
+  // .pipe(concat('scripts.js'))
   .pipe(browserify())
   .on('error', gutil.log)
   .pipe(gulp.dest(dest + 'scripts/'))
@@ -44,7 +44,7 @@ gulp.task('script', function(){
 gulp.task('watch', function() {
     gulp.watch(source + '**/*.css', ['css']);
     gulp.watch(dest + '**/*.html', ['html']);
-    gulp.watch(jssource + '*.js'), ['script'];
+    gulp.watch(jssource + '*.js', ['script']);
 });
 
 gulp.task('webserver', function() {

@@ -88,42 +88,19 @@ h1, h2, h3, h4 {
     word-wrap: break-word;
     text-align: center;
     color: white;
-    padding-top: .5em;
+    padding: 2rem 0;
     font-weight: 500;
+    margin: 0;
 }
 /*--adds .4 rem to each heading fz and character spacing 1-6---*/
 h1 {
     font-size: 2.1rem;
     letter-spacing: 7px;
 }
-h2 {
-    font-size: 1.7000000000000002rem;
-    letter-spacing: 2.1px;
-}
-h3 {
-    font-size: 1.3000000000000003rem;
-    letter-spacing: 0.63px;
-}
-h4 {
-    font-size: 0.9000000000000002rem;
-    letter-spacing: 0.189px;
-}
 @media screen and (min-width: 380px) {
     h1 {
         font-size: 2.5rem;
         letter-spacing: 10px;
-    }
-    h2 {
-        font-size: 2.1rem;
-        letter-spacing: 3px;
-    }
-    h3 {
-        font-size: 1.7000000000000002rem;
-        letter-spacing: 0.8999999999999999px;
-    }
-    h4 {
-        font-size: 1.3000000000000003rem;
-        letter-spacing: 0.26999999999999996px;
     }
 }
 @media screen and (min-width: 600px) {
@@ -131,35 +108,11 @@ h4 {
         font-size: 4rem;
         letter-spacing: 12px;
     }
-    h2 {
-        font-size: 3.6rem;
-        letter-spacing: 3.5999999999999996px;
-    }
-    h3 {
-        font-size: 3.2rem;
-        letter-spacing: 1.0799999999999998px;
-    }
-    h4 {
-        font-size: 2.8000000000000003rem;
-        letter-spacing: 0.32399999999999995px;
-    }
 }
 @media screen and (min-width: 760px) {
     h1 {
         font-size: 4.4rem;
         letter-spacing: 18px;
-    }
-    h2 {
-        font-size: 4rem;
-        letter-spacing: 5.3999999999999995px;
-    }
-    h3 {
-        font-size: 3.6rem;
-        letter-spacing: 1.6199999999999999px;
-    }
-    h4 {
-        font-size: 3.2rem;
-        letter-spacing: 0.48599999999999993px;
     }
 }
 @media screen and (min-width: 1200px) {
@@ -167,35 +120,75 @@ h4 {
         font-size: 4.8rem;
         letter-spacing: 22px;
     }
+}
+/*end of h1*/
+h2 {
+    letter-spacing: 5px;
+    font-size: 1.9rem;
+}
+@media screen and (min-width: 380px) {
     h2 {
-        font-size: 4rem;
-        letter-spacing: 6.6px;
+        font-size: 2.2rem;
+        letter-spacing: 7px;
     }
+}
+@media screen and (min-width: 600px) {
+    h2 {
+        font-size: 2.8rem;
+        letter-spacing: 9px;
+    }
+}
+/*end h2*/
+h3 {
+    letter-spacing: 3px;
+    font-size: 1.8rem;
+}
+@media screen and (min-width: 380px) {
     h3 {
-        font-size: 3.2rem;
-        letter-spacing: 1.9799999999999998px;
+        font-size: 2.0rem;
+        letter-spacing: 3px;
     }
-    h4 {
-        font-size: 2.4000000000000004rem;
-        letter-spacing: 0.5939999999999999px;
+}
+@media screen and (min-width: 600px) {
+    h3 {
+        font-size: 2.4rem;
+        letter-spacing: 3px;
+    }
+}
+.section p {
+    margin: 1rem auto;
+    color: white;
+    text-align: justify;
+}
+@media screen and (min-width: 600px) {
+    .section p {
+        font-size: 2.0rem;
+    }
+}
+.blue-background {
+    background: rgb(0, 181, 197);
+}
+.article {}
+@media screen and (min-width: 760px) {
+    .article {
+        width: 80%;
+        margin: 0 auto;
     }
 }
 .nav-elements {
     padding: 0;
-    width: 70%;
-    background: black;
-    margin: 2rem 0 1rem;
+    background: rgb(204, 116, 0);
+    margin: 3rem 0 1rem;
     /*nav-bar*/
 }
 .nav-elements .nav-bar {
     display: block;
-    width: 80%;
     margin: 0 auto;
     text-align: center;
     /*end of anchor tags*/
 }
 .nav-elements .nav-bar li {
-    margin: 1rem 2rem;
+    margin: 1rem 1rem;
 }
 .nav-elements .nav-bar a {
     color: white;
@@ -227,13 +220,11 @@ h4 {
 }
 @media screen and (min-width: 760px) {
     .nav-elements .nav-bar {
-        width: 100%;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
             -ms-flex-direction: row;
@@ -251,7 +242,7 @@ h4 {
 /*.header {*/
 /*min-height: 100vh;
   position: relative;*/
-#headerImage {
+.headerImage {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -265,18 +256,19 @@ h4 {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    background: -webkit-linear-gradient( bottom, rgba(0, 181, 197, 0.7), rgba(255, 173, 66, 0.7)), url(../images/backgrounds/glacier2_800.jpg);
-    background: linear-gradient( to top, rgba(0, 181, 197, 0.7), rgba(255, 173, 66, 0.7)), url(../images/backgrounds/glacier2_800.jpg);
+    background: -webkit-linear-gradient( bottom, rgba(0,0,0,.5), rgba(0,0,0,.5)), url(../images/backgrounds/glacier2_800.jpg);
+    background: linear-gradient( to top, rgba(0,0,0,.5), rgba(0,0,0,.5)), url(../images/backgrounds/glacier2_800.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     height: 100vh;
     max-height: 100vh;
+    /*end of #title*/
 }
-#headerImage .bg-wrapper {
+.headerImage .bg-wrapper {
     padding: 1rem 0;
 }
-#headerImage .bg-wrapper #logo {
+.headerImage .bg-wrapper #logo {
     position: relative;
     background: url(../images/logos/DRD_notag.svg) no-repeat white;
     background-size: 90%;
@@ -288,25 +280,25 @@ h4 {
     border-radius: 50%;
 }
 /*end of .bg-wrapper*/
-#headerImage h1 {
-    color: rgb(137, 52, 16);
+.headerImage #title h1 {
+    color: rgb(0, 187, 204);
 }
-#headerImage h3 {
+.headerImage #title h3 {
     padding-top: 0;
     padding-bottom: 1rem;
-    color: black;
+    color: white;
 }
-#headerImage p {
+.headerImage #title p {
     font-family: 'Dancing Script',cursive;
     text-align: center;
-    color: black;
-    padding: .5rem;
+    color: white;
+    padding: 10px 0;
     font-size: 1.8rem;
 }
 @media screen and (min-width: 600px) {
-    #headerImage {
-        background: -webkit-linear-gradient( bottom, rgba(0, 181, 197, 0.7), rgba(255, 173, 66, 0.7)), url(../images/backgrounds/glacier2_800.jpg);
-        background: linear-gradient( to top, rgba(0, 181, 197, 0.7), rgba(255, 173, 66, 0.7)), url(../images/backgrounds/glacier2_800.jpg);
+    .headerImage {
+        background: -webkit-linear-gradient( bottom, rgba(0,0,0,.5), rgba(0,0,0,.5)), url(../images/backgrounds/glacier2_800.jpg);
+        background: linear-gradient( to top, rgba(0,0,0,.5), rgba(0,0,0,.5)), url(../images/backgrounds/glacier2_800.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -315,9 +307,9 @@ h4 {
     }
 }
 @media screen and (min-width: 1200px) {
-    #headerImage {
-        background: -webkit-linear-gradient( bottom, rgba(0, 181, 197, 0.7), rgba(255, 173, 66, 0.7)), url(../images/backgrounds/glacier2_1600.jpg);
-        background: linear-gradient( to top, rgba(0, 181, 197, 0.7), rgba(255, 173, 66, 0.7)), url(../images/backgrounds/glacier2_1600.jpg);
+    .headerImage {
+        background: -webkit-linear-gradient( bottom, rgba(0,0,0,.5), rgba(0,0,0,.5)), url(../images/backgrounds/glacier2_1600.jpg);
+        background: linear-gradient( to top, rgba(0,0,0,.5), rgba(0,0,0,.5)), url(../images/backgrounds/glacier2_1600.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -326,19 +318,13 @@ h4 {
     }
 }
 @media screen and (min-width: 600px) {
-    #headerImage p {
+    .headerImage #title p {
         font-size: 2.2rem;
     }
 }
 @media screen and (min-width: 760px) {
-    #headerImage p {
+    .headerImage #title p {
         font-size: 2.8rem;
     }
 }
-/*end of #headerImage*/
-#design {
-    background: rgb(0, 181, 197);
-}
-#design h2 {
-    padding: 1rem 0;
-}
+/*end of .headerImage*/

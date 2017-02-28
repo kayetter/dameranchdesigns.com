@@ -1,2 +1,2 @@
-var jquery = require('jquery'),
-    jqueryui = require('jquery-ui');
+$ = require('jquery');
+var jqueryUiBrowserify = require("jquery-ui-browserify");

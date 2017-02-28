@@ -1,61 +1,64 @@
 /*-----------Header Styles--------------------*/
+
+
 /*.header {*/
-  /*min-height: 100vh;
+
+
+/*min-height: 100vh;
   position: relative;*/
 
-#headerImage {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  @mixin backImage ../images/backgrounds/glacier2_800.jpg,100vh, color($DRDblue a(.7)),color($DRDyellow a(.7));
-
-  @media $small {
-    @mixin backImage ../images/backgrounds/glacier2_800.jpg,100vh, color($DRDblue a(.7)),color($DRDyellow a(.7));
-  }
-
-  @media $large {
-    @mixin backImage ../images/backgrounds/glacier2_1600.jpg,100vh, color($DRDblue a(.7)),color($DRDyellow a(.7));
-  }
-
-.bg-wrapper {
-  padding: 1rem 0;
-
-    #logo {
-      position: relative;
-      background: url(../images/logos/DRD_notag.svg) no-repeat white;
-      background-size: 90%;
-      background-position: center center;
-      display: block;
-      width: 100px;
-      height: 100px;
-      margin: 0 auto;
-      border-radius: 50%;
+.headerImage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @mixin backImage ../images/backgrounds/glacier2_800.jpg, 100vh, $black-cvr, $black-cvr;
+    @media $small {
+        @mixin backImage ../images/backgrounds/glacier2_800.jpg, 100vh, $black-cvr, $black-cvr;
     }
-  }/*end of .bg-wrapper*/
-
-  h1 {
-    color: $darkorange;
-  }
-
-  h3 {
-      padding-top: 0;
-      padding-bottom: 1rem;
-      color: black;
-  }
-
-  p {
-      font-family: $font-cursive;
-      text-align: center;
-      color: black;
-      padding: .5rem;
-      font-size: 1.8rem;
-       @media $small {
-          font-size: 2.2rem;
-      }
-      @media $medium {
-         font-size: 2.8rem;
-     }
+    @media $large {
+        @mixin backImage ../images/backgrounds/glacier2_1600.jpg, 100vh, $black-cvr, $black-cvr;
     }
+    .bg-wrapper {
+        padding: 1rem 0;
+        #logo {
+            position: relative;
+            background: url(../images/logos/DRD_notag.svg) no-repeat white;
+            background-size: 90%;
+            background-position: center center;
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            border-radius: 50%;
+        }
+    }
+    /*end of .bg-wrapper*/
+    #title {
+        h1 {
+            color: $brightblue;
+        }
+        h3 {
+            padding-top: 0;
+            padding-bottom: 1rem;
+            color: white;
+        }
+        p {
+            font-family: $font-cursive;
+            text-align: center;
+            color: white;
+            padding: 10px 0;
+            font-size: 1.8rem;
+            @media $small {
+                font-size: 2.2rem;
+            }
+            @media $medium {
+                font-size: 2.8rem;
+            }
+        }
+    }
+    /*end of #title*/
+}
 
-} /*end of #headerImage*/
+
+/*end of .headerImage*/

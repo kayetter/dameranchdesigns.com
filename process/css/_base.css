@@ -29,71 +29,67 @@
         word-wrap: break-word;
         text-align: center;
         color: white;
-        padding-top: .5em;
+        padding: 2rem 0;
         font-weight: 500;
+        margin: 0;
     }
     /*--adds .4 rem to each heading fz and character spacing 1-6---*/
 
-    $size: 2.1rem;
-    $spacing: 7px;
-    @for $i from 1 through 4 {
-        h$i {
-            font-size: resolve($size);
-            letter-spacing: resolve($spacing);
-            @extend %heading;
-        }
-        $size: $size - .4rem;
-        $spacing: $spacing * .3;
-    }
+h1 {
+  @extend %heading;
+  font-size: 2.1rem;
+  letter-spacing: 7px;
 
     @media $xsmall {
-        $size: 2.5rem;
-        $spacing: 10px;
-        @for $i from 1 through 4 {
-            h$i {
-                font-size: resolve($size);
-                letter-spacing: resolve($spacing);
-            }
-            $size: $size - .4rem;
-            $spacing: $spacing * .3;
-        }
+      font-size: 2.5rem;
+      letter-spacing: 10px;
     }
-
     @media $small {
-        $size: 4.0rem;
-        $spacing: 12px;
-        @for $i from 1 through 4 {
-            h$i {
-                font-size: resolve($size);
-                letter-spacing: resolve($spacing);
-            }
-            $size: $size - .4rem;
-            $spacing: $spacing * .3;
-        }
+      font-size: 4rem;
+      letter-spacing: 12px;
     }
-
     @media $medium {
-        $size: 4.4rem;
-        $spacing: 18px;
-        @for $i from 1 through 4 {
-            h$i {
-                font-size: resolve($size);
-                letter-spacing: resolve($spacing);
-            }
-            $size: $size - .4rem;
-            $spacing: $spacing * .3;
-        }
+      font-size: 4.4rem;
+      letter-spacing: 18px;
+    }
+    @media $large {
+      font-size: 4.8rem;
+      letter-spacing: 22px;
     }
 
-    @media $large {
-            $size: 4.8rem;
-            $spacing: 22px;
-            @for $i from 1 through 4 {
-                h$i {
-                    font-size: resolve($size);
-                    letter-spacing: resolve($spacing);
-                }
-                $size: $size - .8rem;
-                $spacing: $spacing * .3;
-            }
-        }
+  }/*end of h1*/
+
+  h2 {
+    @extend %heading;
+    letter-spacing: 5px;
+    font-size: 1.9rem;
+
+    @media $xsmall {
+      font-size: 2.2rem;
+      letter-spacing: 7px;
+    }
+    @media $small {
+      font-size: 2.8rem;
+      letter-spacing: 9px;
+    }
+
+  }/*end h2*/
+
+  h3 {
+    @extend %heading;
+    letter-spacing: 3px;
+    font-size: 1.8rem;
+
+    @media $xsmall {
+      font-size: 2.0rem;
+      letter-spacing: 3px;
+    }
+    @media $small {
+      font-size: 2.4rem;
+      letter-spacing: 3px;
+    }
+  }
+
+  h4 {
+    @extend %heading;
+  }
