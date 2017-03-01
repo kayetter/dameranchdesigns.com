@@ -1,6 +1,0 @@
-.article {
-  @media $medium {
-  width: 80%;
-  margin: 0 auto;
-  }
-}

@@ -3,7 +3,8 @@
 @import "mixins";
 @import "base";
 @import "modules/section";
-@import "modules/article";
+@import "modules/block";
+@import "modules/container";
 @import "sections/navigation";
-@import "sections/header";
+@import "sections/title";
 @import "sections/design";

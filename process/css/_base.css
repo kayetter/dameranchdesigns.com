@@ -21,6 +21,14 @@
         font-size: 1.8rem;
         line-height: 160%;
         font-weight: $fwt-thin;
+
+        @mixin backImage ../images/backgrounds/glacier2_800.jpg, 100vh, transparent, transparent;
+        @media $small {
+            @mixin backImage ../images/backgrounds/glacier2_800.jpg, 100vh, transparent, transparent;
+        }
+        @media $large {
+            @mixin backImage ../images/backgrounds/glacier2_1600.jpg, 100vh, transparent, transparent;
+        }
     }
 
     %heading {
@@ -29,7 +37,7 @@
         word-wrap: break-word;
         text-align: center;
         color: white;
-        padding: 2rem 0;
+        padding: 1rem 0;
         font-weight: 500;
         margin: 0;
     }
@@ -37,11 +45,11 @@
 
 h1 {
   @extend %heading;
-  font-size: 2.1rem;
+  font-size: 2.5rem;
   letter-spacing: 7px;
 
     @media $xsmall {
-      font-size: 2.5rem;
+      font-size: 3.2rem;
       letter-spacing: 10px;
     }
     @media $small {
@@ -61,35 +69,41 @@ h1 {
 
   h2 {
     @extend %heading;
-    letter-spacing: 5px;
-    font-size: 1.9rem;
+    letter-spacing: 3px;
+    font-size: 2.0rem;
 
     @media $xsmall {
-      font-size: 2.2rem;
-      letter-spacing: 7px;
+      font-size: 2.4rem;
+      letter-spacing: 3px;
     }
     @media $small {
       font-size: 2.8rem;
-      letter-spacing: 9px;
+      letter-spacing: 3px;
     }
 
   }/*end h2*/
 
   h3 {
     @extend %heading;
-    letter-spacing: 3px;
+    letter-spacing: normal;
     font-size: 1.8rem;
 
     @media $xsmall {
       font-size: 2.0rem;
-      letter-spacing: 3px;
     }
     @media $small {
       font-size: 2.4rem;
-      letter-spacing: 3px;
     }
   }
 
   h4 {
     @extend %heading;
+  }
+
+  svg {
+    display: block;
+    margin: auto;
+    fill: $brightorange;
+    width: 44px;
+    text-align: center;
   }

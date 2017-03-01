@@ -1,11 +1,11 @@
         //calculates width of tagline
         function textWidth(text) {
-            var calc = '<section class = "headerImage" style= "height:40px">' + text + '</section>' ;
+            var calc = '<section class = "title-section" style= "height:40px">' + text + '</section>' ;
             $('body').append(calc);
-            $('body').find('.headerImage:last').wrapInner("<p></p>");
+            $('body').find('.title-section:last').wrapInner("<p></p>");
             console.log(calc)
-            var width = $('body').find('.headerImage p:last').width();
-            $('body').find('.headerImage:last').remove();
+            var width = $('body').find('.title-section p:last').width();
+            $('body').find('.title-section:last').remove();
             console.log(width);
             $('.nav-elements').css('width', width + 'px');
         };

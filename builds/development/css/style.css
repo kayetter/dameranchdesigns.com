@@ -81,6 +81,38 @@ body {
     font-size: 1.8rem;
     line-height: 160%;
     font-weight: 300;
+    background: -webkit-linear-gradient( bottom, transparent, transparent), url(../images/backgrounds/glacier2_800.jpg);
+    background: linear-gradient( to top, transparent, transparent), url(../images/backgrounds/glacier2_800.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    max-height: 100vh;
+}
+@media screen and (min-width: 600px) {
+    body {
+        background: -webkit-linear-gradient( bottom, transparent, transparent), url(../images/backgrounds/glacier2_800.jpg);
+        background: linear-gradient( to top, transparent, transparent), url(../images/backgrounds/glacier2_800.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+        background-size: cover;
+        height: 100vh;
+        max-height: 100vh;
+    }
+}
+@media screen and (min-width: 1200px) {
+    body {
+        background: -webkit-linear-gradient( bottom, transparent, transparent), url(../images/backgrounds/glacier2_1600.jpg);
+        background: linear-gradient( to top, transparent, transparent), url(../images/backgrounds/glacier2_1600.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+        background-size: cover;
+        height: 100vh;
+        max-height: 100vh;
+    }
 }
 h1, h2, h3, h4 {
     font-family: 'Roboto Slab',serif;
@@ -88,18 +120,18 @@ h1, h2, h3, h4 {
     word-wrap: break-word;
     text-align: center;
     color: white;
-    padding: 2rem 0;
+    padding: 1rem 0;
     font-weight: 500;
     margin: 0;
 }
 /*--adds .4 rem to each heading fz and character spacing 1-6---*/
 h1 {
-    font-size: 2.1rem;
+    font-size: 2.5rem;
     letter-spacing: 7px;
 }
 @media screen and (min-width: 380px) {
     h1 {
-        font-size: 2.5rem;
+        font-size: 3.2rem;
         letter-spacing: 10px;
     }
 }
@@ -123,62 +155,137 @@ h1 {
 }
 /*end of h1*/
 h2 {
-    letter-spacing: 5px;
-    font-size: 1.9rem;
+    letter-spacing: 3px;
+    font-size: 2.0rem;
 }
 @media screen and (min-width: 380px) {
     h2 {
-        font-size: 2.2rem;
-        letter-spacing: 7px;
+        font-size: 2.4rem;
+        letter-spacing: 3px;
     }
 }
 @media screen and (min-width: 600px) {
     h2 {
         font-size: 2.8rem;
-        letter-spacing: 9px;
+        letter-spacing: 3px;
     }
 }
 /*end h2*/
 h3 {
-    letter-spacing: 3px;
+    letter-spacing: normal;
     font-size: 1.8rem;
 }
 @media screen and (min-width: 380px) {
     h3 {
         font-size: 2.0rem;
-        letter-spacing: 3px;
     }
 }
 @media screen and (min-width: 600px) {
     h3 {
         font-size: 2.4rem;
-        letter-spacing: 3px;
     }
 }
-.section p {
+svg {
+    display: block;
+    margin: auto;
+    fill: rgb(183, 70, 21);
+    width: 44px;
+    text-align: center;
+}
+.section {
+    /*end of article*/
+}
+.section .article {
+    /*end of p*/
+}
+.section .article .row1 .block {
+    background-color: rgb(245, 245, 245);
+}
+.section .article .row2 .block {
+    background-color: rgb(240, 240, 240);
+}
+.section .article .block {
+    padding: 3rem 1rem;
+}
+/*border: 1px solid black;*/
+.section .article .block .summary {
+    width: 100%;
+}
+.section .article .block .display {
+    display: none;
+}
+/*end of .block*/
+.section .article p {
     margin: 1rem auto;
-    color: white;
     text-align: justify;
 }
+@media screen and (min-width: 760px) {
+    .section .article {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+@media screen and (min-width: 760px) {
+    .section .article .block {
+        width: 50%;
+        margin: 1rem;
+    }
+    .section .article .block:last-of-type {
+        margin-left: 0;
+    }
+}
 @media screen and (min-width: 600px) {
-    .section p {
+    .section .article p {
         font-size: 2.0rem;
     }
 }
-.blue-background {
-    background: rgb(0, 181, 197);
+/*end of section*/
+.section.blue-background {
+    background: rgba(0, 181, 197, 0.8);
 }
-.article {}
+.section.white-background {
+    background: white;
+}
+.section.white-background h1, .section.white-background h2, .section.white-background h3, .section.white-background h4, .section.white-background h5, .section.white-background p {
+    color: rgb(40, 149, 159);
+}
+.filler {
+    height: 50vh;
+}
+.block {
+    display: block;
+}
 @media screen and (min-width: 760px) {
-    .article {
-        width: 80%;
-        margin: 0 auto;
+    .block {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    }
+}
+.container .row {
+    display: block;
+}
+@media screen and (min-width: 760px) {
+    .container .row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
     }
 }
 .nav-elements {
     padding: 0;
     background: rgb(204, 116, 0);
-    margin: 3rem 0 1rem;
+    margin: 2rem 0 4rem;
     /*nav-bar*/
 }
 .nav-elements .nav-bar {
@@ -219,6 +326,11 @@ h3 {
     width: 100%;
 }
 @media screen and (min-width: 760px) {
+    .nav-elements {
+        margin-top: 5rem;
+    }
+}
+@media screen and (min-width: 760px) {
     .nav-elements .nav-bar {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -242,7 +354,9 @@ h3 {
 /*.header {*/
 /*min-height: 100vh;
   position: relative;*/
-.headerImage {
+.title-section {
+    background: rgba(0,0,0,.5);
+    height: 100vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -256,19 +370,12 @@ h3 {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    background: -webkit-linear-gradient( bottom, rgba(0,0,0,.5), rgba(0,0,0,.5)), url(../images/backgrounds/glacier2_800.jpg);
-    background: linear-gradient( to top, rgba(0,0,0,.5), rgba(0,0,0,.5)), url(../images/backgrounds/glacier2_800.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    height: 100vh;
-    max-height: 100vh;
     /*end of #title*/
 }
-.headerImage .bg-wrapper {
+.title-section .bg-wrapper {
     padding: 1rem 0;
 }
-.headerImage .bg-wrapper #logo {
+.title-section .bg-wrapper #logo {
     position: relative;
     background: url(../images/logos/DRD_notag.svg) no-repeat white;
     background-size: 90%;
@@ -280,51 +387,60 @@ h3 {
     border-radius: 50%;
 }
 /*end of .bg-wrapper*/
-.headerImage #title h1 {
+.title-section #title h1 {
     color: rgb(0, 187, 204);
+    padding: 2rem 0 1rem;
+    font-size: 2.0rem;
 }
-.headerImage #title h3 {
+.title-section #title h3 {
     padding-top: 0;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     color: white;
+    letter-spacing: 3px;
 }
-.headerImage #title p {
+.title-section #title p {
     font-family: 'Dancing Script',cursive;
     text-align: center;
     color: white;
     padding: 10px 0;
     font-size: 1.8rem;
 }
-@media screen and (min-width: 600px) {
-    .headerImage {
-        background: -webkit-linear-gradient( bottom, rgba(0,0,0,.5), rgba(0,0,0,.5)), url(../images/backgrounds/glacier2_800.jpg);
-        background: linear-gradient( to top, rgba(0,0,0,.5), rgba(0,0,0,.5)), url(../images/backgrounds/glacier2_800.jpg);
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-        height: 100vh;
-        max-height: 100vh;
-    }
-}
-@media screen and (min-width: 1200px) {
-    .headerImage {
-        background: -webkit-linear-gradient( bottom, rgba(0,0,0,.5), rgba(0,0,0,.5)), url(../images/backgrounds/glacier2_1600.jpg);
-        background: linear-gradient( to top, rgba(0,0,0,.5), rgba(0,0,0,.5)), url(../images/backgrounds/glacier2_1600.jpg);
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-        height: 100vh;
-        max-height: 100vh;
+@media screen and (min-width: 380px) {
+    .title-section #title h1 {
+        font-size: 2.5rem;
     }
 }
 @media screen and (min-width: 600px) {
-    .headerImage #title p {
+    .title-section #title h1 {
+        font-size: 2.8rem;
+    }
+}
+@media screen and (min-width: 760px) {
+    .title-section #title h1 {
+        font-size: 4.4rem;
+    }
+}
+@media screen and (min-width: 760px) {
+    .title-section #title h3 {
+        font-size: 3.2rem;
+        letter-spacing: 5px;
+    }
+}
+@media screen and (min-width: 600px) {
+    .title-section #title p {
         font-size: 2.2rem;
     }
 }
 @media screen and (min-width: 760px) {
-    .headerImage #title p {
+    .title-section #title p {
         font-size: 2.8rem;
     }
 }
 /*end of .headerImage*/
+#design {
+    padding: 3rem 0;
+}
+.icon {}
+.display-none {
+    display: none;
+}
