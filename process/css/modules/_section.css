@@ -1,63 +1,59 @@
 .section {
-
-  .article {
-    @media $medium {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .row1 .block{
-    background-color: color(white shade(4%));
-  }
-  .row2 .block{
-    background-color: color(white shade(6%));
-  }
-
-    .block {
-      padding: 3rem 1rem;
-      /*border: 1px solid black;*/
-      @media $medium {
-        width: 50%;
-        margin: 1rem;
-        &:last-of-type {
-          margin-left: 0;
+    .article {
+        @media $medium {
+            width: 100%;
+            margin: 0 auto;
         }
-      }
-      .summary {
-        width: 100%;
-      }
+        .row1 .block {
+            background-color: color(white shade(4%));
+        }
+        .row2 .block {
+            background-color: color(white shade(6%));
+        }
+        .block {
+            padding: 3rem 1rem;
+            /*border: 1px solid black;*/
+            @media $medium {
+                width: 50%;
+                margin: 1rem;
+                max-height: 400px;
+                /*overflow-y: auto;*/
+                &:last-of-type {
+                    margin-left: 0;
+                }
 
-      .display {
-        display: none;
-      }
-    }/*end of .block*/
+            }
+            .hidden {
+              display: none;
+            }
+        }
+        /*end of .block*/
+        p {
+            margin: 1rem auto;
+            text-align: justify;
+            @media $small {
+                font-size: 2.0rem;
+            }
+        }
+        /*end of p*/
+    }
+    /*end of article*/
+}
 
 
-
-    p {
-      margin: 1rem auto;
-      text-align: justify;
-      @media $small {
-        font-size: 2.0rem;
-      }
-    }/*end of p*/
-  }/*end of article*/
-
-
-}/*end of section*/
+/*end of section*/
 
 .section.blue-background {
-  background: color($DRDblue a(.8));
+    background: color($DRDblue a(.8));
 }
 
 .section.white-background {
-  background: white;
-
-  h1, h2, h3, h4, h5, p {
-    color: color($DRDblue saturation(60%));
-  }
+    background: white;
+    h1, h2, h3, h4, h5, p {
+        color: color($DRDblue saturation(60%));
+    }
 }
 
 .filler {
-  height: 50vh;
+    height: 50vh;
 }

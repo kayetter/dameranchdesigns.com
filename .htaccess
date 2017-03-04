@@ -1,0 +1,8 @@
+# Use PHP56
+AddHandler application/x-httpd-php56 .php
+
+# Never use www in the domain
+# Replace 'example.com' with your domain name
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.(([a-z0-9_]+\.)?dameranchdesigns\.com)$ [NC]
+RewriteRule .? http://%1%{REQUEST_URI} [R=301,L]

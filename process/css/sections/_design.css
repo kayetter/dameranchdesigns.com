@@ -1,11 +1,34 @@
 #design {
   padding: 3rem 0;
-}
+
+  .mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
+	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: $brightblue; background-color: color($brightblue a(.85)); }
+
+	.mCS-rounded-dark.mCSB_scrollTools .mCSB_draggerRail{ background-color: #000; background-color: rgba(0,0,0,0.15); }
+
+	.mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar,
+	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{ background-color: $brightblue; background-color: color($brightblue a(.85)); }
+
+  .block {
+    .details {
+      overflow-y: auto;
+      max-height: 200px;
+    }
+
+    .summary h3{
+      height: 92px;
+    }
+
+
+
+
+  }/*end of block*/
+
+
+}/*end of #design*/
+
+
 
 
 .icon {
-}
-
-.display-none {
-  display: none;
 }

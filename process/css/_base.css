@@ -1,5 +1,8 @@
     /*====================MAIN PAGE STYLES============*/
 
+    /* Track */
+
+
     html {
         /*---sets font size using rem to exact pixel. for example 1.8rem = 18 px.*/
         font-size: 62.5%;
@@ -22,12 +25,12 @@
         line-height: 160%;
         font-weight: $fwt-thin;
 
-        @mixin backImage ../images/backgrounds/glacier2_800.jpg, 100vh, transparent, transparent;
+        @mixin backImage ../images/backgrounds/kayaks_1600.jpg, 100vh, transparent, transparent;
         @media $small {
-            @mixin backImage ../images/backgrounds/glacier2_800.jpg, 100vh, transparent, transparent;
+            @mixin backImage ../images/backgrounds/kayaks_1600.jpg, 100vh, transparent, transparent;
         }
         @media $large {
-            @mixin backImage ../images/backgrounds/glacier2_1600.jpg, 100vh, transparent, transparent;
+            @mixin backImage ../images/backgrounds/kayaks_1600.jpg, 100vh, transparent, transparent;
         }
     }
 

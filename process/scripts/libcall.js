@@ -1,2 +1,3 @@
 $ = require('jquery');
-var jqueryUiBrowserify = require("jquery-ui-browserify");
+jqueryUiBrowserify = require("jquery-ui-browserify");
+require('malihu-custom-scrollbar-plugin')($);

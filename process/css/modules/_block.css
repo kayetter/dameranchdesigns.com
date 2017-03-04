@@ -1,8 +1,1 @@
-.block {
-display: block;
-  @media $medium {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  }
-}
+

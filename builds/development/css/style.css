@@ -64,6 +64,7 @@ table {
 
 }*/
 /*====================MAIN PAGE STYLES============*/
+/* Track */
 html {
     /*---sets font size using rem to exact pixel. for example 1.8rem = 18 px.*/
     font-size: 62.5%;
@@ -81,8 +82,8 @@ body {
     font-size: 1.8rem;
     line-height: 160%;
     font-weight: 300;
-    background: -webkit-linear-gradient( bottom, transparent, transparent), url(../images/backgrounds/glacier2_800.jpg);
-    background: linear-gradient( to top, transparent, transparent), url(../images/backgrounds/glacier2_800.jpg);
+    background: -webkit-linear-gradient( bottom, transparent, transparent), url(../images/backgrounds/kayaks_1600.jpg);
+    background: linear-gradient( to top, transparent, transparent), url(../images/backgrounds/kayaks_1600.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
@@ -92,8 +93,8 @@ body {
 }
 @media screen and (min-width: 600px) {
     body {
-        background: -webkit-linear-gradient( bottom, transparent, transparent), url(../images/backgrounds/glacier2_800.jpg);
-        background: linear-gradient( to top, transparent, transparent), url(../images/backgrounds/glacier2_800.jpg);
+        background: -webkit-linear-gradient( bottom, transparent, transparent), url(../images/backgrounds/kayaks_1600.jpg);
+        background: linear-gradient( to top, transparent, transparent), url(../images/backgrounds/kayaks_1600.jpg);
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: center center;
@@ -104,8 +105,8 @@ body {
 }
 @media screen and (min-width: 1200px) {
     body {
-        background: -webkit-linear-gradient( bottom, transparent, transparent), url(../images/backgrounds/glacier2_1600.jpg);
-        background: linear-gradient( to top, transparent, transparent), url(../images/backgrounds/glacier2_1600.jpg);
+        background: -webkit-linear-gradient( bottom, transparent, transparent), url(../images/backgrounds/kayaks_1600.jpg);
+        background: linear-gradient( to top, transparent, transparent), url(../images/backgrounds/kayaks_1600.jpg);
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: center center;
@@ -208,10 +209,7 @@ svg {
     padding: 3rem 1rem;
 }
 /*border: 1px solid black;*/
-.section .article .block .summary {
-    width: 100%;
-}
-.section .article .block .display {
+.section .article .block .hidden {
     display: none;
 }
 /*end of .block*/
@@ -229,6 +227,8 @@ svg {
     .section .article .block {
         width: 50%;
         margin: 1rem;
+        max-height: 400px;
+        /*overflow-y: auto;*/
     }
     .section .article .block:last-of-type {
         margin-left: 0;
@@ -251,22 +251,6 @@ svg {
 }
 .filler {
     height: 50vh;
-}
-.block {
-    display: block;
-}
-@media screen and (min-width: 760px) {
-    .block {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-                flex-direction: row;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-    }
 }
 .container .row {
     display: block;
@@ -439,8 +423,26 @@ svg {
 /*end of .headerImage*/
 #design {
     padding: 3rem 0;
+    /*end of block*/
 }
+#design .mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, #design .mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: rgb(0, 187, 204);
+    background-color: rgba(0, 187, 204, 0.85);
+}
+#design .mCS-rounded-dark.mCSB_scrollTools .mCSB_draggerRail {
+    background-color: #000;
+    background-color: rgba(0,0,0,0.15);
+}
+#design .mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar, #design .mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+    background-color: rgb(0, 187, 204);
+    background-color: rgba(0, 187, 204, 0.85);
+}
+#design .block .details {
+    overflow-y: auto;
+    max-height: 200px;
+}
+#design .block .summary h3 {
+    height: 92px;
+}
+/*end of #design*/
 .icon {}
-.display-none {
-    display: none;
-}
