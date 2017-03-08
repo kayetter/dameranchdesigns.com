@@ -1,3 +1,5 @@
+// npm install --save-dev Gulp gulp-util gulp-webserver gulp-postcss autoprefixer precss gulp-postcss cssnano postcss-math gulp-uglify gulp-concat gulp-browserify postcss-animation
+
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
     webserver = require('gulp-webserver'),
