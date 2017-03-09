@@ -28,7 +28,7 @@ var gulp = require('gulp'),
     jssource = ['process/scripts/*.js'],
     dest = 'builds/development/',
     prod = 'builds/production/',
-    noProcss = ['builds/css/jquery.mCustomScrollbar.css'],
+    noProcss = ['builds/development/css/jquery.mCustomScrollbar.css'],
     isProd,
     isDev,
     limbo = 'process/limbo/';
