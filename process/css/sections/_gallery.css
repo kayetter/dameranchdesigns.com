@@ -1,0 +1,11 @@
+#gallery {
+  img {
+    display: block;
+    max-width: 300px;
+    margin: auto;
+  }
+  span {
+    font-weight: bold;
+    padding: 0;
+  }
+}

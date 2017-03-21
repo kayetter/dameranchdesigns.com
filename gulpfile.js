@@ -1,4 +1,4 @@
-// npm install --save-dev Gulp gulp-util gulp-webserver gulp-postcss autoprefixer precss gulp-postcss cssnano postcss-math gulp-uglify gulp-concat gulp-browserify postcss-animation gulp-if cssnano gulp-cssnano gulp-rev-replace gulp-rev rev-del gulp-clean gulp-imagemin imagemin-pngcrush gulp-jsonminify
+// npm install --save-dev Gulp gulp-util gulp-webserver gulp-postcss autoprefixer precss cssnano postcss-math gulp-uglify gulp-concat gulp-browserify postcss-animation gulp-if cssnano gulp-cssnano gulp-rev-replace gulp-rev rev-del gulp-clean gulp-imagemin imagemin-pngcrush gulp-jsonminify
 
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
@@ -25,13 +25,14 @@ var gulp = require('gulp'),
     revReplace = require('gulp-rev-replace'),
 
     source = 'process/css/',
-    jssource = ['process/scripts/*.js'],
+    jssource = ['process/scripts/'],
     dest = 'builds/development/',
     prod = 'builds/production/',
     noProcss = ['builds/development/css/jquery.mCustomScrollbar.css'],
     isProd,
     isDev,
-    limbo = 'process/limbo/';
+    limbo = 'process/limbo/',
+    build;
 
 
 //sets a variable that if set = production environment otherwise it defaults to development, at cmd prompt use NODE_ENV=production gulp
@@ -41,6 +42,12 @@ env = process.env.NODE_ENV || 'development';
 isProd = env==='production';
 isDev = env === 'development';
 
+//variable changes in different environments
+if (isDev) {
+    build = dest;
+} else {
+    build = prod;
+}
 
 
 gulp.task('css', function() {
@@ -63,14 +70,14 @@ gulp.task('css', function() {
 
 //browserify scripts
 gulp.task('script', function(){
-  gulp.src(jssource)
+  gulp.src(jssource + '*.js')
   // .pipe(concat('scripts.js'))
   .pipe(browserify())
   .on('error', gutil.log)
   .pipe(gulpif(isDev, gulp.dest(dest + 'scripts/')))
   .pipe(gulpif(isProd, uglify()))
   .pipe(gulpif(isProd, gulp.dest(limbo + 'scripts/')));
-})
+});
 
 //PRODUCTION TASKS
 
@@ -86,7 +93,7 @@ gulp.task('moveImages', function(){
   gulp.src(dest + 'images/**/*.{svg,ico}')
   .pipe(gulpif(isProd,
     gulp.dest(prod + 'images/')));
-})
+});
 
 //css files associated with plugins that do not need to go through postcss but need to move to limbo
 
@@ -115,7 +122,7 @@ gulp.task('images', function () {
             }],
             use: [pngcrush()]
         })))
-        .pipe(gulpif(isProd, gulp.dest(limbo + 'images')));
+        .pipe(gulpif(isProd, gulp.dest(prod + 'images')));
 });
 
 gulp.task('uglify', function(){
@@ -171,17 +178,17 @@ gulp.task('revcss', ['revreplace'], function(){
 });
 
 
-gulp.task('watch', function() {
-    gulp.watch(source + '**/*.css', ['css']);
-    gulp.watch(dest + '**/*.html', ['html']);
-    gulp.watch(jssource + '*.js', ['script']);
-    gulp.watch(dest + '**/*.{jpg,JPEG,jpeg,png,svg,gif}')
-});
+  gulp.task('watch', function() {
+      gulp.watch(source + '**/*.css', ['css', 'moveFiles']);
+      gulp.watch(dest + '**/*.html', ['moveFiles']);
+      gulp.watch(jssource + '*.js', ['script']);
+      gulp.watch(dest + 'images/**/*.*', ['moveFiles'])
+  });
+
 
 gulp.task('webserver', function() {
-    gulpif(isDev, gulp.src(dest))
-    gulpif(isProd, gulp.src(prod))
-        .pipe(webserver({
+   gulp.src(build)
+   .pipe(webserver({
             livereload: true,
             open: true
         }));

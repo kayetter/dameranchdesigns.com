@@ -37,6 +37,7 @@
     "imagemin-pngcrush": "^5.0.0",
     "install": "^0.8.7",
     "jquery": "^3.1.1",
+    "jquery-ui": "^1.12.1",
     "jquery-ui-browserify": "^1.11.0-pre-seelio",
     "postcss-animation": "0.0.11",
     "postcss-color-function": "^3.0.0",

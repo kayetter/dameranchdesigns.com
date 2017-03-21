@@ -36,14 +36,27 @@
 
                function timeOut() {
                  setTimeout(function(){
-                   details.slideUp('fast');}, 40000);
+                   details.slideUp('fast');}, 100000);
                  }
            });
 
-/*add custom scroll bar to detail element*/
-              $('.details').mCustomScrollbar({
-                theme: 'rounded-dots-dark'
+          $('.accordion').accordion({
+
+            collapsible: true,
+            classes: {
+              "ui-accordion": "accordion-panel",
+              "ui-accordion-header": "accordion-header",
+              "ui-accordion-header-collapsed": "accordion-header-collapsed",
+              "ui-accordion-content": "accordion-content",
+              "ui-accordion-content-active": "accordion-content-active",
+              "ui-accordion-header-icon": "accordion-header-icon",
+              "ui-accordion-icons": "accordion-icons"},
+            animate: 300,
+            active: 0
               });
+
+
+
 
 
 

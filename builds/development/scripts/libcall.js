@@ -28013,7 +28013,7 @@ and dependencies (minified).
 
 },{}],6:[function(require,module,exports){
 $ = require('jquery');
-jqueryUiBrowserify = require("jquery-ui-browserify");
+jqueryUi = require('jquery-ui-browserify');
 require('malihu-custom-scrollbar-plugin')($);
 
 },{"jquery":3,"jquery-ui-browserify":2,"malihu-custom-scrollbar-plugin":4}]},{},[6])

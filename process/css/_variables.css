@@ -3,12 +3,13 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 
 
+
 $DRDblue: rgb(0, 181, 197);
 $DRDorange:   rgb(230, 99, 41);
 $DRDyellow: rgb(255, 173, 66);
-$brightblue: color($DRDblue lightness(40%));
-$brightyellow: color($DRDyellow lightness(40%));
-$brightorange: color($DRDorange lightness(40%));
+$brightblue: color($DRDblue lightness(40%)); /*#28959f rgb (40, 149, 159)*/
+$brightyellow: color($DRDyellow lightness(40%)); /*#cc7400 rgb(204 116 0)*/
+$brightorange: color($DRDorange lightness(40%));  /*#b74615 rgb(183 70 21)*/
 $black-cvr: rgba(0,0,0,.5);
 $black-hvr: rgba(0,0,0,.2);
 

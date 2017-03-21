@@ -1,10 +1,13 @@
+@import "../../node_modules/jquery-ui-browserify/themes/base/jquery.ui.all.css";
 @import "variables";
 @import "reset";
 @import "mixins";
 @import "base";
 @import "modules/section";
-@import "modules/block";
 @import "modules/container";
+@import "modules/aside";
+@import "modules/accordion";
 @import "sections/navigation";
 @import "sections/title";
 @import "sections/design";
+@import "sections/gallery";

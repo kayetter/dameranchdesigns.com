@@ -11,24 +11,48 @@
 
   .block {
     .details {
-      overflow-y: auto;
-      max-height: 200px;
+      /*overflow-y:auto;*/
+      /*max-height: 200px;*/
     }
 
-    .summary h3{
-      height: 92px;
-    }
-
-
-
+    .summary {
+      transition: all .2s ease-in-out;
+      &:hover {
+        transform: scale(1.1);
+        color: color($brightblue shade(50%));
+      }
+      h3 {
+        height: 92px;
+      }
+    }/*end of summary*/
 
   }/*end of block*/
 
+  #love {
+    background-color: color(white shade(2%));
+  }
+  #portal {
+    background-color: color(white shade(4%));
+          }
+  #experience {
+    background-color: color(white shade(6%));
+  }
+  #get-started {
+    background-color: color(white shade(8%));
+  }
+
+  @media $medium {
+      width: 100%;
+      margin: 0 auto;
+      #love, #portal {
+        background-color: color(white shade(4%));
+      }
+      #experience, #get-started {
+        background-color: color(white shade(8%));
+      }
+      p {
+        width: 90%;
+      }
+  }
 
 }/*end of #design*/
-
-
-
-
-.icon {
-}
