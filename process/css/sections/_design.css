@@ -1,54 +1,27 @@
 #design {
   padding: 3rem 0;
 
-  .mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
-	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: $brightblue; background-color: color($brightblue a(.85)); }
-
-	.mCS-rounded-dark.mCSB_scrollTools .mCSB_draggerRail{ background-color: #000; background-color: rgba(0,0,0,0.15); }
-
-	.mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar,
-	.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{ background-color: $brightblue; background-color: color($brightblue a(.85)); }
-
-  .block {
-    .details {
-      /*overflow-y:auto;*/
-      /*max-height: 200px;*/
-    }
-
-    .summary {
-      transition: all .2s ease-in-out;
-      &:hover {
-        transform: scale(1.1);
-        color: color($brightblue shade(50%));
-      }
-      h3 {
-        height: 92px;
-      }
-    }/*end of summary*/
-
-  }/*end of block*/
-
   #love {
-    background-color: color(white shade(2%));
+    background-color: $white-2;
   }
   #portal {
-    background-color: color(white shade(4%));
+    background-color: $white-4;
           }
   #experience {
-    background-color: color(white shade(6%));
+    background-color: $white-6;
   }
   #get-started {
-    background-color: color(white shade(8%));
+    background-color: $white-8;
   }
 
   @media $medium {
       width: 100%;
       margin: 0 auto;
       #love, #portal {
-        background-color: color(white shade(4%));
+        background-color: $white-4;
       }
       #experience, #get-started {
-        background-color: color(white shade(8%));
+        background-color: $white-8;
       }
       p {
         width: 90%;

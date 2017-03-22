@@ -1,10 +1,11 @@
 .ui-accordion {
-  background: blue;
+  background: $white-4;
+  width: 80%;
+  margin: auto;
   font-family: inherit;
   padding: 2rem;
 
     .ui-accordion-panel {
-        color: orange;
         border: 1px solid $DRDblue;
         /*background: black;*/
     }
@@ -12,25 +13,25 @@
         color: $DRDyellow;
         border: 10px solid $DRDyellow;
         background: $brightblue;
+          text-align: left;
     }
     .ui-accordion-header-collapsed {
         color: $DRDorange;
-        border: 10px solid $DRDorange;
     }
     .ui-accordion-content {
-        color: $brightblue;
         border: 10px solid $brightblue;
+        p {
+          font-size: 1.6rem;
+          padding: 0 1rem;
+        }
     }
     .ui-accordion-content-active {
         color: $brightyellow;
-        border: 10px solid $brightyellow;
+      padding: 0;
     }
     .ui-accordion-header-icon {
         color: $brightorange;
-        border: 10px solid $brightorange;
     }
     .ui-accordion-icons {
-        color: purple;
-        border: 10px solid purple;
     }
 }

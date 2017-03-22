@@ -1,25 +1,27 @@
 .section {
     .article {
-
-
-
-
         .block {
             padding: 3rem 1rem;
-
+            .summary {
+                transition: all .2s ease-in-out;
+                &:hover {
+                    transform: scale(1.1);
+                    color: color($brightblue shade(50%));
+                }
+                h3 {
+                    height: 92px;
+                }
+            }
             @media $medium {
                 width: 50%;
                 margin: 1rem;
-
-                /*max-height: 400px;*/
-                /*overflow-y: auto;*/
                 &:last-of-type {
                     margin-left: 0;
                 }
-
-            } /*end of medium*/
+            }
+            /*end of medium*/
             .hidden {
-              display: none;
+                display: none;
             }
         }
         /*end of .block*/
@@ -45,7 +47,7 @@
 .white-background {
     background: color(white a(.9));
     h1, h2, h3, h4, h5, p {
-        color: color($DRDblue saturation(60%));
+        color: $fontblue;
     }
 }
 

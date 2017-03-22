@@ -7,15 +7,20 @@
 $DRDblue: rgb(0, 181, 197);
 $DRDorange:   rgb(230, 99, 41);
 $DRDyellow: rgb(255, 173, 66);
-$brightblue: color($DRDblue lightness(40%)); /*#28959f rgb (40, 149, 159)*/
+$brightblue: color($DRDblue lightness(40%)); /*#28959f rgb(0, 187, 204)*/
 $brightyellow: color($DRDyellow lightness(40%)); /*#cc7400 rgb(204 116 0)*/
 $brightorange: color($DRDorange lightness(40%));  /*#b74615 rgb(183 70 21)*/
+$fontblue: color($DRDblue saturation(60%)); /*rgb(40, 149, 159)*/
 $black-cvr: rgba(0,0,0,.5);
 $black-hvr: rgba(0,0,0,.2);
+$white-2: color(white shade(2%));
+$white-4: color(white shade(4%));
+$white-6: color(white shade(6%));
+$white-8: color(white shade(8%));
 
 
 
-$font-main:'Open Sans', sans-serif;
+$font-main:'Raleway', sans-serif;
 $font-heading: 'Roboto Slab', serif;
 $font-cursive: 'Dancing Script', cursive;
 

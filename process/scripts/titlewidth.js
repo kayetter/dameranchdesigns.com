@@ -40,7 +40,8 @@
            });
 
           $('.accordion').accordion({
-
+            heightStyle: "content",
+            header: "h3",
             collapsible: true,
             classes: {
               "ui-accordion": "accordion-panel",

@@ -1577,9 +1577,10 @@ body .ui-tooltip {
 @import url(https://fonts.googleapis.com/css?family=Dancing+Script|Roboto+Slab:300,400,700|Open+Sans:300,400,700);
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,600,700);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
-/*#28959f rgb (40, 149, 159)*/
+/*#28959f rgb(0, 187, 204)*/
 /*#cc7400 rgb(204 116 0)*/
 /*#b74615 rgb(183 70 21)*/
+/*rgb(40, 149, 159)*/
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -1657,7 +1658,7 @@ body {
     height: 100vh;
     padding: 0;
     color: black;
-    font-family: 'Open Sans',sans-serif;
+    font-family: 'Raleway',sans-serif;
     font-size: 1.8rem;
     line-height: 160%;
     font-weight: 300;
@@ -1774,7 +1775,7 @@ svg {
 }
 p {
     width: 100%;
-    padding: 2rem;
+    padding: 1rem;
     font-size: 1.8rem;
 }
 @media screen and (min-width: 760px) {
@@ -1793,6 +1794,18 @@ p {
 .section .article .block {
     padding: 3rem 1rem;
 }
+.section .article .block .summary {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+.section .article .block .summary h3 {
+    height: 92px;
+}
+.section .article .block .summary:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    color: rgb(0, 94, 102);
+}
 /*end of medium*/
 .section .article .block .hidden {
     display: none;
@@ -1806,8 +1819,6 @@ p {
     .section .article .block {
         width: 50%;
         margin: 1rem;
-        /*max-height: 400px;*/
-        /*overflow-y: auto;*/
     }
     .section .article .block:last-of-type {
         margin-left: 0;
@@ -1850,12 +1861,13 @@ p {
     padding: 2rem 0;
 }
 .ui-accordion {
-    background: blue;
+    background: rgb(245, 245, 245);
+    width: 80%;
+    margin: auto;
     font-family: inherit;
     padding: 2rem;
 }
 .ui-accordion .ui-accordion-panel {
-    color: orange;
     border: 1px solid rgb(0, 181, 197);
     /*background: black;*/
 }
@@ -1863,27 +1875,26 @@ p {
     color: rgb(255, 173, 66);
     border: 10px solid rgb(255, 173, 66);
     background: rgb(0, 187, 204);
+    text-align: left;
 }
 .ui-accordion .ui-accordion-header-collapsed {
     color: rgb(230, 99, 41);
-    border: 10px solid rgb(230, 99, 41);
 }
 .ui-accordion .ui-accordion-content {
-    color: rgb(0, 187, 204);
     border: 10px solid rgb(0, 187, 204);
+}
+.ui-accordion .ui-accordion-content p {
+    font-size: 1.6rem;
+    padding: 0 1rem;
 }
 .ui-accordion .ui-accordion-content-active {
     color: rgb(204, 116, 0);
-    border: 10px solid rgb(204, 116, 0);
+    padding: 0;
 }
 .ui-accordion .ui-accordion-header-icon {
     color: rgb(183, 70, 21);
-    border: 10px solid rgb(183, 70, 21);
 }
-.ui-accordion .ui-accordion-icons {
-    color: purple;
-    border: 10px solid purple;
-}
+.ui-accordion .ui-accordion-icons {}
 .nav-elements {
     padding: 0;
     background: rgb(204, 116, 0);
@@ -2042,38 +2053,6 @@ p {
 #design {
     padding: 3rem 0;
 }
-#design .mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, #design .mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-    background-color: rgb(0, 187, 204);
-    background-color: rgba(0, 187, 204, 0.85);
-}
-#design .mCS-rounded-dark.mCSB_scrollTools .mCSB_draggerRail {
-    background-color: #000;
-    background-color: rgba(0,0,0,0.15);
-}
-#design .mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar, #design .mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
-    background-color: rgb(0, 187, 204);
-    background-color: rgba(0, 187, 204, 0.85);
-}
-#design .block {
-    /*end of summary*/
-}
-#design .block .details {
-    /*overflow-y:auto;*/
-    /*max-height: 200px;*/
-}
-#design .block .summary {
-    -webkit-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-}
-#design .block .summary h3 {
-    height: 92px;
-}
-#design .block .summary:hover {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-    color: rgb(0, 94, 102);
-}
-/*end of block*/
 #design #love {
     background-color: rgb(250, 250, 250);
 }
@@ -2102,7 +2081,15 @@ p {
     }
 }
 /*end of #design*/
-#gallery img {
+#gallery .summary img {
+    display: block;
+    width: 350px;
+    margin: auto;
+}
+#gallery #bmb {
+    background: rgb(250, 250, 250);
+}
+#gallery .details img {
     display: block;
     max-width: 300px;
     margin: auto;
