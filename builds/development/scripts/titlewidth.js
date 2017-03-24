@@ -36,11 +36,12 @@
 
                function timeOut() {
                  setTimeout(function(){
-                   details.slideUp('fast');}, 100000);
+                   details.slideUp('fast');}, 1000000);
                  }
            });
 
           $('.accordion').accordion({
+            active: false,
             heightStyle: "content",
             header: "h3",
             collapsible: true,
@@ -53,7 +54,6 @@
               "ui-accordion-header-icon": "accordion-header-icon",
               "ui-accordion-icons": "accordion-icons"},
             animate: 300,
-            active: 0
               });
 
 

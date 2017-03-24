@@ -45,7 +45,7 @@
 }
 
 .white-background {
-    background: color(white a(.9));
+    background: white;
     h1, h2, h3, h4, h5, p {
         color: $fontblue;
     }

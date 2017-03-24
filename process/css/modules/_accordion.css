@@ -1,37 +1,31 @@
 .ui-accordion {
-  background: $white-4;
-  width: 80%;
-  margin: auto;
-  font-family: inherit;
-  padding: 2rem;
-
+    background: $white-4;
+    width: 100%;
+    margin: auto;
+    font-family: inherit;
+    padding: 2rem;
     .ui-accordion-panel {
-        border: 1px solid $DRDblue;
         /*background: black;*/
     }
     .ui-accordion-header {
-        color: $DRDyellow;
-        border: 10px solid $DRDyellow;
-        background: $brightblue;
-          text-align: left;
+        text-align: left;
+        background: $white-4;
+        border: none;
     }
-    .ui-accordion-header-collapsed {
-        color: $DRDorange;
-    }
+
+    .ui-accordion-header-collapsed {}
     .ui-accordion-content {
-        border: 10px solid $brightblue;
         p {
-          font-size: 1.6rem;
-          padding: 0 1rem;
+            font-size: 1.6rem;
+            padding: 0 1rem;
         }
     }
     .ui-accordion-content-active {
-        color: $brightyellow;
-      padding: 0;
+        padding: 0;
+        border: none;
     }
-    .ui-accordion-header-icon {
-        color: $brightorange;
+  }/*end of .ui-accordion*/
+
+  .ui-icon {
+      font-size: 3.6rem;
     }
-    .ui-accordion-icons {
-    }
-}

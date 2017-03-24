@@ -180,6 +180,7 @@ gulp.task('revcss', ['revreplace'], function(){
 
   gulp.task('watch', function() {
       gulp.watch(source + '**/*.css', ['css', 'moveFiles']);
+      gulp.watch('node_modules/jquery-ui/themes/base/*.css', ['css', 'moveFiles']);
       gulp.watch(dest + '**/*.html', ['moveFiles']);
       gulp.watch(jssource + '*.js', ['script']);
       gulp.watch(dest + 'images/**/*.*', ['moveFiles'])
