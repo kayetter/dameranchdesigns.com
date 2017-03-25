@@ -1,4 +1,7 @@
 .section {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
     .article {
         .block {
             padding: 3rem 1rem;
@@ -40,8 +43,12 @@
 
 /*end of section*/
 
-.section.blue-background {
+.blue-background {
     background: color($DRDblue a(.8));
+}
+
+.orange-background {
+  background: $drdorange;
 }
 
 .white-background {
@@ -49,8 +56,4 @@
     h1, h2, h3, h4, h5, p {
         color: $fontblue;
     }
-}
-
-.filler {
-    height: 50vh;
 }

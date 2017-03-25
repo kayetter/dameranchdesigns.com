@@ -10,6 +10,7 @@
 @import "modules/container";
 @import "modules/aside";
 @import "modules/accordion";
+@import "modules/parallax";
 @import "sections/navigation";
 @import "sections/title";
 @import "sections/design";

@@ -1,4 +1,4 @@
-// npm install --save-dev Gulp gulp-util gulp-webserver gulp-postcss autoprefixer precss cssnano postcss-math gulp-uglify gulp-concat gulp-browserify postcss-animation gulp-if cssnano gulp-cssnano gulp-rev-replace gulp-rev rev-del gulp-clean gulp-imagemin imagemin-pngcrush gulp-jsonminify
+// npm install --save-dev gulp gulp-util gulp-webserver gulp-postcss autoprefixer precss cssnano postcss-math gulp-uglify gulp-concat gulp-browserify postcss-animation gulp-if cssnano gulp-cssnano gulp-rev-replace gulp-rev rev-del gulp-clean gulp-imagemin imagemin-pngcrush gulp-jsonminify scrollmagic jquery jquery-ui-browserify
 
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
@@ -79,6 +79,13 @@ gulp.task('script', function(){
   .pipe(gulpif(isProd, gulp.dest(limbo + 'scripts/')));
 });
 
+//concat plugins into one plugin file
+gulp.task('jsConcat', function(){
+  gulp.src(jssource + 'plugins/*.js')
+  .pipe(concat('plugins.js'))
+  .pipe(gulp.dest('process/scripts'));
+});
+
 //PRODUCTION TASKS
 
 //move .html files to production folder
@@ -125,11 +132,7 @@ gulp.task('images', function () {
         .pipe(gulpif(isProd, gulp.dest(prod + 'images')));
 });
 
-gulp.task('uglify', function(){
-  gulp.src(dest + 'scripts/*.js')
-  .pipe(uglify())
 
-})
 
 //==============MAKE PRODUCTION BUILD
 // three tasks for file hashing and cachebusting
@@ -183,6 +186,7 @@ gulp.task('revcss', ['revreplace'], function(){
       gulp.watch('node_modules/jquery-ui/themes/base/*.css', ['css', 'moveFiles']);
       gulp.watch(dest + '**/*.html', ['moveFiles']);
       gulp.watch(jssource + '*.js', ['script']);
+      gulp.watch(jssource + '/plugins/*.js', ['jsConcat']);
       gulp.watch(dest + 'images/**/*.*', ['moveFiles'])
   });
 

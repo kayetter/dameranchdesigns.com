@@ -56,6 +56,35 @@
             animate: 300,
               });
 
+              // init controller
+              var ctrl = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onLeave"}});
+
+              $(".section").each(function() {
+
+                new ScrollMagic.Scene({
+                  triggerElement: this
+                  })
+                  .setPin(this)
+                  .addIndicators()
+                  .addTo(ctrl);
+
+                });
+
+              // // build scenes
+              // new ScrollMagic.Scene({triggerElement: ".section"})
+              //         .setTween("#parallax1 article", {y: "80%", ease: Linear.easeNone})
+              //         .addIndicators()
+              //         .addTo(controller);
+
+              // new ScrollMagic.Scene({triggerElement: "#parallax2"})
+              //         .setTween("#parallax2 > div", {y: "80%", ease: Linear.easeNone})
+              //         .addIndicators()
+              //         .addTo(controller);
+              //
+              // new ScrollMagic.Scene({triggerElement: "#parallax3"})
+              //         .setTween("#parallax3 > div", {y: "80%", ease: Linear.easeNone})
+              //         .addIndicators()
+              //         .addTo(controller);
 
 
 

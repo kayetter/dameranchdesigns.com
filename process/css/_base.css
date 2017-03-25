@@ -24,15 +24,9 @@
         font-size: 1.8rem;
         line-height: 160%;
         font-weight: $fwt-thin;
+      }
 
-        @mixin backImage ../images/backgrounds/desert_1600.jpg, 100vh, transparent, transparent;
-        @media $small {
-            @mixin backImage ../images/backgrounds/desert_1600.jpg, 100vh, transparent, transparent;
-        }
-        @media $large {
-            @mixin backImage ../images/backgrounds/desert_1600.jpg, 100vh, transparent, transparent;
-        }
-    }
+
 
     %heading {
         font-family: $font-heading;

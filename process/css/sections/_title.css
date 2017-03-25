@@ -8,8 +8,8 @@
   position: relative;*/
 
 .title-section {
+    z-index: -100;
     background: $black-cvr;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

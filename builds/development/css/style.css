@@ -1665,38 +1665,6 @@ body{
     font-size: 1.8rem;
     line-height: 160%;
     font-weight: 300;
-    background: -webkit-linear-gradient( bottom, transparent, transparent), url(../images/backgrounds/desert_1600.jpg);
-    background: linear-gradient( to top, transparent, transparent), url(../images/backgrounds/desert_1600.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
-    height: 100vh;
-    max-height: 100vh;
-}
-@media screen and (min-width: 600px){
-    body{
-        background: -webkit-linear-gradient( bottom, transparent, transparent), url(../images/backgrounds/desert_1600.jpg);
-        background: linear-gradient( to top, transparent, transparent), url(../images/backgrounds/desert_1600.jpg);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center center;
-        background-size: cover;
-        height: 100vh;
-        max-height: 100vh;
-    }
-}
-@media screen and (min-width: 1200px){
-    body{
-        background: -webkit-linear-gradient( bottom, transparent, transparent), url(../images/backgrounds/desert_1600.jpg);
-        background: linear-gradient( to top, transparent, transparent), url(../images/backgrounds/desert_1600.jpg);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center center;
-        background-size: cover;
-        height: 100vh;
-        max-height: 100vh;
-    }
 }
 h1, h2, h3, h4{
     font-family: 'Roboto Slab',serif;
@@ -1789,6 +1757,9 @@ p{
     }
 }
 .section{
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
     /*end of article*/
 }
 .section .article{
@@ -1833,17 +1804,17 @@ p{
     }
 }
 /*end of section*/
-.section.blue-background{
+.blue-background{
     background: rgba(0, 181, 197, 0.8);
+}
+.orange-background{
+    background: $drdorange;
 }
 .white-background{
     background: white;
 }
 .white-background h1, .white-background h2, .white-background h3, .white-background h4, .white-background h5, .white-background p{
     color: rgb(40, 149, 159);
-}
-.filler{
-    height: 50vh;
 }
 .container .row{
     display: block;
@@ -1890,6 +1861,12 @@ p{
 /*end of .ui-accordion*/
 .ui-icon{
     font-size: 3.6rem;
+}
+#desertsand div{
+    background: url('../images/backgrounds/desert_1600.jpg');
+    background-size: cover;
+    height: 100vh;
+    z-index: 100;
 }
 .nav-elements{
     padding: 0;
@@ -1964,8 +1941,8 @@ p{
 /*min-height: 100vh;
   position: relative;*/
 .title-section{
+    z-index: -100;
     background: rgba(0,0,0,.5);
-    height: 100vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2047,6 +2024,7 @@ p{
 }
 /*end of .headerImage*/
 #design{
+    z-index: 100;
     padding: 3rem 0;
 }
 #design #love{

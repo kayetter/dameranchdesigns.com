@@ -20,6 +20,7 @@
   "devDependencies": {
     "autoprefixer": "^6.7.3",
     "cssnano": "^3.10.0",
+    "gsap": "^1.19.1",
     "gulp": "^3.9.1",
     "gulp-browserify": "^0.5.1",
     "gulp-clean": "^0.3.2",
@@ -43,6 +44,7 @@
     "postcss-color-function": "^3.0.0",
     "postcss-math": "0.0.7",
     "precss": "^1.4.0",
-    "rev-del": "^1.0.5"
+    "rev-del": "^1.0.5",
+    "scrollmagic": "^2.0.5"
   }
 }
