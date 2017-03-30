@@ -1,0 +1,31 @@
+.pic-background{
+  @mixin backImage ../images/backgrounds/desert_flower_white.jpg, center left;
+  /*z-index: 999;*/
+}
+
+#pic2 {
+  @mixin backImage ../images/backgrounds/sunset3_1600.jpg, center center
+}
+
+#pic3 {
+  @mixin backImage ../images/backgrounds/ocotillo_sunset.jpg, center center
+}
+
+.blue-background {
+    background: $DRDblue;
+}
+
+.orange-background {
+  background: $DRDorange;
+}
+
+.yellow-background {
+  background: $DRDyellow;
+}
+
+.white-background {
+    background: white;
+    h1, h2, h3, h4, h5, p {
+        color: $fontblue;
+    }
+}

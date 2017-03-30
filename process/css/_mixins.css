@@ -1,4 +1,4 @@
-@define-mixin backImage
+@define-mixin backImageGradient
 $image,
 $height: 100vh,
 $grstart: $black-cvr,
@@ -12,6 +12,17 @@ $bgSize: cover {
     background-size: $bgSize;
     height: 100vh;
     max-height: $height;
+}
+
+@define-mixin backImage
+  $image,
+  $bgPos: center center,
+  $bgSize: cover {
+    background:  url($image);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: $bgPos;
+    background-size: $bgSize;
 }
 
 

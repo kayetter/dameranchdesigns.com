@@ -1,28 +1,31 @@
 #design {
-  z-index: 100;
   padding: 3rem 0;
 
+  h3, h4, {
+    color: $DRDblue
+  }
+
   #love {
-    background-color: $white-2;
+    background-color: $white-8;
   }
   #portal {
-    background-color: $white-4;
+    background-color: $white-6;
           }
   #experience {
-    background-color: $white-6;
+    background-color: $white-4;
   }
   #get-started {
-    background-color: $white-8;
+    background-color: $white-2;
   }
 
   @media $medium {
       width: 100%;
       margin: 0 auto;
       #love, #portal {
-        background-color: $white-4;
+        background-color: $white-6;
       }
       #experience, #get-started {
-        background-color: $white-8;
+        background-color: $white-2;
       }
       p {
         width: 90%;

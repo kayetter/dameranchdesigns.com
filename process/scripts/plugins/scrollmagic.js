@@ -1,1 +1,0 @@
-ScrollMagic = require('ScrollMagic');

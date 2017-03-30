@@ -1,59 +1,18 @@
 .section {
-  height: 100vh;
   position: relative;
-  overflow: hidden;
-    .article {
-        .block {
-            padding: 3rem 1rem;
-            .summary {
-                transition: all .2s ease-in-out;
-                &:hover {
-                    transform: scale(1.1);
-                    color: color($brightblue shade(50%));
-                }
-                h3 {
-                    height: 92px;
-                }
-            }
-            @media $medium {
-                width: 50%;
-                margin: 1rem;
-                &:last-of-type {
-                    margin-left: 0;
-                }
-            }
-            /*end of medium*/
-            .hidden {
-                display: none;
-            }
-        }
-        /*end of .block*/
-        p {
-            margin: 1rem auto;
-            text-align: justify;
-            @media $small {
-                font-size: 2.0rem;
-            }
-        }
-        /*end of p*/
-    }
-    /*end of article*/
+  z-index: 10;
 }
 
+
+.full-height {
+  height: 100vh;
+}
+
+.pic-height {
+  height: 100vh;
+  @media $medium {
+    height: 100vh;
+  }
+}
 
 /*end of section*/
-
-.blue-background {
-    background: color($DRDblue a(.8));
-}
-
-.orange-background {
-  background: $drdorange;
-}
-
-.white-background {
-    background: white;
-    h1, h2, h3, h4, h5, p {
-        color: $fontblue;
-    }
-}

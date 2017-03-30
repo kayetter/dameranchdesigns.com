@@ -1,4 +1,4 @@
-// npm install --save-dev gulp gulp-util gulp-webserver gulp-postcss autoprefixer precss cssnano postcss-math gulp-uglify gulp-concat gulp-browserify postcss-animation gulp-if cssnano gulp-cssnano gulp-rev-replace gulp-rev rev-del gulp-clean gulp-imagemin imagemin-pngcrush gulp-jsonminify scrollmagic jquery jquery-ui-browserify
+// npm install --save-dev gulp gulp-util gulp-webserver gulp-postcss autoprefixer precss cssnano postcss-math gulp-uglify gulp-concat gulp-browserify postcss-animation gulp-if cssnano gulp-cssnano gulp-rev-replace gulp-rev rev-del gulp-clean gulp-imagemin imagemin-pngcrush gulp-jsonminify scrollmagic, gsap, jquery, jquery-ui-dist, jquery-modal
 
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
@@ -23,6 +23,8 @@ var gulp = require('gulp'),
     rev = require('gulp-rev'),
     revDel = require('rev-del'),
     revReplace = require('gulp-rev-replace'),
+    wiredep = require('wiredep').stream,
+    bowerFiles = require('main-bower-files'),
 
     source = 'process/css/',
     jssource = ['process/scripts/'],
@@ -50,6 +52,38 @@ if (isDev) {
 }
 
 
+// Bower css
+gulp.task('bower-css', function(){
+  gulp.src(bowerFiles("**/*.css"))
+   .pipe(concat('lib-styles.css'))
+   .pipe(gulpcssnano())
+      .pipe(gulp.dest(dest + 'css'))
+      .pipe(gulpif(isProd, gulpcssnano({
+        sourcemap: true
+      })))
+      .pipe(gulpif(isProd, gulp.dest(limbo + 'css')))
+});
+
+// Bower js
+gulp.task('bower-js', function(){
+  gulp.src(bowerFiles("**/*.js"))
+    .pipe(concat('lib-scripts.js'))
+    .pipe(gulp.dest(dest + 'scripts/'))
+    .pipe(gulpif(isProd, uglify()))
+    .pipe(gulpif(isProd, gulp.dest(limbo + 'scripts')))
+});
+
+//not used
+gulp.task('bower', function () {
+  gulp.src('process/html/index.html')
+    .pipe(wiredep({
+      optional: 'configuration',
+      goes: 'here'
+    }))
+    .pipe(gulp.dest('builds/development/'));
+});
+
+
 gulp.task('css', function() {
     gulp.src(source + 'style.css')
         .pipe(postcss([
@@ -71,15 +105,14 @@ gulp.task('css', function() {
 //browserify scripts
 gulp.task('script', function(){
   gulp.src(jssource + '*.js')
-  // .pipe(concat('scripts.js'))
-  .pipe(browserify())
+  .pipe(concat('scripts.js'))
   .on('error', gutil.log)
-  .pipe(gulpif(isDev, gulp.dest(dest + 'scripts/')))
+  .pipe(gulpif(isDev, gulp.dest(dest + 'scripts')))
   .pipe(gulpif(isProd, uglify()))
-  .pipe(gulpif(isProd, gulp.dest(limbo + 'scripts/')));
+  .pipe(gulpif(isProd, gulp.dest(limbo + 'scripts')));
 });
 
-//concat plugins into one plugin file
+//concat plugins into one plugin file --not used
 gulp.task('jsConcat', function(){
   gulp.src(jssource + 'plugins/*.js')
   .pipe(concat('plugins.js'))
@@ -102,15 +135,9 @@ gulp.task('moveImages', function(){
     gulp.dest(prod + 'images/')));
 });
 
-//css files associated with plugins that do not need to go through postcss but need to move to limbo
 
-gulp.task('moveCSS', function(){
-  gulp.src(noProcss)
-  .pipe(gulpif(isProd, gulpcssnano()))
-  .pipe(gulpif(isProd, gulp.dest(limbo + 'css')));
-});
 
-gulp.task('moveFiles', ['moveHTML', 'moveImages', 'moveCSS']);
+gulp.task('moveFiles', ['moveHTML', 'moveImages']);
 
 //if isProd will minify json files and move to limbo
 gulp.task('jsonminify', function () {
@@ -183,11 +210,10 @@ gulp.task('revcss', ['revreplace'], function(){
 
   gulp.task('watch', function() {
       gulp.watch(source + '**/*.css', ['css', 'moveFiles']);
-      gulp.watch('node_modules/jquery-ui/themes/base/*.css', ['css', 'moveFiles']);
       gulp.watch(dest + '**/*.html', ['moveFiles']);
       gulp.watch(jssource + '*.js', ['script']);
-      gulp.watch(jssource + '/plugins/*.js', ['jsConcat']);
-      gulp.watch(dest + 'images/**/*.*', ['moveFiles'])
+      gulp.watch(dest + 'images/**/*.*', ['moveFiles']);
+      gulp.watch('bower.json', ['bower-css', 'bower-js']);
   });
 
 
@@ -201,5 +227,5 @@ gulp.task('webserver', function() {
 //4-step process to get to prod 1. cleanProd 2. preProd 3. rev 4. revcss. Step#2 is the only one that needs to be run in NODE_ENV=production
 
 
-gulp.task('preprod', ['moveFiles', 'css', 'script', 'images', 'jsonminify']);
-gulp.task('default', ['moveFiles', 'css', 'script', 'images', 'webserver', 'watch']);
+gulp.task('preprod', ['moveFiles', 'css', 'bower-css', 'script', 'bower-js', 'images', 'jsonminify']);
+gulp.task('default', ['moveFiles', 'css', 'bower-css', 'script', 'bower-js', 'images', 'webserver', 'watch']);

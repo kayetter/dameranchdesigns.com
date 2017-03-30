@@ -7,18 +7,17 @@
 /*min-height: 100vh;
   position: relative;*/
 
-.title-section {
-    z-index: -100;
-    background: $black-cvr;
+#title-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .bg-wrapper {
+    #title-logo {
         padding: 1rem 0;
-        #logo {
+        z-index: 9999;
+        #logo-svg {
             position: relative;
-            background: url(../images/logos/DRD_notag.svg) no-repeat white;
+            background: url(../images/logos/DRD_notag.svg) no-repeat $white;
             background-size: 90%;
             background-position: center center;
             display: block;
@@ -47,17 +46,17 @@
         h3 {
             padding-top: 0;
             padding-bottom: 2rem;
-            color: white;
+            color: $white;
             letter-spacing: 3px;
             @media $medium {
               font-size: 3.2rem;
               letter-spacing: 5px;
             }
         }
-        p {
+        div {
             font-family: $font-cursive;
             text-align: center;
-            color: white;
+            color: $white;
             padding: 10px 0;
             font-size: 1.8rem;
             @media $small {
