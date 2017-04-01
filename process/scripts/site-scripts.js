@@ -24,24 +24,8 @@
                 width = $('#title').width();
                 $('.nav-elements').css('width', width + 'px');
             }
-            // trying to open details with jqueryUI widget
-            // $("#love-details").dialog({
-            //     appendTo: '#design',
-            //     autoOpen: false,
-            //     // height: 500,
-            //     width: 450,
-            //     modal: true,
-            //     cancel: function() {
-            //         $(this).dialog("close");
-            //         console.log('created cancel');
-            //     }
-            // });
-            // $("#love").click(function() {
-            //     $("#love-details").dialog("open");
-            //     console.log('opened modal');
-            //
-            // });
 
+// /*---using jquery-modal to open modal content of each block in the design section*/
             $(".block").click(function() {
               myobj = $(this);
               console.log(myobj);
@@ -56,7 +40,7 @@
 
 
 
-            /*on click toggle show hide detail element of blocks*/
+            // /*on click toggle show hide detail element of blocks*/
 
             //   $(".summary").click(function(e){
 
@@ -72,7 +56,7 @@
             //          details.slideUp('fast');}, 1000000);
             //        }
             //  });
-
+// /*----using jqueryui widget to create accordion content for gallery----*/
             $('.accordion').accordion({
                 active: false,
                 heightStyle: "content",
@@ -89,12 +73,12 @@
                 },
                 animate: 300,
             });
-
+// ============================scroll magic controller and scrolling design and animation=======================
             // init controller
             var controller = new ScrollMagic.Controller({});
 
             //calculate window height - height of #title-logo
-            var winHeight = $(window).height() - 230;
+            var winHeight = $(window).height() - 220 + $('#pic1').height();
 
             //tweenMax timeline for logo rotate, scale and bounce out
             var tweenLogo = new TimelineMax()
@@ -103,14 +87,10 @@
                     rotation: 180,
                     ease: Back.easeOut
                 }))
-                .add(TweenMax.to('#title-logo', 1, {
+                .add(TweenMax.to('#title-logo', 1.5, {
                     y: winHeight,
                     x: -20,
                     ease: Bounce.easeOut
-                }))
-                .add(TweenMax.to('#title-logo', .5, {
-                    opacity: 0,
-                    scale: 0
                 }));
 
             //new scrollScene for the #title-logo animation
@@ -118,6 +98,7 @@
                     triggerElement: '#pic1',
                     triggerHook: '.9'
                 })
+                .setClassToggle("#title-section", "z-index")
                 .setTween(tweenLogo)
                 // .addIndicators()
                 .addTo(controller);
@@ -152,6 +133,9 @@
 
             });
 
+            // slick carousel call
+
+            $(#carousel).slick()
 
 
 

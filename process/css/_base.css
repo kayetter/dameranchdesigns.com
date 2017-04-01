@@ -120,19 +120,17 @@ h1 {
     }
   }
 
-  .ui-dialog {
-    z-index: 9999
-  }
-
-.ui-widget-overlay{
-    position: absolute;
-    z-index: 0;
+em {
+  font-family: $font-cursive;
+  color: $DRDorange;
+  font-size: 110%;
 }
 
-.blocker {
-  z-index: 999999;
+.drd {
+  font-family: $font-heading;
+  font-size: 100%;
+  letter-spacing: 3px;
 }
-
   /*.f180 {
     display: inline-block;
     unicode-bidi:bidi-override;

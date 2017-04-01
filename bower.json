@@ -24,10 +24,11 @@
     "jquery-ui": "^1.12.1",
     "jquery-modal": "^0.8.0",
     "gsap": "^1.19.1",
-    "scrollmagic": "ScrollMagic#^2.0.5"
+    "scrollmagic": "ScrollMagic#^2.0.5",
+    "slick-carousel": "^1.6.0"
   },
   "overrides": {
-        "jquery-ui": {
+    "jquery-ui": {
       "main": [
         "jquery-ui.min.js",
         "themes/pepper-grinder/jquery-ui.min.css",

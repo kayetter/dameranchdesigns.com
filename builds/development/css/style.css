@@ -184,15 +184,15 @@ p{
         font-size: 2.0rem;
     }
 }
-.ui-dialog{
-    z-index: 9999;
+em{
+    font-family: 'Dancing Script',cursive;
+    color: rgb(230, 99, 41);
+    font-size: 110%;
 }
-.ui-widget-overlay{
-    position: absolute;
-    z-index: 0;
-}
-.blocker{
-    z-index: 999999;
+.drd{
+    font-family: 'Roboto Slab',serif;
+    font-size: 100%;
+    letter-spacing: 3px;
 }
 /*.f180 {
     display: inline-block;
@@ -293,16 +293,16 @@ p{
 .ui-icon{
     font-size: 3.6rem;
 }
-//styling to get UI widget on top
+/*//styling to get UI widget on top*/
 .ui-dialog{
     z-index: 9999;
 }
-//more styling for UI dialog widget make sure you use 'appendTo'
+/*//more styling for UI dialog widget make sure you use 'appendTo'*/
 .ui-widget-overlay{
     position: absolute;
     z-index: 0;
 }
-//styling for jquery modal to get the modal on top
+/*//styling for jquery modal to get the modal on top*/
 .blocker{
     z-index: 999999;
 }
@@ -315,16 +315,6 @@ p{
     width: 95%;
     padding: 1rem 0 0;
 }
-.modal p em{
-    color: rgb(230, 99, 41);
-    font-family: 'Dancing Script',cursive;
-    font-size: 110%;
-}
-.modal p strong{
-    font-weight: bold;
-    letter-spacing: 3px;
-    color: rgb(230, 99, 41);
-}
 .modal a{
     color: rgb(230, 99, 41);
     font-family: 'Dancing Script',cursive;
@@ -333,6 +323,9 @@ p{
 }
 .modal a:hover{
     color: rgb(0, 45, 49);
+}
+.z-index{
+    z-index: 99999;
 }
 .nav-elements{
     padding: 0;
