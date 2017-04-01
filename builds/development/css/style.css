@@ -184,6 +184,16 @@ p{
         font-size: 2.0rem;
     }
 }
+.ui-dialog{
+    z-index: 9999;
+}
+.ui-widget-overlay{
+    position: absolute;
+    z-index: 0;
+}
+.blocker{
+    z-index: 999999;
+}
 /*.f180 {
     display: inline-block;
     unicode-bidi:bidi-override;
@@ -224,6 +234,9 @@ p{
     display: block;
     /*end of block*/
 }
+.container .row .summary h3, .container .row .summary h4{
+    color: rgb(0, 181, 197);
+}
 .container .row .block{
     width: 90%;
     margin: auto;
@@ -249,6 +262,9 @@ p{
     }
 }
 /*end of container*/
+.summary h3, .summary h4{
+    color: rgb(0, 181, 197);
+}
 .ui-accordion{
     background: rgb(254, 242, 225);
     width: 100%;
@@ -276,6 +292,47 @@ p{
 /*end of .ui-accordion*/
 .ui-icon{
     font-size: 3.6rem;
+}
+//styling to get UI widget on top
+.ui-dialog{
+    z-index: 9999;
+}
+//more styling for UI dialog widget make sure you use 'appendTo'
+.ui-widget-overlay{
+    position: absolute;
+    z-index: 0;
+}
+//styling for jquery modal to get the modal on top
+.blocker{
+    z-index: 999999;
+}
+.modal{
+    background: rgb(255, 248, 240);
+    max-width: 90vw;
+}
+.modal p{
+    color: rgb(0, 164, 179);
+    width: 95%;
+    padding: 1rem 0 0;
+}
+.modal p em{
+    color: rgb(230, 99, 41);
+    font-family: 'Dancing Script',cursive;
+    font-size: 110%;
+}
+.modal p strong{
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: rgb(230, 99, 41);
+}
+.modal a{
+    color: rgb(230, 99, 41);
+    font-family: 'Dancing Script',cursive;
+    font-size: 110%;
+    text-decoration: underline;
+}
+.modal a:hover{
+    color: rgb(0, 45, 49);
 }
 .nav-elements{
     padding: 0;
@@ -471,9 +528,6 @@ p{
 #design{
     padding: 3rem 0;
 }
-#design h3, #design h4, #design{
-    color: rgb(0, 181, 197);
-}
 #design #love{
     background-color: rgb(255, 251, 245);
 }
@@ -492,7 +546,7 @@ p{
         margin: 0 auto;
     }
     #design #love, #design #portal{
-        background-color: rgb(254, 246, 235);
+        background-color: none;
     }
     #design #experience, #design #get-started{
         background-color: rgb(254, 237, 215);

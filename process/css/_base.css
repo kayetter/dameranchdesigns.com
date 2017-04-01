@@ -120,6 +120,19 @@ h1 {
     }
   }
 
+  .ui-dialog {
+    z-index: 9999
+  }
+
+.ui-widget-overlay{
+    position: absolute;
+    z-index: 0;
+}
+
+.blocker {
+  z-index: 999999;
+}
+
   /*.f180 {
     display: inline-block;
     unicode-bidi:bidi-override;

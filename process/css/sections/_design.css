@@ -1,10 +1,6 @@
 #design {
   padding: 3rem 0;
 
-  h3, h4, {
-    color: $DRDblue
-  }
-
   #love {
     background-color: $white-8;
   }
@@ -22,7 +18,7 @@
       width: 100%;
       margin: 0 auto;
       #love, #portal {
-        background-color: $white-6;
+        background-color: none;
       }
       #experience, #get-started {
         background-color: $white-2;

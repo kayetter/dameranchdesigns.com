@@ -1,0 +1,49 @@
+
+//styling to get UI widget on top
+.ui-dialog {
+  z-index: 9999
+}
+//more styling for UI dialog widget make sure you use 'appendTo'
+.ui-widget-overlay{
+  position: absolute;
+  z-index: 0;
+}
+
+
+//styling for jquery modal to get the modal on top
+.blocker {
+z-index: 999999;
+}
+
+.modal {
+  background: $white;
+  max-width: 90vw;
+
+  p {
+    color: $bluedarker;
+    width: 95%;
+    padding: 1rem 0 0;
+    em {
+      color: $DRDorange;
+      font-family: $font-cursive;
+      font-size: 110%;
+    }
+
+    strong {
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: $DRDorange;
+    }
+
+  }
+
+  a {
+    color: $DRDorange;
+    font-family: $font-cursive;
+    font-size: 110%;
+    text-decoration: underline;
+    &:hover {
+      color: $bluedark;
+    }
+  }
+}

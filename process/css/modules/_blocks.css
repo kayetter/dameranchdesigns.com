@@ -7,6 +7,11 @@
         flex-direction: row;
       }
 
+      .summary {
+        h3, h4 {
+        color: $DRDblue;
+      }
+    }
       .block {
         width: 90%;
         margin: auto;
@@ -20,3 +25,9 @@
       } /*end of block*/
   } /*end of row*/
 } /*end of container*/
+
+.summary {
+  h3, h4 {
+    color: $DRDblue;
+  }
+}

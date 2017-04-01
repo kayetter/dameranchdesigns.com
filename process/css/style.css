@@ -9,6 +9,7 @@
 @import "modules/aside";
 @import "modules/blocks";
 @import "modules/accordion";
+@import "modules/widgets";
 @import "sections/navigation";
 @import "sections/title";
 @import "sections/backgrounds";
