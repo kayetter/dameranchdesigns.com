@@ -1,31 +1,6 @@
-.ui-accordion {
-    background: $white-4;
-    width: 100%;
-    margin: auto;
-    font-family: inherit;
-    padding: 2rem;
-    .ui-accordion-panel {
-        /*background: black;*/
-    }
-    .ui-accordion-header {
-        text-align: left;
-        background: $white-4;
-        border: none;
-    }
 
-    .ui-accordion-header-collapsed {}
-    .ui-accordion-content {
-        p {
-            font-size: 1.6rem;
-            padding: 0 1rem;
-        }
-    }
-    .ui-accordion-content-active {
-        padding: 0;
-        border: none;
-    }
-  }/*end of .ui-accordion*/
+.accordion {
+  width: 100%;
+  padding: 3rem 3rem 0;
 
-  .ui-icon {
-      font-size: 3.6rem;
-    }
+}

@@ -94,8 +94,22 @@ body{
 body .hidden{
     display: none;
 }
+.logo{
+    padding: 1rem 0;
+}
+.logo #logo-svg{
+    position: relative;
+    background: url(../images/logos/DRD_notag.svg) no-repeat rgb(255, 248, 240);
+    background-size: 90%;
+    background-position: center center;
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
 h1, h2, h3, h4{
-    font-family: 'Roboto Slab',serif;
+    font-family: 'Raleway',sans-serif;
     line-height: 1.5;
     word-wrap: break-word;
     text-align: center;
@@ -211,6 +225,8 @@ em{
 .section{
     position: relative;
     z-index: 10;
+    padding: 3rem 0;
+    min-height: 100vh;
 }
 .full-height{
     height: 100vh;
@@ -236,6 +252,10 @@ em{
 }
 .container .row .summary h3, .container .row .summary h4{
     color: rgb(0, 181, 197);
+    cursor: pointer;
+}
+.container .row .summary h3.visited{
+    color: rgb(179, 82, 41);
 }
 .container .row .block{
     width: 90%;
@@ -262,53 +282,160 @@ em{
     }
 }
 /*end of container*/
-.summary h3, .summary h4{
-    color: rgb(0, 181, 197);
-}
-.ui-accordion{
-    background: rgb(254, 242, 225);
+.accordion{
     width: 100%;
-    margin: auto;
-    font-family: inherit;
-    padding: 2rem;
+    padding: 3rem 3rem 0;
 }
-.ui-accordion .ui-accordion-panel{
-    /*background: black;*/
+/* Icons */
+@font-face{
+    font-family: 'slick';
+    font-weight: normal;
+    font-style: normal;
+    src: url('./fonts/slick.eot');
+    src: url('./fonts/slick.eot?#iefix') format('embedded-opentype'), url('./fonts/slick.ttf') format('truetype'), url('./fonts/slick.svg#slick') format('svg');
 }
-.ui-accordion .ui-accordion-header{
-    text-align: left;
-    background: rgb(254, 242, 225);
-    border: none;
-}
-.ui-accordion .ui-accordion-header-collapsed{}
-.ui-accordion .ui-accordion-content p{
-    font-size: 1.6rem;
-    padding: 0 1rem;
-}
-.ui-accordion .ui-accordion-content-active{
-    padding: 0;
-    border: none;
-}
-/*end of .ui-accordion*/
-.ui-icon{
-    font-size: 3.6rem;
-}
-/*//styling to get UI widget on top*/
-.ui-dialog{
-    z-index: 9999;
-}
-/*//more styling for UI dialog widget make sure you use 'appendTo'*/
-.ui-widget-overlay{
+/* Arrows */
+.slick-prev, .slick-next{
+    font-size: 0;
+    line-height: 0;
     position: absolute;
-    z-index: 0;
+    top: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
 }
-/*//styling for jquery modal to get the modal on top*/
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus{
+    color: transparent;
+    outline: none;
+    background: transparent;
+}
+.slick-prev:hover:before, .slick-prev:focus:before, .slick-next:hover:before, .slick-next:focus:before{
+    opacity: 1;
+}
+.slick-prev.slick-disabled:before, .slick-next.slick-disabled:before{
+    opacity: .25;
+}
+.slick-prev:before, .slick-next:before{
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.slick-prev{
+    left: -25px;
+}
+[dir='rtl'] .slick-prev{
+    right: -25px;
+    left: auto;
+}
+.slick-prev:before{
+    content: '←';
+}
+[dir='rtl'] .slick-prev:before{
+    content: '→';
+}
+.slick-next{
+    right: -25px;
+}
+[dir='rtl'] .slick-next{
+    right: auto;
+    left: -25px;
+}
+.slick-next:before{
+    content: '→';
+}
+[dir='rtl'] .slick-next:before{
+    content: '←';
+}
+/* Dots */
+.slick-dotted.slick-slider{
+    margin-bottom: 30px;
+}
+.slick-dots{
+    position: absolute;
+    bottom: -25px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+.slick-dots li{
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+}
+.slick-dots li button{
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.slick-dots li button:hover, .slick-dots li button:focus{
+    outline: none;
+}
+.slick-dots li button:hover:before, .slick-dots li button:focus:before{
+    opacity: 1;
+}
+.slick-dots li button:before{
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: '•';
+    text-align: center;
+    opacity: .25;
+    color: black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before{
+    opacity: .75;
+    color: black;
+}
+/*//styling for jquery modal to get the modal in foreground of window*/
 .blocker{
-    z-index: 999999;
+    z-index: 9999;
+    background: -webkit-linear-gradient( bottom, rgba(0,0,0,.5), rgba(0,0,0,.5)), url(../images/backgrounds/desert_sand.jpg);
+    background: linear-gradient( to top, rgba(0,0,0,.5), rgba(0,0,0,.5)), url(../images/backgrounds/desert_sand.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    max-height: 100vh;
 }
 .modal{
     background: rgb(255, 248, 240);
-    max-width: 90vw;
+    max-width: 800px;
+    padding: 3rem;
 }
 .modal p{
     color: rgb(0, 164, 179);
@@ -322,10 +449,46 @@ em{
     text-decoration: underline;
 }
 .modal a:hover{
-    color: rgb(0, 45, 49);
+    color: rgb(0, 100, 108);
 }
+/*end of jquery-modal style*/
+/*--style to to toggle with scrollmagic so logo sits on top*/
 .z-index{
-    z-index: 99999;
+    z-index: 99;
+}
+/*===========slick carousel styles===============*/
+/* --position carousel side buttons*/
+.slick-prev{
+    left: 20px;
+    z-index: 9999;
+    /*included to get previous button to advance*/
+}
+.slick-next{
+    right: 20px;
+}
+.slick-next:before, .slick-prev:before{
+    font-size: 30px;
+    color: rgb(0, 181, 197);
+}
+/*---styling dot buttons*/
+.slick-dots li button:before{
+    font-size: 12px;
+    color: rgb(0, 181, 197);
+}
+.slick-dots li.slick-active button:before{
+    opacity: .75;
+    color: rgb(0, 181, 197);
+}
+.carousel .carousel-slide{
+    max-width: 750px;
+    margin: auto;
+    padding: 6rem;
+    background: rgb(255, 248, 240);
+}
+.carousel .slide img{
+    display: block;
+    width: 600px;
+    margin: auto;
 }
 .nav-elements{
     padding: 0;
@@ -343,10 +506,9 @@ em{
     margin: 1rem 1rem;
 }
 .nav-elements .nav-bar a{
-    color: rgb(0, 187, 204);
+    color: rgb(0, 181, 197);
     width: 100%;
     font-size: 1.6rem;
-    font-weight: 400;
     text-align: center;
     -webkit-transition: .3s ease-out;
     transition: .3s ease-out;
@@ -355,7 +517,7 @@ em{
 .nav-elements .nav-bar a:after{
     display: block;
     content: '';
-    background-color: white;
+    background-color: rgb(0, 100, 108);
     width: 0;
     height: 3px;
     margin-bottom: .3rem;
@@ -363,11 +525,11 @@ em{
     transition: width .3s ease-out, background-color .3s ease-in;
 }
 .nav-elements .nav-bar a:hover{
-    color: white;
+    color: rgb(0, 100, 108);
 }
 .nav-elements .nav-bar a:hover:after{
     content: '';
-    background-color: white;
+    background-color: rgb(0, 100, 108);
     width: 100%;
 }
 @media screen and (min-width: 760px){
@@ -415,22 +577,6 @@ em{
             align-items: center;
     /*end of #title*/
 }
-#title-section #title-logo{
-    padding: 1rem 0;
-    z-index: 9999;
-}
-#title-section #title-logo #logo-svg{
-    position: relative;
-    background: url(../images/logos/DRD_notag.svg) no-repeat rgb(255, 248, 240);
-    background-size: 90%;
-    background-position: center center;
-    display: block;
-    width: 100px;
-    height: 100px;
-    margin: 0 auto;
-    border-radius: 50%;
-}
-/*end of .bg-wrapper*/
 #title-section #title h1{
     color: rgb(0, 187, 204);
     padding: 2rem 0 1rem;
@@ -513,13 +659,13 @@ em{
     background: rgb(255, 173, 66);
 }
 .white-background{
-    background: white;
+    background: rgb(255, 248, 240);
 }
 .white-background h1, .white-background h2, .white-background h3, .white-background h4, .white-background h5, .white-background p{
-    color: rgb(40, 149, 159);
+    color: rgb(0, 181, 197);
 }
-#design{
-    padding: 3rem 0;
+.white-background p{
+    color: rgb(0, 164, 179);
 }
 #design #love{
     background-color: rgb(255, 251, 245);
@@ -549,20 +695,57 @@ em{
     }
 }
 /*end of #design*/
-#gallery .summary img{
-    display: block;
-    width: 350px;
+#gallery h3{
+    width: 50%;
     margin: auto;
 }
-#gallery #bmb{
-    background: rgb(254, 237, 215);
+#gallery .image img{
+    max-width: 350px;
 }
-#gallery .details img{
-    display: block;
-    max-width: 300px;
-    margin: auto;
+.gallery-article{
+    padding-top: 6rem;
+    width: 95%;
+    max-width: 960px;
+    /* end of galler-article styling*/
 }
-#gallery span{
-    font-weight: bold;
+.gallery-article .container{
     padding: 0;
+}
+.gallery-article .container .row{}
+.gallery-article .info-content{
+    padding-left: 2rem;
+}
+.gallery-article svg{
+    display: inline-block;
+}
+.gallery-article h4{
+    width: 100%;
+    letter-spacing: 3px;
+}
+.gallery-article strong{
+    display: inline-block;
+    font-size: 90%;
+    color: rgb(230, 99, 41);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.gallery-article .image{
+    padding: 1rem;
+}
+.gallery-article .image img{
+    display: block;
+    max-width: 400px;
+    margin: auto;
+}
+@media screen and (min-width: 760px){
+    .gallery-article .container .row{
+        display: block;
+    }
+}
+@media screen and (min-width: 1200px){
+    .gallery-article .container .row{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
 }

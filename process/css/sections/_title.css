@@ -7,27 +7,14 @@
 /*min-height: 100vh;
   position: relative;*/
 
+
+
 #title-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    #title-logo {
-        padding: 1rem 0;
-        z-index: 9999;
-        #logo-svg {
-            position: relative;
-            background: url(../images/logos/DRD_notag.svg) no-repeat $white;
-            background-size: 90%;
-            background-position: center center;
-            display: block;
-            width: 100px;
-            height: 100px;
-            margin: 0 auto;
-            border-radius: 50%;
-        }
-    }
-    /*end of .bg-wrapper*/
+
     #title {
         h1 {
             color: $brightblue;

@@ -32,9 +32,14 @@
               idName = myobj.attr("id");
               id = '#'+idName + '-modal';
               console.log(id)
-                $(id).appendTo("body").modal({fadeDuration: 300, fadeDelay: 1.5});
-                console.log("i clicked here");
+                $(id).appendTo("body").modal({fadeDuration: 300, fadeDelay: 0}).on('modal:close', function(){
+                  $(myobj.children('h3')).addClass('visited');
+                });
                 return false;
+            });
+
+            $('#bmb-slide').click(function(){
+              $('#bmb-gallery-article').appendTo("body").modal({fadeDuration: 300, fadeDelay: 1.5});
             });
 
 
@@ -56,29 +61,17 @@
             //          details.slideUp('fast');}, 1000000);
             //        }
             //  });
-// /*----using jqueryui widget to create accordion content for gallery----*/
-            $('.accordion').accordion({
-                active: false,
-                heightStyle: "content",
-                header: "h3",
-                collapsible: true,
-                classes: {
-                    "ui-accordion": "accordion-panel",
-                    "ui-accordion-header": "accordion-header",
-                    "ui-accordion-header-collapsed": "accordion-header-collapsed",
-                    "ui-accordion-content": "accordion-content",
-                    "ui-accordion-content-active": "accordion-content-active",
-                    "ui-accordion-header-icon": "accordion-header-icon",
-                    "ui-accordion-icons": "accordion-icons"
-                },
-                animate: 300,
-            });
+
 // ============================scroll magic controller and scrolling design and animation=======================
             // init controller
             var controller = new ScrollMagic.Controller({});
 
             //calculate window height - height of #title-logo
-            var winHeight = $(window).height() - 220 + $('#pic1').height();
+            var logoPos = $('#title-logo').position();
+            var logoPosY = logoPos.top;
+            var titleHt = $('#title-section').height() - 1.8 * logoPosY;
+            var logo2x = $('#title-logo').height() * 2;
+            var fallHt = titleHt + $('#pic1').height();
 
             //tweenMax timeline for logo rotate, scale and bounce out
             var tweenLogo = new TimelineMax()
@@ -87,8 +80,8 @@
                     rotation: 180,
                     ease: Back.easeOut
                 }))
-                .add(TweenMax.to('#title-logo', 1.5, {
-                    y: winHeight,
+                .add(TweenMax.to('#title-logo', 2, {
+                    y: fallHt,
                     x: -20,
                     ease: Bounce.easeOut
                 }));
@@ -96,7 +89,7 @@
             //new scrollScene for the #title-logo animation
             var sceneLogo = new ScrollMagic.Scene({
                     triggerElement: '#pic1',
-                    triggerHook: '.9'
+                    triggerHook: '1'
                 })
                 .setClassToggle("#title-section", "z-index")
                 .setTween(tweenLogo)
@@ -108,7 +101,7 @@
                 new ScrollMagic.Scene({
                         triggerElement: this,
                         triggerHook: '0',
-                        duration: 800
+                        duration: 0
                     })
                     .setPin(this, {
                         pushFollowers: false
@@ -119,25 +112,35 @@
             });
 
             //pins the content sections so that they stay in place for a bit of extra scrolling
-            $(".content").each(function() {
-                new ScrollMagic.Scene({
-                        triggerElement: this,
-                        triggerHook: '0',
-                        duration: 300
-                    })
-                    .setPin(this, {
-                        pushFollowers: true
-                    })
-                    // .addIndicators()
-                    .addTo(controller);
-
-            });
+            // $(".content").each(function() {
+            //     new ScrollMagic.Scene({
+            //             triggerElement: this,
+            //             triggerHook: '0',
+            //             duration: 1
+            //         })
+            //         .setPin(this, {
+            //             pushFollowers: true
+            //         })
+            //         // .addIndicators()
+            //         .addTo(controller);
+            //
+            // });
 
             // slick carousel call
 
-            $(#carousel).slick()
+            $('.carousel-slide').slick({
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              fade: true,
+              dots: true,
+              infinite: true,
+              speed: 500}
+            );
 
-
+/*===============jquery-accordion control ======================*/
+            $('.accordion').accordion({
+                "transitionSpeed": 400
+            });
 
 
 

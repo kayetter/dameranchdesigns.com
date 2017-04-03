@@ -21,20 +21,13 @@
   ],
   "dependencies": {
     "jquery-dist": "^2.1.3",
-    "jquery-ui": "^1.12.1",
     "jquery-modal": "^0.8.0",
     "gsap": "^1.19.1",
     "scrollmagic": "ScrollMagic#^2.0.5",
-    "slick-carousel": "^1.6.0"
+    "slick-carousel": "^1.6.0",
+    "jquery-accordion": "*"
   },
   "overrides": {
-    "jquery-ui": {
-      "main": [
-        "jquery-ui.min.js",
-        "themes/pepper-grinder/jquery-ui.min.css",
-        "themes/pepper-grinder/theme.css"
-      ]
-    },
     "gsap": {
       "main": [
         "src/uncompressed/TweenMax.js",
@@ -47,6 +40,18 @@
         "scrollmagic/uncompressed/ScrollMagic.js",
         "scrollmagic/uncompressed/plugins/debug.addIndicators.js",
         "scrollmagic/uncompressed/plugins/animation.gsap.js"
+      ]
+    },
+    "slick-carousel": {
+      "main": [
+        "slick/slick.min.js",
+        "slick/slick.css"
+      ]
+    },
+    "jquery-accordion": {
+      "main": [
+        "js/jquery.accordion.js",
+        "css/jquery.accordion.css"
       ]
     }
   }

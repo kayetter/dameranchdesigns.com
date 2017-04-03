@@ -30,11 +30,13 @@ var gulp = require('gulp'),
     jssource = ['process/scripts/'],
     dest = 'builds/development/',
     prod = 'builds/production/',
-    noProcss = ['builds/development/css/jquery.mCustomScrollbar.css'],
     isProd,
     isDev,
     limbo = 'process/limbo/',
-    build;
+    build,
+    cssAssets = [
+      'bower_components/slick-carousel/slick/*/*.*',
+    ];
 
 
 //sets a variable that if set = production environment otherwise it defaults to development, at cmd prompt use NODE_ENV=production gulp
@@ -52,7 +54,7 @@ if (isDev) {
 }
 
 
-// Bower css
+// concatenate any cssthat is needed for bower component plugins
 gulp.task('bower-css', function(){
   gulp.src(bowerFiles("**/*.css"))
    .pipe(concat('lib-styles.css'))
@@ -64,13 +66,20 @@ gulp.task('bower-css', function(){
       .pipe(gulpif(isProd, gulp.dest(limbo + 'css')))
 });
 
-// Bower js
+// concatenate any js that is needed for bower component plugins
 gulp.task('bower-js', function(){
   gulp.src(bowerFiles("**/*.js"))
     .pipe(concat('lib-scripts.js'))
     .pipe(gulp.dest(dest + 'scripts/'))
     .pipe(gulpif(isProd, uglify()))
     .pipe(gulpif(isProd, gulp.dest(limbo + 'scripts')))
+});
+
+//grab fonts from bower_components
+gulp.task('cssAssets', function(){
+  gulp.src(cssAssets)
+    .pipe(gulp.dest(dest+'css'))
+    .pipe(gulpif(isProd, gulp.dest(limbo + 'css')));
 });
 
 //not used
@@ -209,11 +218,12 @@ gulp.task('revcss', ['revreplace'], function(){
 
 
   gulp.task('watch', function() {
-      gulp.watch(source + '**/*.css', ['css', 'moveFiles']);
-      gulp.watch(dest + '**/*.html', ['moveFiles']);
-      gulp.watch(jssource + '*.js', ['script']);
-      gulp.watch(dest + 'images/**/*.*', ['moveFiles']);
-      gulp.watch('bower.json', ['bower-css', 'bower-js']);
+    gulp.watch(cssAssets, ['cssAssets']);
+    gulp.watch(source + '**/*.css', ['css', 'moveFiles']);
+    gulp.watch(dest + '**/*.html', ['moveFiles']);
+    gulp.watch(jssource + '*.js', ['script']);
+    gulp.watch(dest + 'images/**/*.*', ['moveFiles']);
+    gulp.watch('bower.json', ['bower-css', 'bower-js']);
   });
 
 
@@ -227,5 +237,5 @@ gulp.task('webserver', function() {
 //4-step process to get to prod 1. cleanProd 2. preProd 3. rev 4. revcss. Step#2 is the only one that needs to be run in NODE_ENV=production
 
 
-gulp.task('preprod', ['moveFiles', 'css', 'bower-css', 'script', 'bower-js', 'images', 'jsonminify']);
-gulp.task('default', ['moveFiles', 'css', 'bower-css', 'script', 'bower-js', 'images', 'webserver', 'watch']);
+gulp.task('preprod', ['moveFiles', 'cssAssets', 'css', 'bower-css', 'script', 'bower-js', 'images', 'jsonminify']);
+gulp.task('default', ['moveFiles', 'cssAssets', 'css', 'bower-css', 'script', 'bower-js', 'images', 'webserver', 'watch']);

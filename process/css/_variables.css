@@ -18,8 +18,9 @@ $white-2: color($sand lightness(92%));
 $white-4: color($sand lightness(94%));
 $white-6: color($sand lightness(96%));
 $white-8: color($sand lightness(98%));
+$orangedarker: color($DRDorange blackness(30%));
 $bluedarker: color($DRDblue blackness(30%));
-$bluedark: color($DRDblue shade(75%));
+$bluedark: color($DRDblue shade(45%));
 
 
 

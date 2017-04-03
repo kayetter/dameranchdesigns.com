@@ -1,23 +1,14 @@
 
-/*//styling to get UI widget on top*/
-.ui-dialog {
-  z-index: 9999
-}
-/*//more styling for UI dialog widget make sure you use 'appendTo'*/
-.ui-widget-overlay{
-  position: absolute;
-  z-index: 0;
-}
-
-
-/*//styling for jquery modal to get the modal on top*/
+/*//styling for jquery modal to get the modal in foreground of window*/
 .blocker {
-z-index: 999999;
+z-index: 9999;
+@mixin backImageGradient ../images/backgrounds/desert_sand.jpg;
 }
 
 .modal {
   background: $white;
-  max-width: 90vw;
+  max-width: 800px;
+  padding: 3rem;
 
   p {
     color: $bluedarker;
@@ -35,8 +26,38 @@ z-index: 999999;
       color: $bluedark;
     }
   }
+} /*end of jquery-modal style*/
+
+/*--style to to toggle with scrollmagic so logo sits on top*/
+.z-index {
+  z-index: 99;
 }
 
-.z-index {
-  z-index: 99999;
+
+/*===========slick carousel styles===============*/
+
+/* --position carousel side buttons*/
+.slick-prev {
+    left: 20px;
+    z-index: 9999; /*included to get previous button to advance*/
+}
+
+.slick-next {
+  right: 20px;
+}
+
+.slick-next:before, .slick-prev:before {
+    font-size: 30px;
+    color: $DRDblue;
+}
+
+/*---styling dot buttons*/
+.slick-dots li button:before {
+    font-size: 12px;
+    color: $DRDblue;
+  }
+
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: $DRDblue;
 }

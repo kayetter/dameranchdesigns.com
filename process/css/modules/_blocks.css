@@ -10,7 +10,12 @@
       .summary {
         h3, h4 {
         color: $DRDblue;
-      }
+        cursor: pointer;
+        }
+        h3.visited {
+          color: $orangedarker;
+        }
+
     }
       .block {
         width: 90%;
@@ -25,9 +30,3 @@
       } /*end of block*/
   } /*end of row*/
 } /*end of container*/
-
-.summary {
-  h3, h4 {
-    color: $DRDblue;
-  }
-}

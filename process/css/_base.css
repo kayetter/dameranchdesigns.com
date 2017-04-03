@@ -30,10 +30,24 @@
         }
       }
 
+.logo {
+    padding: 1rem 0;
+    #logo-svg {
+        position: relative;
+        background: url(../images/logos/DRD_notag.svg) no-repeat $white;
+        background-size: 90%;
+        background-position: center center;
+        display: block;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+  }
 
 
     %heading {
-        font-family: $font-heading;
+        font-family: $font-main;
         line-height: 1.5;
         word-wrap: break-word;
         text-align: center;

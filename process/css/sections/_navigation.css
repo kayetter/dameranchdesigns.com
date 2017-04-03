@@ -20,10 +20,9 @@
             margin: 1rem 1rem;
         }
         a {
-            color: $brightblue;
+            color: $DRDblue;
             width: 100%;
             font-size: 1.6rem;
-            font-weight: 400;
             text-align: center;
             transition: .3s ease-out;
             padding: 0 .4rem;
@@ -33,18 +32,18 @@
             &:after {
                 display: block;
                 content: '';
-                background-color: white;
+                background-color: $bluedark;
                 width: 0;
                 height: 3px;
                 margin-bottom: .3rem;
                 transition: width .3s ease-out, background-color .3s ease-in;
             }
             &:hover {
-                color: white;
+                color: $bluedark;
             }
             &:hover:after {
                 content: '';
-                background-color: white;
+                background-color: $bluedark;
                 width: 100%;
             }
         }
