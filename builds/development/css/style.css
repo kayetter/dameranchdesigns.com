@@ -650,12 +650,6 @@ em{
     background-attachment: fixed;
     background-position: center left;
     background-size: cover;
-    /*@each $media in $media-list  {
-    @media $(media, 1){
-      width: $(media, 2);
-    }
-  }*/
-    /*z-index: 999;*/
 }
 #pic2{
     background: url('../images/backgrounds/sunset3_1000.jpg');

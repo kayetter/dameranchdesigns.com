@@ -1,15 +1,6 @@
 .pic-background{
   @mixin backImage '../images/backgrounds/desert_flower_white_1000.jpg', center left;
 
-
-
-  /*@each $media in $media-list  {
-    @media $(media, 1){
-      width: $(media, 2);
-    }
-  }*/
-
-  /*z-index: 999;*/
 }
 
 #pic2 {
