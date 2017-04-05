@@ -2,10 +2,10 @@
 
 
 
-$DRDblue: rgb(0, 181, 197);
-$DRDorange:   rgb(230, 99, 41);
-$DRDyellow: rgb(255, 173, 66);
-$sand: rgb(253, 227, 194);
+$DRDblue: rgb(0, 181, 197); /*#00B5C5*/
+$DRDorange:   rgb(230, 99, 41); /*E66329*/
+$DRDyellow: rgb(255, 173, 66); /*#FFAD42*/
+$sand: rgb(253, 227, 194); /*#FDE3C2*/
 
 $white: color($sand lightness(97%)); /*rgb(254, 244, 230)*/
 $brightblue: color($DRDblue lightness(40%)); /*#28959f rgb(0, 187, 204)*/

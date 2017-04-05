@@ -1,18 +1,28 @@
 .pic-background{
-  @mixin backImage ../images/backgrounds/desert_flower_white.jpg, center left;
+  @mixin backImage '../images/backgrounds/desert_flower_white_1000.jpg', center left;
+
+
+
+  /*@each $media in $media-list  {
+    @media $(media, 1){
+      width: $(media, 2);
+    }
+  }*/
+
   /*z-index: 999;*/
 }
 
 #pic2 {
-  @mixin backImage ../images/backgrounds/sunset3_1600.jpg, center center
+  @mixin backImage '../images/backgrounds/sunset3_1000.jpg', center center;
 }
 
 #pic3 {
-  @mixin backImage ../images/backgrounds/ocotillo_sunset.jpg, center center
+  @mixin backImage '../images/backgrounds/ocotillo_sunset_1000.jpeg', center center;
 }
 
 .blue-background {
     background: $DRDblue;
+
 }
 
 .orange-background {

@@ -25,6 +25,8 @@ var gulp = require('gulp'),
     revReplace = require('gulp-rev-replace'),
     wiredep = require('wiredep').stream,
     bowerFiles = require('main-bower-files'),
+    rename = require('gulp-rename'),
+    imageResize = require('gulp-image-resize'),
 
     source = 'process/css/',
     jssource = ['process/scripts/'],
@@ -155,6 +157,25 @@ gulp.task('jsonminify', function () {
         .pipe(gulpif(isProd, gulp.dest(limbo + 'js')));
 });
 
+// make versions of images using gulp-image-resize not in watch list.
+var resizeImageTasks = [];
+
+[400,600,800,1000,2000].forEach(function(size) {
+  var resizeImageTask = 'resize_' + size;
+  gulp.task(resizeImageTask, function() {
+    return gulp.src('builds/development/image_tobe_processed/**/*.{jpg,jpeg,png}')
+      .pipe(imageResize({
+         width:  size,
+         upscale: false,
+         crop: false
+             }))
+      .pipe(rename(function (path) { path.basename += '_'+size; }))
+      .pipe(gulp.dest('builds/development/images/'))
+  });
+  resizeImageTasks.push(resizeImageTask);
+});
+gulp.task('resize-images', resizeImageTasks);
+
 //if isProd compresses image files and rmoves viewbox for svg and puts in limbo if i
 gulp.task('images', function () {
     gulp.src('builds/development/images/**/*.{jpg,JPEG,png,jpeg,gif}')
@@ -218,6 +239,7 @@ gulp.task('revcss', ['revreplace'], function(){
 
 
   gulp.task('watch', function() {
+    gulp.watch('builds/development/images/', ['imageResize', 'images', 'moveFiles'])
     gulp.watch(cssAssets, ['cssAssets']);
     gulp.watch(source + '**/*.css', ['css', 'moveFiles']);
     gulp.watch(dest + '**/*.html', ['moveFiles']);
@@ -234,8 +256,8 @@ gulp.task('webserver', function() {
             open: true
         }));
 });
-//4-step process to get to prod 1. cleanProd 2. preProd 3. rev 4. revcss. Step#2 is the only one that needs to be run in NODE_ENV=production
+//4-step process to get to prod 1. gulp cleanProd 2. NODE_ENV=production gulp preProd 3. gulp rev 4. gulp revcss. Step#2 is the only one that needs to be run in NODE_ENV=production
 
 
-gulp.task('preprod', ['moveFiles', 'cssAssets', 'css', 'bower-css', 'script', 'bower-js', 'images', 'jsonminify']);
+gulp.task('preProd', ['moveFiles', 'cssAssets', 'css', 'bower-css', 'script', 'bower-js', 'images', 'jsonminify']);
 gulp.task('default', ['moveFiles', 'cssAssets', 'css', 'bower-css', 'script', 'bower-js', 'images', 'webserver', 'watch']);

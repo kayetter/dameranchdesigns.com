@@ -89,7 +89,7 @@
             //new scrollScene for the #title-logo animation
             var sceneLogo = new ScrollMagic.Scene({
                     triggerElement: '#pic1',
-                    triggerHook: '1'
+                    triggerHook: '.95'
                 })
                 .setClassToggle("#title-section", "z-index")
                 .setTween(tweenLogo)

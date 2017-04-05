@@ -1,6 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Dancing+Script|Roboto+Slab:300,400,700|Open+Sans:300,400,700);
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,600,700);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+/*#00B5C5*/
+/*E66329*/
+/*#FFAD42*/
+/*#FDE3C2*/
 /*rgb(254, 244, 230)*/
 /*#28959f rgb(0, 187, 204)*/
 /*#cc7400 rgb(204 116 0)*/
@@ -46,6 +50,19 @@ table{
     border-collapse: collapse;
     border-spacing: 0;
 }
+/*$media-list: ($xsmall, $small, $medium, $large, $xlarge),
+  $size-list: (400, 600, 800, 1000, 2000)
+  $background-colors-list: (#4BC2A5, #606F40, #6648CA, #6B6022, #2F54E9),
+  $border-colors-list: (#ff9900, #77ff66, #73C227, #C23E50, #7BAFC2),
+  $colors-list: (#111, #222, #111, #444, #555)
+  @for $i from 1 through length($media-list) {
+      @media $ + nth($media-list, $i) {
+        background-image: url(../images/ + nth($size-list) + /desert_flower_white.jpg);
+          color: nth($colors-list, $i);
+          background-color: nth($background-colors-list, $i);
+          border: 1px solid nth($border-colors-list, $i);
+      }
+  }*/
 /*@define-mixin headingSize $size: 1.8rem, $spacing: 7px
 {
   @for $i from 6 through 1{
@@ -628,22 +645,27 @@ em{
 }
 /*end of .headerImage*/
 .pic-background{
-    background: url(../images/backgrounds/desert_flower_white.jpg);
+    background: url('../images/backgrounds/desert_flower_white_1000.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center left;
     background-size: cover;
+    /*@each $media in $media-list  {
+    @media $(media, 1){
+      width: $(media, 2);
+    }
+  }*/
     /*z-index: 999;*/
 }
 #pic2{
-    background: url(../images/backgrounds/sunset3_1600.jpg);
+    background: url('../images/backgrounds/sunset3_1000.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
 }
 #pic3{
-    background: url(../images/backgrounds/ocotillo_sunset.jpg);
+    background: url('../images/backgrounds/ocotillo_sunset_1000.jpeg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
