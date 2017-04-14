@@ -25,19 +25,7 @@
                 $('.nav-elements').css('width', width + 'px');
             }
 
-// /*---using jquery-modal to open modal content of each block in the design section*/
-            $(".block").click(function() {
-              myobj = $(this);
-              console.log(myobj);
-              idName = myobj.attr("id");
-              id = '#'+idName + '-modal';
-              console.log(id)
-                $(id).appendTo("body").modal({fadeDuration: 300, fadeDelay: 0}).on('modal:close', function(){
-                  $(myobj.children('h3')).addClass('visited');
-                });
-                return false;
-            });
-
+              //gallery slide modal
             $('#bmb-slide').click(function(){
               $('#bmb-gallery-article').appendTo("body").modal({fadeDuration: 300, fadeDelay: 1.5});
             });
@@ -69,9 +57,9 @@
             //calculate window height - height of #title-logo
             var logoPos = $('#title-logo').position();
             var logoPosY = logoPos.top;
-            var titleHt = $('#title-section').height() - 1.8 * logoPosY;
+            var titleHt = $('#title-section').height();
             var logo2x = $('#title-logo').height() * 2;
-            var fallHt = titleHt + $('#pic1').height();
+            var fallHt = titleHt - logo2x;
 
             //tweenMax timeline for logo rotate, scale and bounce out
             var tweenLogo = new TimelineMax()
@@ -82,34 +70,40 @@
                 }))
                 .add(TweenMax.to('#title-logo', 2, {
                     y: fallHt,
-                    x: -20,
+                    x: 20,
                     ease: Bounce.easeOut
+                }))
+                .add(TweenMax.to('#title-logo',.5,{
+                  scale: 0,
+                  opacity: 0,
+                  ease: Back.easeOut
                 }));
 
             //new scrollScene for the #title-logo animation
-            var sceneLogo = new ScrollMagic.Scene({
-                    triggerElement: '#pic1',
-                    triggerHook: '.95'
+            var logoScene = new ScrollMagic.Scene({
+                    triggerElement: '#title',
+                    triggerHook: '.05'
                 })
                 .setClassToggle("#title-section", "z-index")
                 .setTween(tweenLogo)
-                // .addIndicators()
+                .addIndicators()
                 .addTo(controller);
 
-            //pins the pic backgrounds and let's next section move up on the picture
-            $(".pic-background").each(function() {
-                new ScrollMagic.Scene({
-                        triggerElement: this,
-                        triggerHook: '0',
-                        duration: 0
-                    })
-                    .setPin(this, {
-                        pushFollowers: false
-                    })
-                    // .addIndicators()
-                    .addTo(controller);
 
-            });
+            //pins the pic backgrounds and let's next section move up on the picture
+            // $(".pic-background").each(function() {
+            //     new ScrollMagic.Scene({
+            //             triggerElement: this,
+            //             triggerHook: '0',
+            //             duration: 0
+            //         })
+            //         .setPin(this, {
+            //             pushFollowers: false
+            //         })
+            //         // .addIndicators()
+            //         .addTo(controller);
+            //
+            // });
 
             //pins the content sections so that they stay in place for a bit of extra scrolling
             // $(".content").each(function() {
@@ -137,6 +131,7 @@
               speed: 500}
             );
 
+
 /*===============jquery-accordion control ======================*/
             $('.accordion').accordion({
                 "transitionSpeed": 400
@@ -158,4 +153,10 @@
                 $('.nav-elements').css('width', width + 'px');
             }
             console.log($('.nav-elements').width());
+            var logoPos = $('#title-logo').position();
+            var logoPosY = logoPos.top;
+            var titleHt = $('#title-section').height();
+            var logo2x = $('#title-logo').height() * 2;
+            var fallHt = titleHt - logo2x;
+
         });

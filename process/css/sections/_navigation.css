@@ -1,14 +1,11 @@
 .nav-elements {
     padding: 0;
-    background: $sand;
-    margin: 2rem 0 4rem;
-      @media $medium {
-        margin-top: 5rem;
-      }
+    background: $DRDorange;
+    margin: 0 auto;
 
     .nav-bar {
         display: block;
-          @media $medium {
+          @media $xsmall {
             display: flex;
             justify-content: space-around;
             flex-direction: row;
@@ -17,10 +14,10 @@
         margin: 0 auto;
         text-align: center;
         li {
-            margin: 1rem 1rem;
+            padding: 1rem;
         }
         a {
-            color: $DRDblue;
+            color: $white;
             width: 100%;
             font-size: 1.6rem;
             text-align: center;

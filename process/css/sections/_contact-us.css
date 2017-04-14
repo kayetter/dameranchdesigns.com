@@ -1,0 +1,30 @@
+#contact-us {
+  min-height: auto;
+
+  h3 {
+    font-size: 3.0rem;
+  }
+  em {
+    color: $brightblue;
+  }
+
+  a em {
+    &:hover {
+      color: $white;
+    }
+    &:after {
+      display: block;
+      content: '';
+      width: 0;
+      height: 4px;
+      margin-bottom: .3rem;
+      transition: width .3s ease-out, background-color .3s ease-in, border-bottom .3s ease-in;
+    }
+
+    &:hover:after {
+      border-bottom: 2px solid $white;
+      background-color: $orangedarker;
+      width: 100%;
+    }
+  }
+}

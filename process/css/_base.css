@@ -16,7 +16,8 @@
 
 
     body {
-      background: $white;
+        background: transparent;
+        position: relative;
         margin: 0;
         padding: 0;
         color: black;
@@ -24,6 +25,12 @@
         font-size: 1.8rem;
         line-height: 160%;
         font-weight: $fwt-thin;
+  .main {
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
 
         .hidden {
           display: none;
@@ -56,30 +63,33 @@
         font-weight: 500;
         margin: 0;
     }
-    /*--adds .4 rem to each heading fz and character spacing 1-6---*/
+  
 
 h1 {
   @extend %heading;
-  font-size: 2.5rem;
-  letter-spacing: 7px;
+    em {
+      letter-spacing: 3px;
+      font-size: 3.0rem;
+      color: $DRDblue;
 
     @media $xsmall {
-      font-size: 3.2rem;
-      letter-spacing: 10px;
-    }
-    @media $small {
-      font-size: 4rem;
-      letter-spacing: 12px;
-    }
-    @media $medium {
-      font-size: 4.4rem;
-      letter-spacing: 18px;
-    }
-    @media $large {
-      font-size: 4.8rem;
-      letter-spacing: 22px;
+      font-size: 4.0rem;
+
     }
 
+    @media $small {
+      font-size: 4.4rem;
+      letter-spacing: 5px;
+    }
+    @media $medium {
+      font-size: 5.0rem;
+      letter-spacing: 7px;
+    }
+    @media $large {
+      font-size: 6.0rem;
+      letter-spacing: 9px;
+    }
+    } /*end of em*/
   }/*end of h1*/
 
   h2 {
@@ -124,6 +134,7 @@ h1 {
   }
 
   p {
+    color: $white;
     width: 100%;
     padding: 1rem;
     font-size: 1.8rem;
@@ -137,7 +148,11 @@ h1 {
 em {
   font-family: $font-cursive;
   color: $DRDorange;
-  font-size: 110%;
+  font-size: 120%;
+}
+
+svg {
+  display: block;
 }
 
 .drd {
@@ -145,17 +160,7 @@ em {
   font-size: 100%;
   letter-spacing: 3px;
 }
-  /*.f180 {
-    display: inline-block;
-    unicode-bidi:bidi-override;
-    direction:rtl;
-    transform:rotateY(180deg);
-    font-size: 150%;
-  }
 
-.f90 {
-  display: inline-block;
-  font-size: 150%;
-  transform:rotate(-90deg);
-  padding-left: 5px;
-}*/
+.footer {
+  padding: 3rem 0;
+}

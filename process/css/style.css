@@ -7,7 +7,6 @@
 @import "base";
 @import "modules/section";
 @import "modules/aside";
-@import "modules/blocks";
 @import "modules/accordion";
 @import "modules/slick-theme";
 @import "modules/widgets";
@@ -16,4 +15,5 @@
 @import "sections/title";
 @import "sections/backgrounds";
 @import "sections/design";
+@import "sections/contact-us";
 @import "sections/gallery";

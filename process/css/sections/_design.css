@@ -1,30 +1,102 @@
 #design {
-  
-  #love {
-    background-color: $white-8;
-  }
-  #portal {
-    background-color: $white-6;
-          }
-  #experience {
-    background-color: $white-4;
-  }
-  #get-started {
-    background-color: $white-2;
+  position: relative;
+  width: 100%;
+
+
+  .row {
+    display: block;
+    position: relative;
+    width: 100%;
+    .row-content {
+      padding: 6rem .5rem;
+      margin: auto;
+      max-width: 960px;
+      @media $xsmall{
+      padding: 10rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      }
+    }
   }
 
-  @media $medium {
+  .row2 {
+    .row-content {
+      @media $xsmall {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  .day {
+    display: flex;
+    z-index: 40;
+    background: $white-background-color;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 340px;
+    padding: 0;
+    min-height: 360px;
+    @media $xsmall {
+      padding: .2rem;
+      width: 360px;
+    }
+    @media $large {
+      transform: scale(1.2,1.2)
+    }
+
+    border-radius: 50%;
+      @media $small {
+        margin: 0;
+      }
+
+      &:active, &:focus {
+        transform: scale(1.2,1.2);
+      }
+
+    h3 {
+      color: $DRDblue;
+      font-size: 135%;
+    }
+
+    p {
       width: 100%;
-      margin: 0 auto;
-      #love, #portal {
-        background-color: none;
+      color: $bluedark;
+      font-size: 95%;
+      line-height: 115%;
+      padding-top: .3rem;
+      text-align: center;
+    }
+  } /*end of day styling*/
+
+  #sunset {
+      h3 {
+      padding-top: 3rem;
+    }
+  }
+}/*end of #design*/
+
+
+  %bee {
+    position: absolute;
+    z-index: 45;
+    display: none;
+    @media $small {
+      display: block;
+      right: 25px;
+      svg {
+        width: 250px;
       }
-      #experience, #get-started {
-        background-color: $white-2;
-      }
-      p {
-        width: 90%;
-      }
+    }
   }
 
-}/*end of #design*/
+  #bee-right {
+    bottom: 0;
+    @extend %bee;
+  }
+
+  #bee-left {
+    top: 0;
+    @extend %bee;
+
+  }

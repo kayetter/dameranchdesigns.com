@@ -14,7 +14,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, menu, nav, output, ruby, section, summary, time, mark, audio, video{
     margin: 0;
     padding: 0;
     border: 0;
@@ -99,7 +99,8 @@ html{
     box-sizing: inherit;
 }
 body{
-    background: rgb(255, 248, 240);
+    background: transparent;
+    position: relative;
     margin: 0;
     padding: 0;
     color: black;
@@ -107,6 +108,12 @@ body{
     font-size: 1.8rem;
     line-height: 160%;
     font-weight: 300;
+}
+body .main{
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 body .hidden{
     display: none;
@@ -135,33 +142,35 @@ h1, h2, h3, h4{
     font-weight: 500;
     margin: 0;
 }
-/*--adds .4 rem to each heading fz and character spacing 1-6---*/
 h1{
-    font-size: 2.5rem;
-    letter-spacing: 7px;
+    /*end of em*/
+}
+h1 em{
+    letter-spacing: 3px;
+    font-size: 3.0rem;
+    color: rgb(0, 181, 197);
 }
 @media screen and (min-width: 380px){
-    h1{
-        font-size: 3.2rem;
-        letter-spacing: 10px;
+    h1 em{
+        font-size: 4.0rem;
     }
 }
 @media screen and (min-width: 600px){
-    h1{
-        font-size: 4rem;
-        letter-spacing: 12px;
+    h1 em{
+        font-size: 4.4rem;
+        letter-spacing: 5px;
     }
 }
 @media screen and (min-width: 760px){
-    h1{
-        font-size: 4.4rem;
-        letter-spacing: 18px;
+    h1 em{
+        font-size: 5.0rem;
+        letter-spacing: 7px;
     }
 }
 @media screen and (min-width: 1200px){
-    h1{
-        font-size: 4.8rem;
-        letter-spacing: 22px;
+    h1 em{
+        font-size: 6.0rem;
+        letter-spacing: 9px;
     }
 }
 /*end of h1*/
@@ -204,6 +213,7 @@ svg{
     text-align: center;
 }
 p{
+    color: rgb(255, 248, 240);
     width: 100%;
     padding: 1rem;
     font-size: 1.8rem;
@@ -218,87 +228,42 @@ p{
 em{
     font-family: 'Dancing Script',cursive;
     color: rgb(230, 99, 41);
-    font-size: 110%;
+    font-size: 120%;
+}
+svg{
+    display: block;
 }
 .drd{
     font-family: 'Roboto Slab',serif;
     font-size: 100%;
     letter-spacing: 3px;
 }
-/*.f180 {
-    display: inline-block;
-    unicode-bidi:bidi-override;
-    direction:rtl;
-    transform:rotateY(180deg);
-    font-size: 150%;
-  }
-
-.f90 {
-  display: inline-block;
-  font-size: 150%;
-  transform:rotate(-90deg);
-  padding-left: 5px;
-}*/
+.footer{
+    padding: 3rem 0;
+}
 .section{
     position: relative;
-    z-index: 10;
-    padding: 3rem 0;
+    width: 100%;
     min-height: 100vh;
 }
-.full-height{
-    height: 100vh;
+.container{
+    width: 100%;
+    /*end of row*/
 }
-.pic-height{
-    height: 100vh;
+.container .row{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
 }
-@media screen and (min-width: 760px){
-    .pic-height{
-        height: 100vh;
-    }
-}
+/*end of container*/
 /*end of section*/
 .aside{
     padding: 2rem 0;
 }
-.container{
-    /*end of row*/
-}
-.container .row{
-    display: block;
-    /*end of block*/
-}
-.container .row .summary h3, .container .row .summary h4{
-    color: rgb(0, 181, 197);
-    cursor: pointer;
-}
-.container .row .summary h3.visited{
-    color: rgb(179, 82, 41);
-}
-.container .row .block{
-    width: 90%;
-    margin: auto;
-    padding: 3rem 1rem;
-    /*margin: .5rem;*/
-}
-@media screen and (min-width: 760px){
-    .container .row{
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-                flex-direction: row;
-    }
-}
-@media screen and (min-width: 760px){
-    .container .row .block{
-        width: 50%;
-        margin: 1%;
-        border-radius: 6px;
-    }
-}
-/*end of container*/
 .accordion{
     width: 100%;
     padding: 3rem 3rem 0;
@@ -450,6 +415,9 @@ em{
     max-height: 100vh;
 }
 .modal{
+    position: fixed;
+    left: 15%;
+    top: 15%;
     background: rgb(255, 248, 240);
     max-width: 800px;
     padding: 3rem;
@@ -471,7 +439,7 @@ em{
 /*end of jquery-modal style*/
 /*--style to to toggle with scrollmagic so logo sits on top*/
 .z-index{
-    z-index: 99;
+    z-index: 30;
 }
 /*===========slick carousel styles===============*/
 /* --position carousel side buttons*/
@@ -509,8 +477,8 @@ em{
 }
 .nav-elements{
     padding: 0;
-    background: rgb(253, 227, 194);
-    margin: 2rem 0 4rem;
+    background: rgb(230, 99, 41);
+    margin: 0 auto;
     /*nav-bar*/
 }
 .nav-elements .nav-bar{
@@ -520,10 +488,10 @@ em{
     /*end of anchor tags*/
 }
 .nav-elements .nav-bar li{
-    margin: 1rem 1rem;
+    padding: 1rem;
 }
 .nav-elements .nav-bar a{
-    color: rgb(0, 181, 197);
+    color: rgb(255, 248, 240);
     width: 100%;
     font-size: 1.6rem;
     text-align: center;
@@ -549,12 +517,7 @@ em{
     background-color: rgb(0, 100, 108);
     width: 100%;
 }
-@media screen and (min-width: 760px){
-    .nav-elements{
-        margin-top: 5rem;
-    }
-}
-@media screen and (min-width: 760px){
+@media screen and (min-width: 380px){
     .nav-elements .nav-bar{
         display: -webkit-box;
         display: -ms-flexbox;
@@ -586,17 +549,20 @@ em{
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     /*end of #title*/
 }
+#title-section #title{
+    margin-top: 6rem;
+}
 #title-section #title h1{
-    color: rgb(0, 187, 204);
-    padding: 2rem 0 1rem;
+    color: rgb(0, 181, 197);
+    padding: 3rem 0 1rem;
     font-size: 2.0rem;
 }
 #title-section #title h3{
@@ -644,73 +610,221 @@ em{
     }
 }
 /*end of .headerImage*/
-.pic-background{
-    background: url('../images/backgrounds/desert_flower_white_1000.jpg');
+#background-pic{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    z-index: -10;
+    background: url('../images/backgrounds/desert_flower_white_300.jpg');
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center left;
+    /*background-attachment: fixed;*/
+    background-position: left;
     background-size: cover;
 }
-#pic2{
-    background: url('../images/backgrounds/sunset3_1000.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
+@media screen and (min-width: 600px){
+    #background-pic{
+        background: url('../images/backgrounds/desert_flower_white_600.jpg');
+        background-repeat: no-repeat;
+        /*background-attachment: fixed;*/
+        background-position: left;
+        background-size: cover;
+    }
 }
-#pic3{
-    background: url('../images/backgrounds/ocotillo_sunset_1000.jpeg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
+@media screen and (min-width: 760px){
+    #background-pic{
+        background: url('../images/backgrounds/desert_flower_white_800.jpg');
+        background-repeat: no-repeat;
+        /*background-attachment: fixed;*/
+        background-position: left;
+        background-size: cover;
+    }
+}
+@media screen and (min-width: 1200px){
+    #background-pic{
+        background: url('../images/backgrounds/desert_flower_white_1000.jpg');
+        background-repeat: no-repeat;
+        /*background-attachment: fixed;*/
+        background-position: left;
+        background-size: cover;
+    }
+}
+@media screen and (min-width: 1400px){
+    #background-pic{
+        background: url('../images/backgrounds/desert_flower_white_2000.jpg');
+        background-repeat: no-repeat;
+        /*background-attachment: fixed;*/
+        background-position: left;
+        background-size: cover;
+    }
 }
 .blue-background{
-    background: rgb(0, 181, 197);
+    background: -webkit-linear-gradient( top, rgba(255, 173, 66, 0.8), rgba(255, 248, 240, 0.8));
+    background: linear-gradient( to bottom, rgba(255, 173, 66, 0.8), rgba(255, 248, 240, 0.8));
 }
-.orange-background{
-    background: rgb(230, 99, 41);
+.org-to-yel-background{
+    background: -webkit-linear-gradient(top, rgba(230, 99, 41, 0.8) 75%, rgba(255, 173, 66, 0.8) 100%);
+    background: linear-gradient(to bottom, rgba(230, 99, 41, 0.8) 75%, rgba(255, 173, 66, 0.8) 100%);
 }
-.yellow-background{
-    background: rgb(255, 173, 66);
+.yel-to-white-background{
+    background: -webkit-linear-gradient(top, rgba(255, 173, 66, 0.8) 50%, rgba(255, 248, 240, 0.8) 100%);
+    background: linear-gradient(to bottom, rgba(255, 173, 66, 0.8) 50%, rgba(255, 248, 240, 0.8) 100%);
 }
 .white-background{
-    background: rgb(255, 248, 240);
+    background: rgba(255, 248, 240, 0.8);
 }
 .white-background h1, .white-background h2, .white-background h3, .white-background h4, .white-background h5, .white-background p{
     color: rgb(0, 181, 197);
 }
-.white-background p{
-    color: rgb(0, 164, 179);
+.white-to-yel-background{
+    background: -webkit-linear-gradient(top, rgba(255, 248, 240, 0.8) 0%, rgba(255, 173, 66, 0.8) 50%);
+    background: linear-gradient(to bottom, rgba(255, 248, 240, 0.8) 0%, rgba(255, 173, 66, 0.8) 50%);
 }
-#design #love{
-    background-color: rgb(255, 251, 245);
+.yel-to-org-background{
+    background: -webkit-linear-gradient(bottom, rgba(230, 99, 41, 0.8), rgba(255, 173, 66, 0.8));
+    background: linear-gradient(to top, rgba(230, 99, 41, 0.8), rgba(255, 173, 66, 0.8));
 }
-#design #portal{
-    background-color: rgb(254, 246, 235);
+.org-to-trans-background{
+    background: -webkit-linear-gradient(bottom, transparent, rgba(230, 99, 41, 0.8));
+    background: linear-gradient(to top, transparent, rgba(230, 99, 41, 0.8));
 }
-#design #experience{
-    background-color: rgb(254, 242, 225);
+#design{
+    position: relative;
+    width: 100%;
 }
-#design #get-started{
-    background-color: rgb(254, 237, 215);
+#design .row{
+    display: block;
+    position: relative;
+    width: 100%;
 }
-@media screen and (min-width: 760px){
-    #design{
-        width: 100%;
-        margin: 0 auto;
+#design .row .row-content{
+    padding: 6rem .5rem;
+    margin: auto;
+    max-width: 960px;
+}
+#design .row2 .row-content{}
+#design .day{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    z-index: 40;
+    background: rgba(255, 248, 240, 0.8);
+    margin: 0 auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    width: 340px;
+    padding: 0;
+    min-height: 360px;
+    border-radius: 50%;
+}
+#design .day h3{
+    color: rgb(0, 181, 197);
+    font-size: 135%;
+}
+#design .day p{
+    width: 100%;
+    color: rgb(0, 100, 108);
+    font-size: 95%;
+    line-height: 115%;
+    padding-top: .3rem;
+    text-align: center;
+}
+#design .day:active, #design .day:focus{
+    -webkit-transform: scale(1.2,1.2);
+            transform: scale(1.2,1.2);
+}
+/*end of day styling*/
+#design #sunset h3{
+    padding-top: 3rem;
+}
+@media screen and (min-width: 380px){
+    #design .row .row-content{
+        padding: 10rem 2rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
     }
-    #design #love, #design #portal{
-        background-color: none;
+}
+@media screen and (min-width: 380px){
+    #design .row2 .row-content{
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
     }
-    #design #experience, #design #get-started{
-        background-color: rgb(254, 237, 215);
+}
+@media screen and (min-width: 380px){
+    #design .day{
+        padding: .2rem;
+        width: 360px;
     }
-    #design p{
-        width: 90%;
+}
+@media screen and (min-width: 1200px){
+    #design .day{
+        -webkit-transform: scale(1.2,1.2);
+                transform: scale(1.2,1.2);
+    }
+}
+@media screen and (min-width: 600px){
+    #design .day{
+        margin: 0;
     }
 }
 /*end of #design*/
+#bee-right, #bee-left{
+    position: absolute;
+    z-index: 45;
+    display: none;
+}
+@media screen and (min-width: 600px){
+    #bee-right, #bee-left{
+        display: block;
+        right: 25px;
+    }
+    #bee-right svg, #bee-left svg{
+        width: 250px;
+    }
+}
+#bee-right{
+    bottom: 0;
+}
+#bee-left{
+    top: 0;
+}
+#contact-us{
+    min-height: auto;
+}
+#contact-us h3{
+    font-size: 3.0rem;
+}
+#contact-us em{
+    color: rgb(0, 187, 204);
+}
+#contact-us a em{}
+#contact-us a em:hover{
+    color: rgb(255, 248, 240);
+}
+#contact-us a em:after{
+    display: block;
+    content: '';
+    width: 0;
+    height: 4px;
+    margin-bottom: .3rem;
+    -webkit-transition: width .3s ease-out, background-color .3s ease-in, border-bottom .3s ease-in;
+    transition: width .3s ease-out, background-color .3s ease-in, border-bottom .3s ease-in;
+}
+#contact-us a em:hover:after{
+    border-bottom: 2px solid rgb(255, 248, 240);
+    background-color: rgb(179, 82, 41);
+    width: 100%;
+}
 #gallery h3{
     width: 50%;
     margin: auto;

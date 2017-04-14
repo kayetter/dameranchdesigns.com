@@ -1,36 +1,62 @@
-.pic-background{
-  @mixin backImage '../images/backgrounds/desert_flower_white_1000.jpg', center left;
+$blue-background-color: color($DRDblue a(.8));
+$org-background-color: color($DRDorange a(.8));
+$yel-background-color: color($DRDyellow a(.8));
+$white-background-color: color($white a(.8));
 
+
+
+#background-pic{
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  z-index: -10;
+  @mixin backImage '../images/backgrounds/desert_flower_white_300.jpg', left;
+  @media $small {
+    @mixin backImage '../images/backgrounds/desert_flower_white_600.jpg', left;
+  }
+  @media $medium {
+    @mixin backImage '../images/backgrounds/desert_flower_white_800.jpg', left;
+  }
+
+  @media $large {
+    @mixin backImage '../images/backgrounds/desert_flower_white_1000.jpg', left;
+  }
+  @media $xlarge {
+    @mixin backImage '../images/backgrounds/desert_flower_white_2000.jpg', left;
+  }
 }
 
-#pic2 {
-  @mixin backImage '../images/backgrounds/sunset3_1000.jpg', center center;
-}
-
-#pic3 {
-  @mixin backImage '../images/backgrounds/ocotillo_sunset_1000.jpeg', center center;
-}
 
 .blue-background {
-    background: $DRDblue;
+    background: linear-gradient( to bottom, $yel-background-color, $white-background-color);
+}
+
+.org-to-yel-background {
+  background: linear-gradient(to bottom, $org-background-color 75%, $yel-background-color 100%);
 
 }
 
-.orange-background {
-  background: $DRDorange;
-}
-
-.yellow-background {
-  background: $DRDyellow;
+.yel-to-white-background {
+  background: linear-gradient(to bottom, $yel-background-color 50%, $white-background-color 100%);
 }
 
 .white-background {
-    background: $white;
+  background: $white-background-color;
     h1, h2, h3, h4, h5, p {
         color: $DRDblue;
     }
+  }
 
-    p {
-      color: $bluedarker;
-    }
+.white-to-yel-background {
+  background: linear-gradient(to bottom, $white-background-color 0%, $yel-background-color 50%);
+}
+
+
+.yel-to-org-background {
+  background: linear-gradient(to top, $org-background-color, $yel-background-color);
+}
+
+.org-to-trans-background {
+  background: linear-gradient(to top, transparent, $org-background-color);
 }

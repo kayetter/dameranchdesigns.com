@@ -1,20 +1,18 @@
 .section {
   position: relative;
-  z-index: 10;
-  padding: 3rem 0;
+  width: 100%;
+
   min-height: 100vh;
 }
 
+.container {
+  width: 100%;
+  .row {
+    display: flex;
+    flex-direction: row;
+  } /*end of row*/
+} /*end of container*/
 
-.full-height {
-  height: 100vh;
-}
 
-.pic-height {
-  height: 100vh;
-  @media $medium {
-    height: 100vh;
-  }
-}
 
 /*end of section*/

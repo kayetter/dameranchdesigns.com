@@ -12,13 +12,15 @@
 #title-section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 
     #title {
+        margin-top: 6rem;
+
         h1 {
-            color: $brightblue;
-            padding: 2rem 0 1rem;
+            color: $DRDblue;
+            padding: 3rem 0 1rem;
             font-size: 2.0rem;
             @media $xsmall {
               font-size: 2.5rem;
@@ -53,8 +55,11 @@
                 font-size: 2.8rem;
             }
         }
+
+
     }
     /*end of #title*/
+
 }
 
 
