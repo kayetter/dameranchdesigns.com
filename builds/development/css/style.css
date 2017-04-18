@@ -143,33 +143,31 @@ h1, h2, h3, h4{
     margin: 0;
 }
 h1{
-    /*end of em*/
-}
-h1 em{
-    letter-spacing: 3px;
-    font-size: 3.0rem;
-    color: rgb(0, 181, 197);
+    font-family: 'Roboto Slab',serif;
+    letter-spacing: 5px;
+    font-size: 3.4rem;
+    color: rgb(0, 187, 204);
 }
 @media screen and (min-width: 380px){
-    h1 em{
-        font-size: 4.0rem;
+    h1{
+        font-size: 3.8rem;
     }
 }
 @media screen and (min-width: 600px){
-    h1 em{
+    h1{
         font-size: 4.4rem;
-        letter-spacing: 5px;
+        letter-spacing: 6px;
     }
 }
 @media screen and (min-width: 760px){
-    h1 em{
+    h1{
         font-size: 5.0rem;
         letter-spacing: 7px;
     }
 }
 @media screen and (min-width: 1200px){
-    h1 em{
-        font-size: 6.0rem;
+    h1{
+        font-size: 5.8rem;
         letter-spacing: 9px;
     }
 }
@@ -238,6 +236,13 @@ svg{
     font-size: 100%;
     letter-spacing: 3px;
 }
+.bee-svg{
+    z-index: 9999999;
+    height: 600px;
+}
+.bee-svg svg{
+    width: 100%;
+}
 .footer{
     padding: 3rem 0;
 }
@@ -247,17 +252,24 @@ svg{
     min-height: 100vh;
 }
 .container{
+    position: relative;
     width: 100%;
     /*end of row*/
 }
 .container .row{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    position: relative;
+    display: block;
+}
+@media screen and (min-width: 600px){
+    .container .row{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+    }
 }
 /*end of container*/
 /*end of section*/
@@ -538,9 +550,6 @@ svg{
 }
 /*nav-elements*/
 /*-----------Header Styles--------------------*/
-/*.header {*/
-/*min-height: 100vh;
-  position: relative;*/
 #title-section{
     display: -webkit-box;
     display: -ms-flexbox;
@@ -563,7 +572,6 @@ svg{
 #title-section #title h1{
     color: rgb(0, 181, 197);
     padding: 3rem 0 1rem;
-    font-size: 2.0rem;
 }
 #title-section #title h3{
     padding-top: 0;
@@ -577,21 +585,6 @@ svg{
     color: rgb(255, 248, 240);
     padding: 10px 0;
     font-size: 1.8rem;
-}
-@media screen and (min-width: 380px){
-    #title-section #title h1{
-        font-size: 2.5rem;
-    }
-}
-@media screen and (min-width: 600px){
-    #title-section #title h1{
-        font-size: 2.8rem;
-    }
-}
-@media screen and (min-width: 760px){
-    #title-section #title h1{
-        font-size: 4.4rem;
-    }
 }
 @media screen and (min-width: 760px){
     #title-section #title h3{
@@ -658,15 +651,22 @@ svg{
         background-size: cover;
     }
 }
-.blue-background{
-    background: -webkit-linear-gradient( top, rgba(255, 173, 66, 0.8), rgba(255, 248, 240, 0.8));
-    background: linear-gradient( to bottom, rgba(255, 173, 66, 0.8), rgba(255, 248, 240, 0.8));
+.org-yel-white-background{
+    background: -webkit-linear-gradient( top, rgba(230, 99, 41, 0.8) 50%, rgba(255, 173, 66, 0.8) 75%, rgba(255, 248, 240, 0.8) 100%);
+    background: linear-gradient( to bottom, rgba(230, 99, 41, 0.8) 50%, rgba(255, 173, 66, 0.8) 75%, rgba(255, 248, 240, 0.8) 100%);
 }
-.org-to-yel-background{
+.white-yel-org-background{
+    background: -webkit-linear-gradient( top, rgba(255, 248, 240, 0.8) 25%, rgba(255, 173, 66, 0.8) 75%, rgba(230, 99, 41, 0.8) 100%);
+    background: linear-gradient( to bottom, rgba(255, 248, 240, 0.8) 25%, rgba(255, 173, 66, 0.8) 75%, rgba(230, 99, 41, 0.8) 100%);
+}
+.org-background{
+    background-color: rgba(230, 99, 41, 0.8);
+}
+.org-yel-background{
     background: -webkit-linear-gradient(top, rgba(230, 99, 41, 0.8) 75%, rgba(255, 173, 66, 0.8) 100%);
     background: linear-gradient(to bottom, rgba(230, 99, 41, 0.8) 75%, rgba(255, 173, 66, 0.8) 100%);
 }
-.yel-to-white-background{
+.yel-white-background{
     background: -webkit-linear-gradient(top, rgba(255, 173, 66, 0.8) 50%, rgba(255, 248, 240, 0.8) 100%);
     background: linear-gradient(to bottom, rgba(255, 173, 66, 0.8) 50%, rgba(255, 248, 240, 0.8) 100%);
 }
@@ -676,15 +676,15 @@ svg{
 .white-background h1, .white-background h2, .white-background h3, .white-background h4, .white-background h5, .white-background p{
     color: rgb(0, 181, 197);
 }
-.white-to-yel-background{
-    background: -webkit-linear-gradient(top, rgba(255, 248, 240, 0.8) 0%, rgba(255, 173, 66, 0.8) 50%);
-    background: linear-gradient(to bottom, rgba(255, 248, 240, 0.8) 0%, rgba(255, 173, 66, 0.8) 50%);
+.white-yel-background{
+    background: -webkit-linear-gradient(top, rgba(255, 248, 240, 0.8) 90%, rgba(255, 173, 66, 0.8) 100%);
+    background: linear-gradient(to bottom, rgba(255, 248, 240, 0.8) 90%, rgba(255, 173, 66, 0.8) 100%);
 }
-.yel-to-org-background{
-    background: -webkit-linear-gradient(bottom, rgba(230, 99, 41, 0.8), rgba(255, 173, 66, 0.8));
-    background: linear-gradient(to top, rgba(230, 99, 41, 0.8), rgba(255, 173, 66, 0.8));
+.yel-org-background{
+    background: -webkit-linear-gradient(top, rgba(255, 173, 66, 0.8), rgba(230, 99, 41, 0.8));
+    background: linear-gradient(to bottom, rgba(255, 173, 66, 0.8), rgba(230, 99, 41, 0.8));
 }
-.org-to-trans-background{
+.org-trans-background{
     background: -webkit-linear-gradient(bottom, transparent, rgba(230, 99, 41, 0.8));
     background: linear-gradient(to top, transparent, rgba(230, 99, 41, 0.8));
 }
@@ -696,85 +696,105 @@ svg{
     display: block;
     position: relative;
     width: 100%;
-}
-#design .row .row-content{
-    padding: 6rem .5rem;
     margin: auto;
-    max-width: 960px;
+    overflow: hidden;
 }
-#design .row2 .row-content{}
+#design .row2{}
 #design .day{
+    background: url('../images/suns/BlueSunrise.svg');
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: center center;
+    background-size: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    overflow-x: hidden;
+    padding: 0;
+    width: 600px;
+    height: 600px;
+    /*end of day-content styling*/
+}
+#design .day .day-content{
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     z-index: 40;
-    background: rgba(255, 248, 240, 0.8);
     margin: 0 auto;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    width: 340px;
-    padding: 0;
-    min-height: 360px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 360px;
+    height: 360px;
     border-radius: 50%;
+    padding: 0 .5rem;
 }
-#design .day h3{
+#design .day .day-content h3{
     color: rgb(0, 181, 197);
-    font-size: 135%;
 }
-#design .day p{
+#design .day .day-content p{
     width: 100%;
     color: rgb(0, 100, 108);
     font-size: 95%;
     line-height: 115%;
-    padding-top: .3rem;
+    padding: 0;
+    padding-top: 10px;
     text-align: center;
 }
-#design .day:active, #design .day:focus{
-    -webkit-transform: scale(1.2,1.2);
-            transform: scale(1.2,1.2);
+#design .day .day-content .bee-decoration{
+    fill: black;
+    position: absolute;
+    padding: 0;
+    top: 20px;
+    right: 75px;
+    height: 47px;
 }
-/*end of day styling*/
+/*end of 'day' content*/
+#design #pm{
+    background: url('../images/suns/GoldNoonSun.svg');
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: center center;
+    background-size: cover;
+    width: 675px;
+    height: 675px;
+}
 #design #sunset h3{
     padding-top: 3rem;
 }
-@media screen and (min-width: 380px){
-    #design .row .row-content{
-        padding: 10rem 2rem;
+@media screen and (min-width: 600px){
+    #design .row{
+        padding: 1rem 0;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
     }
 }
-@media screen and (min-width: 380px){
-    #design .row2 .row-content{
+@media screen and (min-width: 600px){
+    #design .row2{
         -webkit-box-pack: end;
             -ms-flex-pack: end;
                 justify-content: flex-end;
     }
 }
 @media screen and (min-width: 380px){
-    #design .day{
-        padding: .2rem;
-        width: 360px;
-    }
-}
-@media screen and (min-width: 1200px){
-    #design .day{
-        -webkit-transform: scale(1.2,1.2);
-                transform: scale(1.2,1.2);
-    }
-}
-@media screen and (min-width: 600px){
-    #design .day{
-        margin: 0;
+    #design .day .day-content{
+        padding: 0 .2rem;
     }
 }
 /*end of #design*/
@@ -799,30 +819,35 @@ svg{
     top: 0;
 }
 #contact-us{
-    min-height: auto;
+    min-height: 45vh;
+    padding-top: 3em;
 }
 #contact-us h3{
     font-size: 3.0rem;
+    line-height: 1.1;
 }
-#contact-us em{
+#contact-us h4{
+    padding: 0;
+}
+#contact-us a{
     color: rgb(0, 187, 204);
+    font-family: 'Roboto Slab',serif;
+    letter-spacing: 5px;
 }
-#contact-us a em{}
-#contact-us a em:hover{
+#contact-us a:hover{
     color: rgb(255, 248, 240);
 }
-#contact-us a em:after{
+#contact-us a:after{
     display: block;
     content: '';
     width: 0;
-    height: 4px;
+    height: 2px;
     margin-bottom: .3rem;
     -webkit-transition: width .3s ease-out, background-color .3s ease-in, border-bottom .3s ease-in;
     transition: width .3s ease-out, background-color .3s ease-in, border-bottom .3s ease-in;
 }
-#contact-us a em:hover:after{
-    border-bottom: 2px solid rgb(255, 248, 240);
-    background-color: rgb(179, 82, 41);
+#contact-us a:hover:after{
+    background-color: rgb(255, 248, 240);
     width: 100%;
 }
 #gallery h3{
@@ -877,5 +902,40 @@ svg{
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
+    }
+}
+#about-us .container .row .us{
+    display: block;
+}
+#about-us .container .row .img{
+    display: block;
+    width: 200px;
+    margin: auto;
+    min-height: 250px;
+    border-radius: 50%;
+}
+#about-us .container .row #kristin-img{
+    /*@mixin backImage '../images/us/kas_purple_hat2.jpg', center center, 180%;*/
+    background: url('../images/us/kas_headshot2.jpg');
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: 48% -20px;
+    background-size: 320%;
+}
+#about-us .container .row #deb-img{
+    /*@mixin backImage '../images/us/deb_cool.JPG', right -30px, 250%;*/
+    /*@mixin backImage '../images/us/deb_skiing3.JPG', 0 80%,  120%;*/
+    background: url('../images/us/deb_waterfall2.jpg');
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: 20% 100%;
+    background-size: 130%;
+    /*@mixin backImage '../images/us/deb_w_coffee.jpg', 60% center,  180%;*/
+    /*@mixin backImage '../images/us/deb3.jpg', 40% center,  100%;*/
+}
+@media screen and (min-width: 600px){
+    #about-us .container .row{
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
     }
 }

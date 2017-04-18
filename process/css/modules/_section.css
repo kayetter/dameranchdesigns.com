@@ -6,11 +6,16 @@
 }
 
 .container {
+  position: relative;
   width: 100%;
-  .row {
-    display: flex;
-    flex-direction: row;
-  } /*end of row*/
+    .row {
+      position: relative;
+      display: block;
+      @media $small {
+        display: flex;
+        flex-direction: row;
+      }
+    } /*end of row*/
 } /*end of container*/
 
 

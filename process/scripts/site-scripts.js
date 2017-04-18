@@ -15,14 +15,19 @@
 
         //functions called when document loads
         $(document).ready(function() {
+         winWidth = $(window).width();
 
-            if ($(window).width() < 380) {
+            if (winWidth < 380) {
                 $('.nav-elements').css('width', '75%');
-            } else if ($(window).width() > 380 && $(window).width() < 760) {
+            } else if (winWidth > 380 && winWidth < 760) {
                 textWidth($('#title p').text());
             } else {
                 width = $('#title').width();
                 $('.nav-elements').css('width', width + 'px');
+            }
+
+            if (winWidth < 600) {
+                $('.day').css('width', winWidth);
             }
 
               //gallery slide modal
@@ -152,6 +157,10 @@
                 width = $('#title h1').width();
                 $('.nav-elements').css('width', width + 'px');
             }
+
+            if (winWidth < 600) {
+                $('.day').css('width', winWidth);
+            } 
             console.log($('.nav-elements').width());
             var logoPos = $('#title-logo').position();
             var logoPosY = logoPos.top;

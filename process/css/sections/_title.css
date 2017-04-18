@@ -1,13 +1,6 @@
 /*-----------Header Styles--------------------*/
 
 
-/*.header {*/
-
-
-/*min-height: 100vh;
-  position: relative;*/
-
-
 
 #title-section {
     display: flex;
@@ -21,16 +14,6 @@
         h1 {
             color: $DRDblue;
             padding: 3rem 0 1rem;
-            font-size: 2.0rem;
-            @media $xsmall {
-              font-size: 2.5rem;
-            }
-            @media $small {
-              font-size: 2.8rem;
-            }
-            @media $medium {
-              font-size: 4.4rem;
-            }
         }
         h3 {
             padding-top: 0;

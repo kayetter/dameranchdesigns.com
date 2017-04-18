@@ -27,17 +27,23 @@ $white-background-color: color($white a(.8));
   }
 }
 
-
-.blue-background {
-    background: linear-gradient( to bottom, $yel-background-color, $white-background-color);
+.org-yel-white-background {
+    background: linear-gradient( to bottom, $org-background-color 50%, $yel-background-color 75%, $white-background-color 100%);
+}
+.white-yel-org-background {
+    background: linear-gradient( to bottom, $white-background-color 25%, $yel-background-color 75%, $org-background-color 100%);
 }
 
-.org-to-yel-background {
+.org-background {
+  background-color: $org-background-color;
+}
+
+.org-yel-background {
   background: linear-gradient(to bottom, $org-background-color 75%, $yel-background-color 100%);
 
 }
 
-.yel-to-white-background {
+.yel-white-background {
   background: linear-gradient(to bottom, $yel-background-color 50%, $white-background-color 100%);
 }
 
@@ -48,15 +54,15 @@ $white-background-color: color($white a(.8));
     }
   }
 
-.white-to-yel-background {
-  background: linear-gradient(to bottom, $white-background-color 0%, $yel-background-color 50%);
+.white-yel-background {
+  background: linear-gradient(to bottom, $white-background-color 90%, $yel-background-color 100%);
 }
 
 
-.yel-to-org-background {
-  background: linear-gradient(to top, $org-background-color, $yel-background-color);
+.yel-org-background {
+  background: linear-gradient(to bottom, $yel-background-color, $org-background-color);
 }
 
-.org-to-trans-background {
+.org-trans-background {
   background: linear-gradient(to top, transparent, $org-background-color);
 }

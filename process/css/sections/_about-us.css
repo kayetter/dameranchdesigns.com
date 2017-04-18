@@ -1,0 +1,39 @@
+#about-us {
+
+
+.container {
+  .row {
+
+    @media $small {
+      justify-content: space-around;
+    }
+
+    .us {
+      display: block;
+    }
+
+    .img {
+      display: block;
+      width: 200px;
+      margin: auto;
+      min-height: 250px;
+      border-radius: 50%;
+    }
+
+    #kristin-img {
+      /*@mixin backImage '../images/us/kas_purple_hat2.jpg', center center, 180%;*/
+      @mixin backImage '../images/us/kas_headshot2.jpg', 48% -20px , 320%;
+    }
+
+    #deb-img {
+      /*@mixin backImage '../images/us/deb_cool.JPG', right -30px, 250%;*/
+      /*@mixin backImage '../images/us/deb_skiing3.JPG', 0 80%,  120%;*/
+      @mixin backImage '../images/us/deb_waterfall2.jpg', 20% 100%,  130%;
+      /*@mixin backImage '../images/us/deb_w_coffee.jpg', 60% center,  180%;*/
+      /*@mixin backImage '../images/us/deb3.jpg', 40% center,  100%;*/
+
+    }
+  }
+
+  }
+}

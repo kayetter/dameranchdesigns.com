@@ -1,14 +1,20 @@
 #contact-us {
-  min-height: auto;
+  min-height: 45vh;
+  padding-top: 3em;
 
   h3 {
     font-size: 3.0rem;
-  }
-  em {
-    color: $brightblue;
+    line-height: 1.1;
   }
 
-  a em {
+  h4 {
+    padding: 0;
+  }
+
+  a  {
+    color: $brightblue;
+    font-family: $font-heading;
+    letter-spacing: 5px;
     &:hover {
       color: $white;
     }
@@ -16,14 +22,13 @@
       display: block;
       content: '';
       width: 0;
-      height: 4px;
+      height: 2px;
       margin-bottom: .3rem;
       transition: width .3s ease-out, background-color .3s ease-in, border-bottom .3s ease-in;
     }
 
     &:hover:after {
-      border-bottom: 2px solid $white;
-      background-color: $orangedarker;
+      background-color: $white;
       width: 100%;
     }
   }

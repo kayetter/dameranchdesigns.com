@@ -63,33 +63,33 @@
         font-weight: 500;
         margin: 0;
     }
-  
+
 
 h1 {
   @extend %heading;
-    em {
-      letter-spacing: 3px;
-      font-size: 3.0rem;
-      color: $DRDblue;
+  font-family: $font-heading;
+  letter-spacing: 5px;
+  font-size: 3.4rem;
+  color: $brightblue;
 
     @media $xsmall {
-      font-size: 4.0rem;
+      font-size: 3.8rem;
 
     }
 
     @media $small {
       font-size: 4.4rem;
-      letter-spacing: 5px;
+      letter-spacing: 6px;
     }
     @media $medium {
       font-size: 5.0rem;
       letter-spacing: 7px;
     }
     @media $large {
-      font-size: 6.0rem;
+      font-size: 5.8rem;
       letter-spacing: 9px;
     }
-    } /*end of em*/
+
   }/*end of h1*/
 
   h2 {
@@ -160,6 +160,19 @@ svg {
   font-size: 100%;
   letter-spacing: 3px;
 }
+
+.bee-svg {
+  z-index: 9999999;
+  height: 600px;
+
+  svg {
+    width: 100%;
+  }
+
+
+}
+
+
 
 .footer {
   padding: 3rem 0;
