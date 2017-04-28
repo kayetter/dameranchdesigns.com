@@ -1,22 +1,44 @@
 
 /*//styling for jquery modal to get the modal in foreground of window*/
 .blocker {
-z-index: 9999;
-@mixin backImageGradient ../images/backgrounds/desert_sand.jpg;
+z-index: 50;
+@mixin backImageGradient '../images/backgrounds/desert_flower_white_2000.jpg', $white-background-color, $yel-background-color;
+/*background-image: url('../images/backgrounds/desert_flower_white_300.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+background-position: fixed;
+  @media $small {
+    background-image: url('../images/backgrounds/desert_flower_white_600.jpg');
+
+  }
+  @media $medium {
+    background-image: url('../images/backgrounds/desert_flower_white_800.jpg');
+
+  }
+
+  @media $large {
+    background-image: url('../images/backgrounds/desert_flower_white_1000.jpg');
+
+  }
+  @media $xlarge {
+    background-image: url('../images/backgrounds/desert_flower_white_2000.jpg');
+
+  }*/
 }
 
+
+
 .modal {
-  position: fixed;
-  left: 15%;
-  top: 15%;
   background: $white;
-  max-width: 800px;
-  padding: 3rem;
+  padding: 1rem 2rem;
+  max-width: 960px;
+  z-index: -10;
+
 
   p {
     color: $bluedarker;
-    width: 95%;
-    padding: 1rem 0 0;
+    padding: 1rem 0;
+    line-height: 1.2;
 
   }
 
@@ -24,17 +46,14 @@ z-index: 9999;
     color: $DRDorange;
     font-family: $font-cursive;
     font-size: 110%;
-    text-decoration: underline;
+    cursor: pointer;
     &:hover {
-      color: $bluedark;
+      color: $sand;
     }
   }
 } /*end of jquery-modal style*/
 
-/*--style to to toggle with scrollmagic so logo sits on top*/
-.z-index {
-  z-index: 30;
-}
+
 
 
 /*===========slick carousel styles===============*/
@@ -42,7 +61,7 @@ z-index: 9999;
 /* --position carousel side buttons*/
 .slick-prev {
     left: 20px;
-    z-index: 9999; /*included to get previous button to advance*/
+    z-index: 1; /*included to get previous button to advance*/
 }
 
 .slick-next {
@@ -50,8 +69,12 @@ z-index: 9999;
 }
 
 .slick-next:before, .slick-prev:before {
+  display: none;
+  @media $small {
+    display: block;
     font-size: 30px;
     color: $DRDblue;
+  }
 }
 
 /*---styling dot buttons*/
@@ -63,4 +86,48 @@ z-index: 9999;
 .slick-dots li.slick-active button:before {
     opacity: .75;
     color: $DRDblue;
+}
+
+.slick-dots {
+  left: 0;
+}
+
+/*-------------Accordion styles-------------*/
+
+/*[data-accordion]>[data-control] = headings of accordion*/
+  /*creates the arrows at the accordion otherwise the css uses a background image and then rotates it.*/
+[data-accordion]>[data-control] {
+  border-bottom: 1px solid $DRDblue;
+    &:after {
+      content: '\25B8';
+      background-image: none;
+      color: $DRDblue;
+      font-size: 200%;
+      line-height: .7;
+    }
+    &:hover:after {
+      cursor: pointer;
+    }
+}
+
+/*the open content group*/
+[data-accordion].open{
+
+  border-bottom: 1px solid $DRDblue;
+  padding-bottom: 10px;
+
+  /*data control = h4 heading*/
+  >[data-control] {
+    border-bottom: none;
+    &:after {
+      content: '\25BE';
+      transform: none;
+    }
+  }
+}
+
+/*removes the borders on the data content*/
+[data-content]>*, [data-control] {
+  border: none;
+
 }

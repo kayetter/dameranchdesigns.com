@@ -9,27 +9,19 @@
 
   h4 {
     padding: 0;
+    font-size: 125%
   }
 
   a  {
     color: $brightblue;
     font-family: $font-heading;
     letter-spacing: 5px;
+    font-size: 3rem;
     &:hover {
-      color: $white;
-    }
-    &:after {
-      display: block;
-      content: '';
-      width: 0;
-      height: 2px;
-      margin-bottom: .3rem;
-      transition: width .3s ease-out, background-color .3s ease-in, border-bottom .3s ease-in;
+      color: $sand;
     }
 
-    &:hover:after {
-      background-color: $white;
-      width: 100%;
-    }
+  
+
   }
-}
+}/*end of contact us*/

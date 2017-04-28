@@ -7,8 +7,10 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    position: relative;
 
     #title {
+        position: relative;
         margin-top: 6rem;
 
         h1 {
@@ -39,11 +41,20 @@
             }
         }
 
-
     }
     /*end of #title*/
+    #bee-down {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+
+      #title-bee {
+        position: relative;
+        transform: rotate(150deg);
+        width: 66px;
+      }
+    }
+
 
 }
-
-
-/*end of .headerImage*/
+/*end of #title-section*/

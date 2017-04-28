@@ -1,8 +1,9 @@
+
+/*used for modal background*/
 @define-mixin backImageGradient
 $image,
-$height: 100vh,
-$grstart: $black-cvr,
-$grend: $black-cvr,
+$grstart: $white-background-color,
+$grend: $white-background-color,
 $bgPos: center center,
 $bgSize: cover {
     background: linear-gradient( to top, $grstart, $grend), url($image);
@@ -10,8 +11,6 @@ $bgSize: cover {
     background-attachment: fixed;
     background-position: $bgPos;
     background-size: $bgSize;
-    height: 100vh;
-    max-height: $height;
 }
 
 @define-mixin backImage

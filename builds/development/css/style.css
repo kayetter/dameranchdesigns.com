@@ -50,6 +50,7 @@ table{
     border-collapse: collapse;
     border-spacing: 0;
 }
+/*used for modal background*/
 /*$media-list: ($xsmall, $small, $medium, $large, $xlarge),
   $size-list: (400, 600, 800, 1000, 2000)
   $background-colors-list: (#4BC2A5, #606F40, #6648CA, #6B6022, #2F54E9),
@@ -110,6 +111,7 @@ body{
     font-weight: 300;
 }
 body .main{
+    position: relative;
     height: 100vh;
     width: 100%;
     overflow-y: scroll;
@@ -119,18 +121,13 @@ body .hidden{
     display: none;
 }
 .logo{
-    padding: 1rem 0;
-}
-.logo #logo-svg{
-    position: relative;
-    background: url(../images/logos/DRD_notag.svg) no-repeat rgb(255, 248, 240);
-    background-size: 90%;
-    background-position: center center;
     display: block;
+    position: relative;
+    padding: 1rem 0;
     width: 100px;
     height: 100px;
     margin: 0 auto;
-    border-radius: 50%;
+    z-index: 45;
 }
 h1, h2, h3, h4{
     font-family: 'Raleway',sans-serif;
@@ -144,13 +141,14 @@ h1, h2, h3, h4{
 }
 h1{
     font-family: 'Roboto Slab',serif;
-    letter-spacing: 5px;
-    font-size: 3.4rem;
+    letter-spacing: 3px;
+    font-size: 3.0rem;
     color: rgb(0, 187, 204);
 }
 @media screen and (min-width: 380px){
     h1{
-        font-size: 3.8rem;
+        font-size: 3.3rem;
+        letter-spacing: 4px;
     }
 }
 @media screen and (min-width: 600px){
@@ -218,7 +216,6 @@ p{
 }
 @media screen and (min-width: 760px){
     p{
-        width: 80%;
         margin: auto;
         font-size: 2.0rem;
     }
@@ -228,6 +225,49 @@ em{
     color: rgb(230, 99, 41);
     font-size: 120%;
 }
+a{
+    color: rgb(255, 248, 240);
+    font-size: 1.6rem;
+    /*width: 200px;*/
+    text-align: center;
+    -webkit-transition: color .3s ease-out;
+    transition: color .3s ease-out;
+    padding: 0 .4rem;
+}
+@media screen and (min-width: 380px){
+    a{
+        font-size: 2.0rem;
+    }
+}
+a:hover{
+    color: rgb(253, 227, 194);
+}
+a:after{
+    display: block;
+    content: '';
+    background-color: rgb(253, 227, 194);
+    width: 0;
+    height: 3px;
+    -webkit-transition: width .3s ease-in, background-color .3s ease-out;
+    transition: width .3s ease-in, background-color .3s ease-out;
+}
+a:hover:after{
+    content: '';
+    background-color: rgb(253, 227, 194);
+    width: 100%;
+    margin: auto;
+}
+.a-with-img{
+    display: block;
+    margin: auto;
+    /*removing the underline effect on logo hover*/
+}
+.a-with-img:hover{
+    cursor: pointer;
+}
+.a-with-img:hover:after{
+    width: 0;
+}
 svg{
     display: block;
 }
@@ -236,15 +276,14 @@ svg{
     font-size: 100%;
     letter-spacing: 3px;
 }
-.bee-svg{
-    z-index: 9999999;
-    height: 600px;
-}
-.bee-svg svg{
-    width: 100%;
-}
 .footer{
     padding: 3rem 0;
+}
+.z-45{
+    z-index: 45;
+}
+.z-999{
+    z-index: 999;
 }
 .section{
     position: relative;
@@ -257,10 +296,9 @@ svg{
     /*end of row*/
 }
 .container .row{
-    position: relative;
     display: block;
 }
-@media screen and (min-width: 600px){
+@media screen and (min-width: 760px){
     .container .row{
         display: -webkit-box;
         display: -ms-flexbox;
@@ -269,6 +307,8 @@ svg{
         -webkit-box-direction: normal;
             -ms-flex-direction: row;
                 flex-direction: row;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
     }
 }
 /*end of container*/
@@ -276,9 +316,23 @@ svg{
 .aside{
     padding: 2rem 0;
 }
-.accordion{
+.accordion-group .accordion{
     width: 100%;
-    padding: 3rem 3rem 0;
+    max-width: 700px;
+    margin: auto;
+}
+.accordion-group .accordion h4{
+    font-size: 1.8rem;
+    text-align: left;
+    color: rgb(204, 116, 0);
+}
+.accordion-group .accordion p{
+    padding: 10px 10px 0;
+    line-height: 1.2;
+    font-size: 1.8rem;
+}
+.accordion-group .accordion p:first-of-type{
+    padding-top: 0;
 }
 /* Icons */
 @font-face{
@@ -416,56 +470,75 @@ svg{
 }
 /*//styling for jquery modal to get the modal in foreground of window*/
 .blocker{
-    z-index: 9999;
-    background: -webkit-linear-gradient( bottom, rgba(0,0,0,.5), rgba(0,0,0,.5)), url(../images/backgrounds/desert_sand.jpg);
-    background: linear-gradient( to top, rgba(0,0,0,.5), rgba(0,0,0,.5)), url(../images/backgrounds/desert_sand.jpg);
+    z-index: 50;
+    background: -webkit-linear-gradient( bottom, rgba(255, 248, 240, 0.8), rgba(255, 173, 66, 0.8)), url('../images/backgrounds/desert_flower_white_2000.jpg');
+    background: linear-gradient( to top, rgba(255, 248, 240, 0.8), rgba(255, 173, 66, 0.8)), url('../images/backgrounds/desert_flower_white_2000.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
-    height: 100vh;
-    max-height: 100vh;
+    /*background-image: url('../images/backgrounds/desert_flower_white_300.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+background-position: fixed;
+  @media $small {
+    background-image: url('../images/backgrounds/desert_flower_white_600.jpg');
+
+  }
+  @media $medium {
+    background-image: url('../images/backgrounds/desert_flower_white_800.jpg');
+
+  }
+
+  @media $large {
+    background-image: url('../images/backgrounds/desert_flower_white_1000.jpg');
+
+  }
+  @media $xlarge {
+    background-image: url('../images/backgrounds/desert_flower_white_2000.jpg');
+
+  }*/
 }
 .modal{
-    position: fixed;
-    left: 15%;
-    top: 15%;
     background: rgb(255, 248, 240);
-    max-width: 800px;
-    padding: 3rem;
+    padding: 1rem 2rem;
+    max-width: 960px;
+    z-index: -10;
 }
 .modal p{
     color: rgb(0, 164, 179);
-    width: 95%;
-    padding: 1rem 0 0;
+    padding: 1rem 0;
+    line-height: 1.2;
 }
 .modal a{
     color: rgb(230, 99, 41);
     font-family: 'Dancing Script',cursive;
     font-size: 110%;
-    text-decoration: underline;
+    cursor: pointer;
 }
 .modal a:hover{
-    color: rgb(0, 100, 108);
+    color: rgb(253, 227, 194);
 }
 /*end of jquery-modal style*/
-/*--style to to toggle with scrollmagic so logo sits on top*/
-.z-index{
-    z-index: 30;
-}
 /*===========slick carousel styles===============*/
 /* --position carousel side buttons*/
 .slick-prev{
     left: 20px;
-    z-index: 9999;
+    z-index: 1;
     /*included to get previous button to advance*/
 }
 .slick-next{
     right: 20px;
 }
 .slick-next:before, .slick-prev:before{
-    font-size: 30px;
-    color: rgb(0, 181, 197);
+    display: none;
+}
+@media screen and (min-width: 600px){
+    .slick-next:before, .slick-prev:before{
+        display: block;
+        font-size: 30px;
+        color: rgb(0, 181, 197);
+    }
 }
 /*---styling dot buttons*/
 .slick-dots li button:before{
@@ -476,17 +549,188 @@ svg{
     opacity: .75;
     color: rgb(0, 181, 197);
 }
-.carousel .carousel-slide{
-    max-width: 750px;
+.slick-dots{
+    left: 0;
+}
+/*-------------Accordion styles-------------*/
+/*[data-accordion]>[data-control] = headings of accordion*/
+/*creates the arrows at the accordion otherwise the css uses a background image and then rotates it.*/
+[data-accordion]>[data-control]{
+    border-bottom: 1px solid rgb(0, 181, 197);
+}
+[data-accordion]>[data-control]:after{
+    content: '\25B8';
+    background-image: none;
+    color: rgb(0, 181, 197);
+    font-size: 200%;
+    line-height: .7;
+}
+[data-accordion]>[data-control]:hover:after{
+    cursor: pointer;
+}
+/*the open content group*/
+[data-accordion].open{
+    border-bottom: 1px solid rgb(0, 181, 197);
+    padding-bottom: 10px;
+}
+/*data control = h4 heading*/
+[data-accordion].open >[data-control]{
+    border-bottom: none;
+}
+[data-accordion].open >[data-control]:after{
+    content: '\25BE';
+    -webkit-transform: none;
+            transform: none;
+}
+/*removes the borders on the data content*/
+[data-content]>*, [data-control]{
+    border: none;
+}
+.carousel{
+    /*end of slid-div*/
+}
+.carousel .carousel-div{
+    max-width: 650px;
     margin: auto;
-    padding: 6rem;
     background: rgb(255, 248, 240);
+    padding: 1rem;
 }
-.carousel .slide img{
-    display: block;
-    width: 600px;
+.carousel #bmb-slide img{
+    padding-top: 1rem;
+}
+.carousel .slide-div{
+    margin: auto;
+    padding: 0;
+}
+.carousel .slide-div img{
+    width: 100%;
+    min-width: 300px;
+    max-width: 500px;
     margin: auto;
 }
+.carousel .slide-div img:hover{
+    cursor: pointer;
+}
+@media screen and (min-width: 600px){
+    .carousel .carousel-div{
+        padding: 3rem;
+    }
+}
+/*end of carousel-div*/
+#bee-cluster-1 .bee-1, #bee-cluster-1 .bee-2, #bee-cluster-1 .bee-3, #bee-cluster-1 .bee-4, #bee-cluster-1 .bee-5, #bee-cluster-2 .bee-1, #bee-cluster-2 .bee-2, #bee-cluster-2 .bee-3, #bee-cluster-2 .bee-4, #bee-cluster-2 .bee-5, #bee-cluster-3 .bee-1, #bee-cluster-3 .bee-2, #bee-cluster-3 .bee-3, #bee-cluster-3 .bee-4, #bee-cluster-3 .bee-5{
+    width: 60px;
+    position: absolute;
+    z-index: 1;
+}
+#bee-cluster-1 .bee-1{
+    top: 10%;
+    left: 10%;
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+}
+#bee-cluster-1 .bee-2{
+    width: 55px;
+    bottom: 30%;
+    left: 10%;
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+}
+#bee-cluster-1 .bee-3{
+    width: 25px;
+    top: 30%;
+    left: 40%;
+}
+#bee-cluster-1 .bee-4{
+    bottom: 30%;
+    right: 35%;
+    -webkit-transform: rotate(190deg);
+            transform: rotate(190deg);
+}
+#bee-cluster-1 .bee-5{
+    bottom: 0;
+    width: 55px;
+    left: 26%;
+    -webkit-transform: rotate(-40deg);
+            transform: rotate(-40deg);
+    z-index: 50;
+}
+/*end of .bee-cluster-1*/
+#bee-cluster-2{
+    margin-top: 0;
+    margin-bottom: 6rem;
+}
+#bee-cluster-2 .bee-1{
+    width: 65px;
+    top: 0;
+    left: 50%;
+    -webkit-transform: rotate(190deg);
+            transform: rotate(190deg);
+}
+#bee-cluster-2 .bee-2{
+    width: 55px;
+    top: 30%;
+    left: 10%;
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+}
+#bee-cluster-2 .bee-3{
+    width: 25px;
+    top: 30%;
+    left: 40%;
+}
+#bee-cluster-2 .bee-4{
+    bottom: 25%;
+    left: 26%;
+    -webkit-transform: rotate(-40deg);
+            transform: rotate(-40deg);
+}
+#bee-cluster-2 .bee-5{
+    top: 45%;
+    right: 30%;
+    width: 55px;
+    z-index: 50;
+}
+/*end of bee-cluster-2*/
+#bee-cluster-3{
+    display: none;
+}
+#bee-cluster-3 .bee-1{
+    top: 10%;
+    left: 10%;
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+}
+#bee-cluster-3 .bee-2{
+    width: 55px;
+    bottom: 30%;
+    left: 10%;
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+}
+#bee-cluster-3 .bee-3{
+    width: 35px;
+    top: 20%;
+    right: 20%;
+}
+#bee-cluster-3 .bee-4{
+    width: 47px;
+    bottom: 30%;
+    right: 10%;
+    -webkit-transform: rotate(190deg);
+            transform: rotate(190deg);
+}
+#bee-cluster-3 .bee-5{
+    bottom: 10px;
+    width: 45px;
+    left: 26%;
+    z-index: 50;
+}
+@media screen and (min-width: 760px){
+    #bee-cluster-3{
+        display: block;
+    }
+}
+/*end of bee-cluster-3*/
 .nav-elements{
     padding: 0;
     background: rgb(230, 99, 41);
@@ -497,56 +741,13 @@ svg{
     display: block;
     margin: 0 auto;
     text-align: center;
-    /*end of anchor tags*/
 }
 .nav-elements .nav-bar li{
     padding: 1rem;
 }
-.nav-elements .nav-bar a{
-    color: rgb(255, 248, 240);
-    width: 100%;
-    font-size: 1.6rem;
-    text-align: center;
-    -webkit-transition: .3s ease-out;
-    transition: .3s ease-out;
-    padding: 0 .4rem;
-}
-.nav-elements .nav-bar a:after{
-    display: block;
-    content: '';
-    background-color: rgb(0, 100, 108);
-    width: 0;
-    height: 3px;
-    margin-bottom: .3rem;
-    -webkit-transition: width .3s ease-out, background-color .3s ease-in;
-    transition: width .3s ease-out, background-color .3s ease-in;
-}
-.nav-elements .nav-bar a:hover{
-    color: rgb(0, 100, 108);
-}
+.nav-elements .nav-bar a{}
 .nav-elements .nav-bar a:hover:after{
-    content: '';
-    background-color: rgb(0, 100, 108);
-    width: 100%;
-}
-@media screen and (min-width: 380px){
-    .nav-elements .nav-bar{
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-pack: distribute;
-            justify-content: space-around;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-                flex-direction: row;
-        margin: 0;
-    }
-}
-@media screen and (min-width: 380px){
-    .nav-elements .nav-bar a{
-        font-size: 1.8rem;
-    }
+    width: 200px;
 }
 /*nav-elements*/
 /*-----------Header Styles--------------------*/
@@ -564,9 +765,10 @@ svg{
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    /*end of #title*/
+    position: relative;
 }
 #title-section #title{
+    position: relative;
     margin-top: 6rem;
 }
 #title-section #title h1{
@@ -586,6 +788,18 @@ svg{
     padding: 10px 0;
     font-size: 1.8rem;
 }
+/*end of #title*/
+#title-section #bee-down{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+}
+#title-section #bee-down #title-bee{
+    position: relative;
+    -webkit-transform: rotate(150deg);
+            transform: rotate(150deg);
+    width: 66px;
+}
 @media screen and (min-width: 760px){
     #title-section #title h3{
         font-size: 3.2rem;
@@ -602,8 +816,8 @@ svg{
         font-size: 2.8rem;
     }
 }
-/*end of .headerImage*/
-#background-pic{
+/*end of #title-section*/
+.background-pic{
     position: fixed;
     height: 100vh;
     width: 100%;
@@ -616,7 +830,7 @@ svg{
     background-size: cover;
 }
 @media screen and (min-width: 600px){
-    #background-pic{
+    .background-pic{
         background: url('../images/backgrounds/desert_flower_white_600.jpg');
         background-repeat: no-repeat;
         /*background-attachment: fixed;*/
@@ -625,7 +839,7 @@ svg{
     }
 }
 @media screen and (min-width: 760px){
-    #background-pic{
+    .background-pic{
         background: url('../images/backgrounds/desert_flower_white_800.jpg');
         background-repeat: no-repeat;
         /*background-attachment: fixed;*/
@@ -634,7 +848,7 @@ svg{
     }
 }
 @media screen and (min-width: 1200px){
-    #background-pic{
+    .background-pic{
         background: url('../images/backgrounds/desert_flower_white_1000.jpg');
         background-repeat: no-repeat;
         /*background-attachment: fixed;*/
@@ -643,7 +857,7 @@ svg{
     }
 }
 @media screen and (min-width: 1400px){
-    #background-pic{
+    .background-pic{
         background: url('../images/backgrounds/desert_flower_white_2000.jpg');
         background-repeat: no-repeat;
         /*background-attachment: fixed;*/
@@ -696,8 +910,8 @@ svg{
     display: block;
     position: relative;
     width: 100%;
-    margin: auto;
-    overflow: hidden;
+    margin: 0 auto;
+    padding: 3rem 0;
 }
 #design .row2{}
 #design .day{
@@ -716,10 +930,12 @@ svg{
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    overflow-x: hidden;
     padding: 0;
     width: 600px;
     height: 600px;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    z-index: 45;
     /*end of day-content styling*/
 }
 #design .day .day-content{
@@ -736,13 +952,15 @@ svg{
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    width: 360px;
+    overflow-x: visible;
+    width: 100%;
     height: 360px;
     border-radius: 50%;
-    padding: 0 .5rem;
+    padding: 0;
 }
 #design .day .day-content h3{
     color: rgb(0, 181, 197);
+    font-size: 130%;
 }
 #design .day .day-content p{
     width: 100%;
@@ -754,7 +972,6 @@ svg{
     text-align: center;
 }
 #design .day .day-content .bee-decoration{
-    fill: black;
     position: absolute;
     padding: 0;
     top: 20px;
@@ -763,20 +980,36 @@ svg{
 }
 /*end of 'day' content*/
 #design #pm{
-    background: url('../images/suns/GoldNoonSun.svg');
+    background: url('../images/suns/NoonDay.svg');
     background-repeat: no-repeat;
     /*background-attachment: fixed;*/
     background-position: center center;
     background-size: cover;
-    width: 675px;
-    height: 675px;
 }
+#design #sunset{
+    background: url('../images/suns/OrangeSunset.svg');
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: center center;
+    background-size: cover;
+    /*@mixin backImage '../images/suns/Sunset_OgradZZL.svg';*/
+}
+/*@mixin backImage '../images/suns/Sunset_OgradZZR.svg';*/
 #design #sunset h3{
-    padding-top: 3rem;
+    padding: 0;
+    line-height: 1.2;
+}
+#design .bees{
+    display: none;
+    position: relative;
+    margin-top: 6rem;
+    width: 50%;
+    -ms-flex-negative: 3;
+        flex-shrink: 3;
 }
 @media screen and (min-width: 600px){
     #design .row{
-        padding: 1rem 0;
+        padding: 3rem;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -795,29 +1028,15 @@ svg{
 @media screen and (min-width: 380px){
     #design .day .day-content{
         padding: 0 .2rem;
+        width: 360px;
+    }
+}
+@media screen and (min-width: 760px){
+    #design .bees{
+        display: block;
     }
 }
 /*end of #design*/
-#bee-right, #bee-left{
-    position: absolute;
-    z-index: 45;
-    display: none;
-}
-@media screen and (min-width: 600px){
-    #bee-right, #bee-left{
-        display: block;
-        right: 25px;
-    }
-    #bee-right svg, #bee-left svg{
-        width: 250px;
-    }
-}
-#bee-right{
-    bottom: 0;
-}
-#bee-left{
-    top: 0;
-}
 #contact-us{
     min-height: 45vh;
     padding-top: 3em;
@@ -828,60 +1047,60 @@ svg{
 }
 #contact-us h4{
     padding: 0;
+    font-size: 125%;
 }
 #contact-us a{
     color: rgb(0, 187, 204);
     font-family: 'Roboto Slab',serif;
     letter-spacing: 5px;
+    font-size: 3rem;
 }
 #contact-us a:hover{
-    color: rgb(255, 248, 240);
+    color: rgb(253, 227, 194);
 }
-#contact-us a:after{
-    display: block;
-    content: '';
-    width: 0;
-    height: 2px;
-    margin-bottom: .3rem;
-    -webkit-transition: width .3s ease-out, background-color .3s ease-in, border-bottom .3s ease-in;
-    transition: width .3s ease-out, background-color .3s ease-in, border-bottom .3s ease-in;
-}
-#contact-us a:hover:after{
-    background-color: rgb(255, 248, 240);
-    width: 100%;
-}
-#gallery h3{
-    width: 50%;
+/*end of contact us*/
+#gallery h2{
+    font-size: 3.0rem;
+    line-height: 2;
+    width: 80%;
     margin: auto;
+    font-weight: 500;
+    padding: 0;
 }
 #gallery .image img{
     max-width: 350px;
+    vertical-align: middle;
 }
+/*end of #gallery*/
+/*styling for modal. Remember this is added to body so cannot be nested within #gallery*/
 .gallery-article{
-    padding-top: 6rem;
+    position: relative;
+    padding-top: 2rem;
     width: 95%;
-    max-width: 960px;
-    /* end of galler-article styling*/
 }
 .gallery-article .container{
     padding: 0;
+    padding-bottom: 3rem;
 }
 .gallery-article .container .row{}
-.gallery-article .info-content{
-    padding-left: 2rem;
-}
-.gallery-article svg{
-    display: inline-block;
-}
-.gallery-article h4{
+.gallery-article h4, .gallery-article h2{
     width: 100%;
     letter-spacing: 3px;
+    color: rgb(0, 181, 197);
+}
+.gallery-article h3{
+    width: 50%;
+    margin: auto;
+    color: rgb(0, 181, 197);
+}
+.gallery-article #bmb-favicon{
+    width: 40px;
 }
 .gallery-article strong{
     display: inline-block;
     font-size: 90%;
-    color: rgb(230, 99, 41);
-    font-weight: bold;
+    color: rgb(0, 181, 197);
+    font-weight: 600;
     letter-spacing: 2px;
 }
 .gallery-article .image{
@@ -889,7 +1108,9 @@ svg{
 }
 .gallery-article .image img{
     display: block;
+    width: 100%;
     max-width: 400px;
+    min-width: 300px;
     margin: auto;
 }
 @media screen and (min-width: 760px){
@@ -903,10 +1124,31 @@ svg{
         display: -ms-flexbox;
         display: flex;
     }
+    .gallery-article .container .row .info-summary{
+        margin-left: 2rem;
+        margin-right: 1rem;
+    }
+    .gallery-article .container .row .info-summary p{
+        line-height: 1.4;
+    }
 }
+/* end of galler-article styling*/
 #about-us .container .row .us{
     display: block;
+    max-width: 500px;
+    padding: 2rem;
+    margin: 0 auto;
 }
+#about-us .container .row .us h3{
+    padding-bottom: 0;
+}
+#about-us .container .row .us h4{
+    padding-top: 0;
+}
+#about-us .container .row .us p{
+    padding: 1rem 0 0;
+}
+/*end of .us*/
 #about-us .container .row .img{
     display: block;
     width: 200px;
@@ -933,9 +1175,4 @@ svg{
     /*@mixin backImage '../images/us/deb_w_coffee.jpg', 60% center,  180%;*/
     /*@mixin backImage '../images/us/deb3.jpg', 40% center,  100%;*/
 }
-@media screen and (min-width: 600px){
-    #about-us .container .row{
-        -ms-flex-pack: distribute;
-            justify-content: space-around;
-    }
-}
+/*end of #about-us*/

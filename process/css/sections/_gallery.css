@@ -2,69 +2,84 @@
 
 
 
-  h3 {
-    width: 50%;
-    margin: auto;
-  }
+ h2{
+   font-size: 3.0rem;
+   line-height: 2;
+   width: 80%;
+   margin: auto;
+   font-weight: 500;
+   padding: 0;
+ }
 
   .image img {
     max-width: 350px;
+    vertical-align: middle;
   }
 
 
-}
+}/*end of #gallery*/
 
+/*styling for modal. Remember this is added to body so cannot be nested within #gallery*/
 .gallery-article {
-  padding-top: 6rem;
+  position: relative;
+  padding-top: 2rem;
   width: 95%;
-  max-width: 960px;
     .container {
       padding: 0;
+      padding-bottom: 3rem;
       .row {
         @media $medium {
           display: block;
         }
         @media $large{
           display: flex;
+          .info-summary {
+            margin-left: 2rem;
+            margin-right: 1rem;
+            p {
+              line-height: 1.4;
+            }
+          }
         }
       }
     }
 
-    .info-content {
-      padding-left: 2rem;
-    }
-
-
-
-
-    svg {
-      display: inline-block;
-    }
-
-    h4 {
+    h4, h2 {
       width: 100%;
       letter-spacing: 3px;
+      color: $DRDblue;
     }
+
+    h3 {
+      width: 50%;
+      margin: auto;
+      color: $DRDblue;
+    }
+
+    #bmb-favicon {
+      width: 40px;
+    }
+
+
 
     strong {
         display: inline-block;
         font-size: 90%;
-        color: $DRDorange;
-        font-weight: bold;
+        color: $DRDblue;
+        font-weight: 600;
         letter-spacing: 2px;
       }
-
-
-
 
 
     .image {
       padding: 1rem;
         img {
           display: block;
+          width: 100%;
           max-width: 400px;
+          min-width: 300px;
           margin: auto;
         }
     }
+  }
 /* end of galler-article styling*/
-}

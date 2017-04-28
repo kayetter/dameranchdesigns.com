@@ -4,13 +4,26 @@
 .container {
   .row {
 
-    @media $small {
-      justify-content: space-around;
-    }
-
     .us {
       display: block;
-    }
+      max-width: 500px;
+      padding: 2rem;
+      margin: 0 auto;
+
+      h3 {
+        padding-bottom: 0;
+      }
+
+      h4 {
+        padding-top: 0
+
+      }
+
+      p {
+        padding: 1rem 0 0;
+      }
+
+    }/*end of .us*/
 
     .img {
       display: block;
@@ -36,4 +49,4 @@
   }
 
   }
-}
+} /*end of #about-us*/

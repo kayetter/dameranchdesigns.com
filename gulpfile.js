@@ -116,8 +116,6 @@ gulp.task('css', function() {
 //browserify scripts
 gulp.task('script', function(){
   gulp.src(jssource + '*.js')
-  .pipe(concat('scripts.js'))
-  .on('error', gutil.log)
   .pipe(gulpif(isDev, gulp.dest(dest + 'scripts')))
   .pipe(gulpif(isProd, uglify()))
   .pipe(gulpif(isProd, gulp.dest(limbo + 'scripts')));

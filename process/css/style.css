@@ -11,6 +11,7 @@
 @import "modules/slick-theme";
 @import "modules/widgets";
 @import "modules/carousel";
+@import "modules/bee-clusters";
 @import "sections/navigation";
 @import "sections/title";
 @import "sections/backgrounds";

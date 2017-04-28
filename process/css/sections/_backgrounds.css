@@ -1,11 +1,5 @@
-$blue-background-color: color($DRDblue a(.8));
-$org-background-color: color($DRDorange a(.8));
-$yel-background-color: color($DRDyellow a(.8));
-$white-background-color: color($white a(.8));
 
-
-
-#background-pic{
+.background-pic{
   position: fixed;
   height: 100vh;
   width: 100%;
@@ -26,6 +20,8 @@ $white-background-color: color($white a(.8));
     @mixin backImage '../images/backgrounds/desert_flower_white_2000.jpg', left;
   }
 }
+
+
 
 .org-yel-white-background {
     background: linear-gradient( to bottom, $org-background-color 50%, $yel-background-color 75%, $white-background-color 100%);

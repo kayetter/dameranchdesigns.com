@@ -1,17 +1,31 @@
 .carousel {
-  .carousel-slide {
-    max-width: 750px;
+  .carousel-div {
+    max-width: 650px;
     margin: auto;
-    padding: 6rem;
     background: $white;
+    padding: 1rem;
+    @media $small {
+      padding: 3rem;
+    }
   }
 
+  #bmb-slide img {
+    padding-top: 1rem;
+  }
 
-.slide {
+.slide-div {
+  margin: auto;
+  padding: 0;
+
     img {
-      display: block;
-        width: 600px;
-        margin: auto;
+       width: 100%;
+       min-width: 300px;
+       max-width: 500px;
+       margin: auto;
+       &:hover {
+         cursor: pointer;
+         }
     }
-}
-}
+
+  }/*end of slid-div*/
+} /*end of carousel-div*/

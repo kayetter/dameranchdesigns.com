@@ -25,32 +25,29 @@
         font-size: 1.8rem;
         line-height: 160%;
         font-weight: $fwt-thin;
-  .main {
-    height: 100vh;
-    width: 100%;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-  }
+
+        .main {
+          position: relative;
+          height: 100vh;
+          width: 100%;
+          overflow-y: scroll;
+          -webkit-overflow-scrolling: touch;
+        }
 
         .hidden {
           display: none;
         }
       }
 
-.logo {
-    padding: 1rem 0;
-    #logo-svg {
-        position: relative;
-        background: url(../images/logos/DRD_notag.svg) no-repeat $white;
-        background-size: 90%;
-        background-position: center center;
-        display: block;
-        width: 100px;
-        height: 100px;
-        margin: 0 auto;
-        border-radius: 50%;
-    }
-  }
+    .logo {
+      display: block;
+      position: relative;
+      padding: 1rem 0;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+      z-index: 45;
+      }
 
 
     %heading {
@@ -68,12 +65,13 @@
 h1 {
   @extend %heading;
   font-family: $font-heading;
-  letter-spacing: 5px;
-  font-size: 3.4rem;
+  letter-spacing: 3px;
+  font-size: 3.0rem;
   color: $brightblue;
 
     @media $xsmall {
-      font-size: 3.8rem;
+      font-size: 3.3rem;
+      letter-spacing: 4px;
 
     }
 
@@ -139,7 +137,6 @@ h1 {
     padding: 1rem;
     font-size: 1.8rem;
     @media $medium {
-      width: 80%;
       margin: auto;
       font-size: 2.0rem;
     }
@@ -149,6 +146,48 @@ em {
   font-family: $font-cursive;
   color: $DRDorange;
   font-size: 120%;
+}
+
+a {
+    color: $white;
+    font-size: 1.6rem;
+    /*width: 200px;*/
+    text-align: center;
+    transition: color .3s ease-out;
+    padding: 0 .4rem;
+    @media $xsmall {
+      font-size: 2.0rem;
+    }
+    &:hover {
+        color: $sand;
+    }
+    &:after {
+        display: block;
+        content: '';
+        background-color: $sand;
+        width: 0;
+        height: 3px;
+        transition: width .3s ease-in, background-color .3s ease-out;
+    }
+
+    &:hover:after {
+        content: '';
+        background-color: $sand;
+        width: 100%;
+        margin: auto;
+    }
+}
+
+.a-with-img {
+  display: block;
+  margin: auto;
+  &:hover {
+    cursor: pointer;
+  }
+/*removing the underline effect on logo hover*/
+  &:hover:after {
+    width: 0;
+  }
 }
 
 svg {
@@ -161,19 +200,16 @@ svg {
   letter-spacing: 3px;
 }
 
-.bee-svg {
-  z-index: 9999999;
-  height: 600px;
-
-  svg {
-    width: 100%;
-  }
-
-
-}
-
 
 
 .footer {
   padding: 3rem 0;
+}
+
+.z-45 {
+  z-index: 45;
+}
+
+.z-999 {
+  z-index: 999;
 }

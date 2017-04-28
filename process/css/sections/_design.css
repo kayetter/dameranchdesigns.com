@@ -7,10 +7,10 @@
     display: block;
     position: relative;
     width: 100%;
-    margin: auto;
-    overflow: hidden;
+    margin: 0 auto;
+    padding: 3rem 0;
     @media $small{
-      padding: 1rem 0;
+      padding: 3rem;
       display: flex;
       justify-content: flex-start;
     }
@@ -27,10 +27,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    overflow-x: hidden;
     padding: 0;
     width: 600px;
     height: 600px;
+    transition: all .3s ease;
+    z-index: 45;
+
 
   .day-content {
     position: relative;
@@ -39,16 +41,19 @@
     margin: 0 auto;
     flex-direction: column;
     justify-content: center;
-    width: 360px;
+    overflow-x: visible;
+    width: 100%;
     height: 360px;
     border-radius: 50%;
-    padding: 0 .5rem;
+    padding: 0;
     @media $xsmall {
       padding: 0 .2rem;
+      width: 360px
     }
 
     h3 {
       color: $DRDblue;
+      font-size: 130%;
     }
 
     p {
@@ -62,7 +67,6 @@
     }
 
     .bee-decoration {
-      fill: black;
       position: absolute;
       padding: 0;
       top: 20px;
@@ -76,40 +80,31 @@
   } /*end of 'day' content*/
 
   #pm {
-    @mixin backImage '../images/suns/GoldNoonSun.svg';
-    width: 675px;
-    height: 675px;
+    @mixin backImage '../images/suns/NoonDay.svg';
   }
 
   #sunset {
+    @mixin backImage '../images/suns/OrangeSunset.svg';
+    /*@mixin backImage '../images/suns/Sunset_OgradZZL.svg';*/
+    /*@mixin backImage '../images/suns/Sunset_OgradZZR.svg';*/
+
       h3 {
-      padding-top: 3rem;
+      padding: 0;
+
+      line-height: 1.2;
     }
   }
-}/*end of #design*/
 
-
-  %bee {
-    position: absolute;
-    z-index: 45;
+  .bees {
     display: none;
-    @media $small {
+    @media $medium {
       display: block;
-      right: 25px;
-      svg {
-        width: 250px;
-      }
     }
+    position: relative;
+    margin-top: 6rem;
+    width: 50%;
+    flex-shrink: 3;
   }
 
 
-
-  #bee-right {
-    bottom: 0;
-    @extend %bee;
-  }
-
-  #bee-left {
-    top: 0;
-    @extend %bee;
-  }
+}/*end of #design*/

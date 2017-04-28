@@ -22,6 +22,11 @@ $orangedarker: color($DRDorange blackness(30%));
 $bluedarker: color($DRDblue blackness(30%));
 $bluedark: color($DRDblue shade(45%));
 
+$blue-background-color: color($DRDblue a(.8));
+$org-background-color: color($DRDorange a(.8));
+$yel-background-color: color($DRDyellow a(.8));
+$white-background-color: color($white a(.8));
+
 
 
 
