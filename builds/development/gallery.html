@@ -28,14 +28,14 @@
       <a class = 'a-with-img' href='index.html'><img class='logo' src='../images/logos/DRD_circle.svg'></a>
       <h2>design gallery</h2>
     </div>
-    <section class="section">
-          <article id= 'bmb-gallery'>
+    <section class="section carousel-section">
+          <article class='carousel-article' id='gallery-carousel-article'>
               <section class="carousel" id='gallery-carousel'>
                 <div class='carousel-div'>
-                  <div class='slide-div' id='bmb-slide'>
+                  <div class='slide-div' id='bmb-gallery'>
                       <img src="images/gallery/bmb_600.png" alt="">
                   </div>
-                  <div class='slide-div' id='drd-slide'>
+                  <div class='slide-div' id='drd-gallery'>
                       <img src="images/gallery/DRD_500.png" alt="">
                   </div>
                 </div>
@@ -44,9 +44,11 @@
               <!--end of gallery article-->
           </article>
           <section section class='modal-content-blocks hidden' id='gallery-modals'>
-            <article class="article gallery-article" id="bmb-gallery-article">
+
+            <!--BMB gallery modal content-->
+            <article class="article gallery-article" id="bmb-gallery-modal">
                 <header class='header'>
-                    <h2><img id='bmb-favicon' src="images/gallery/bmb-favicon.svg" alt="">
+                    <h2><img class = 'favicon' src="images/gallery/bmb-favicon.svg" alt="">
                     BodyMindBusiness</h2>
                 </header>
                 <section class='container' id="bmb-info">
@@ -96,32 +98,94 @@
                               <div class='para dynamic' id='bmb-tech-dynamic'>
                                   <p> <strong>Dynamic Content</strong> Dynamic content including menu options and carousel testimonials was created using jquery and jquery plugins: jquery-cycle, mustache and jquery UI. Users can email Deb using a prepopulated and editable email contactform. JSON data mark-up is used to easily manage testimonial content.</p>
                               </div>
-                            </div>
                               <!--end of tech details-->
+                            </div>
+                            <!--end of accordion details-->
                           </div>
-                          <!--end of accordion details-->
+                          <!--end of BMB data-accordion group-->
                       </div>
-                    <!--end of BMB modal-container section section-->
+                      <!--end of BMB-info section-->
                 </section>
-                    <!--end of BMB article-->
+                <!--end of bmb-gallery-article modal content-->
             </article>
-                    <!--end of gallery content-blocks modal section-->
+            <!--DRD gallery modal content-->
+            <article class="article gallery-article" id="drd-gallery-modal">
+                <header class='header'>
+                    <h2><img class = 'favicon' src="images/bees/BeeSideRight_white.svg" alt="bee icon right profile">
+                    Dame Ranch Designs</h2>
+                </header>
+                <section class='container' id="drd-info">
+                    <div class="row row1">
+                        <div class='image' id='drd-slide'>
+                            <a class='a-with-img' href="https://dameranchdesigns.com" title='dameranchdesigns.com'><img src="images/gallery/DRD_500.png" alt="dame ranch designs website screenshot"></a>
+                        </div>
+                        <div class='info-summary' id='bmb-info-summary'>
+                          <p><a href="https://dameranchdesigns.com" title='dameranchdesigns.com'>Dame Ranch Designs</a> webpage is a whimsical evocation of our favorite kind of lazy summer day. Working at the pace of love does not need to be slow but it sure feels good -- like the warmth of the sun on your face, the sound of nature buzzing, a whisper of a breeze and the contentment of just being in the moment and doing whatever feels inspired.</p>
+                          <p>The background represents the hues of the sun as it traverses the daytime sky overlaid on a backdrop photo that changes according to the location of the Dame Ranch. The content is minimal and wrapped in suns representing the empowerment of morning, the zenith of full-expression at mid-day and the contentment and fulfillment as the sun sets. </p>
+                        </div>
+                        <!--end of row1 div-->
+                      </div>
+                      <div data-accordion-group class='details accordion-group' id='drd-accordion'>
+                          <div data-accordion class='accordion'id="drd-logo-design">
+                            <h4 data-control>Logo Design</h4>
+                            <div data-content>
+                              <p><a href="https://dameranchdesigns.com" title='dameranchdesigns.com'>Dame Ranch Designs</a> was borne out of whimsy and free flow frequency. The logo in the form of a traditional ranch cattle brand has a "Lazy R" on its side. While the lazy R may look “’lazy” it is offering a glimpse of moving at the pace of love defying external and social expectations of a modern world. The sun rays emanating from the hump of the R inspired the rest of the design work but at its core it is an invitation to be and to know that we are at our highest service when we are creating at the pace of love.</p>
+                              <p>The bees were added to further evoke the comfort of a lazy summer day and to draw the reader’s eye down the page. Each of the suns describes a way of being and using bees became a play on the word “be” or “bee”.</p>
+                            </div>
+                          </div>
+                          <!--end of logo design block-->
+                          <div data-accordion class='accordion'id="bmb-content">
+                            <h4 data-control>Content</h4>
+                            <div data-content>
+                               <p class= >
+                                  <a href="https://dameranchdesigns.com" title='dameranchdesigns.com'>Dame Ranch Designs</a> website content is intentionally minimal. The reader is left to feel the vibration of being in that carefree moment where he or she remembers why she is here and how he serves because this is where we create in our fullest expression. </p>
+                                </p>
+                            </div>
+                          </div>
+                          <!--end of bmb-content block-->
+                          <div data-accordion class="tech accordion" id='bmb-tech'>
+                            <h4 data-control>Technical Design</h4>
+                              <div data-content>
+                                <div class='para tech-summary' id='bmb-tech-summary'>
+                                  <p><strong>Technical Summary</strong> Dame Ranch Designs is a pseudo single-page web design with only 2 linked pages to view additional details not directly related to the front-page story. The design is fully responsive to mobile formats and combines the power of HTML5, CSS3 and jquery to create a high-performance maintenance free website. Secure hypertext transfer protocol enhances security and performance.</p>
+                                  <p>Header card information is included for social media links and is unique to each page. Share buttons are included in the footer.</p>
+                                  <p>Project and builds are managed using nodejs, gulp and bower and is maintained on GitHub (https://github.com/kayetter/dameranchdesigns.com.git)</p>
+                              </div>
+                              <div class='para dynamic' id='bmb-tech-dynamic'>
+                                  <p> <strong>Dynamic Content</strong> Scrolling animation was included using ScrollMagic and TweenMax animations. Slick, jquery-modal and jquery-accordion were used for dynamic carousel content and modals in the gallery section.</p>
+                              </div>
+                              <!--end of drd tech details-->
+                            </div>
+                            <!--end of drd accordion details-->
+                          </div>
+                          <!--end of drd modal-container section section-->
+                      </div>
+                      <!--end of drd article-->
+                </section>
+                <!--end of drd gallery  modal section-->
+            </article>
+            <!--end of gallery section-->
           </section>
-          <!--end of gallery section-->
         </section>
 
-  </main>
 
-
+    <footer class="footer">
+        <div id="copyright"  role=contentinfo>
+            Copyright &copy; 2017, Dame Ranch, LLC. <br> All Rights Reserved.
+        </div>
+        <div id="legal-claims">
+            <p><a href="docs/Claim_of_Confidentiality.pdf" class="footer-anchor" title="Claim_of_Confidentiality.pdf">Claim of Confidentiality</a> <br>(aka Privacy Policy)</p>
+            <p><a href="docs/Claim_of_Respect.pdf" title="Claim_of_Respect.pdf" class="footer-anchor">Claim of Respect</a><br> (aka Terms of Use Policy)</p>
+        </div>
+        <div>
+            Website divinely inspired by:
+            <br><a href="https://dameranchdesigns.com" class="footer-anchor drd-a" ><span>dameranchdesigns.com</span></a>
+        </div>
+     </footer>
+   </main>
     <!-- script calls -->
     <script src='scripts/lib-scripts.js'></script>
     <script src='scripts/gallery.js'></script>
-
-
-
-
-
-
 </body>
 
 </html>

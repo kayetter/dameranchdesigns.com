@@ -234,13 +234,13 @@ a{
     transition: color .3s ease-out;
     padding: 0 .4rem;
 }
+a:hover, a em:hover{
+    color: rgb(253, 227, 194);
+}
 @media screen and (min-width: 380px){
     a{
         font-size: 2.0rem;
     }
-}
-a:hover{
-    color: rgb(253, 227, 194);
 }
 a:after{
     display: block;
@@ -270,11 +270,6 @@ a:hover:after{
 }
 svg{
     display: block;
-}
-.drd{
-    font-family: 'Roboto Slab',serif;
-    font-size: 100%;
-    letter-spacing: 3px;
 }
 .footer{
     padding: 3rem 0;
@@ -1059,6 +1054,10 @@ background-position: fixed;
     color: rgb(253, 227, 194);
 }
 /*end of contact us*/
+#gallery .carousel-section{
+    min-height: auto;
+    padding-bottom: 7rem;
+}
 #gallery h2{
     font-size: 3.0rem;
     line-height: 2;
@@ -1070,6 +1069,9 @@ background-position: fixed;
 #gallery .image img{
     max-width: 350px;
     vertical-align: middle;
+}
+#gallery .footer{
+    position: relative;
 }
 /*end of #gallery*/
 /*styling for modal. Remember this is added to body so cannot be nested within #gallery*/
@@ -1093,8 +1095,8 @@ background-position: fixed;
     margin: auto;
     color: rgb(0, 181, 197);
 }
-.gallery-article #bmb-favicon{
-    width: 40px;
+.gallery-article .favicon{
+    width: 25px;
 }
 .gallery-article strong{
     display: inline-block;
@@ -1110,7 +1112,7 @@ background-position: fixed;
     display: block;
     width: 100%;
     max-width: 400px;
-    min-width: 300px;
+    min-width: 250px;
     margin: auto;
 }
 @media screen and (min-width: 760px){
@@ -1130,6 +1132,11 @@ background-position: fixed;
     }
     .gallery-article .container .row .info-summary p{
         line-height: 1.4;
+    }
+}
+@media screen and (min-width: 600px){
+    .gallery-article .favicon{
+        width: 40px;
     }
 }
 /* end of galler-article styling*/
@@ -1176,3 +1183,106 @@ background-position: fixed;
     /*@mixin backImage '../images/us/deb3.jpg', 40% center,  100%;*/
 }
 /*end of #about-us*/
+#learn-more{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-top: 3rem;
+}
+.footer{
+    display: block;
+    width: 100%;
+    background: rgb(230, 99, 41);
+    padding: 1rem;
+    color: rgb(255, 248, 240);
+}
+.footer div{
+    font-size: 70%;
+    line-height: 1.4;
+    text-align: center;
+}
+.footer div p, .footer div a{
+    font-size: inherit;
+    line-height: 1.2;
+}
+.footer div .drd-a{
+    letter-spacing: 2px;
+}
+@media screen and (min-width: 760px){
+    .footer{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+    }
+    .footer p{
+        padding-top: 0;
+    }
+}
+@media screen and (min-width: 760px){
+    .footer div{
+        font-size: 80%;
+    }
+}
+@media screen and (min-width: 1200px){
+    .footer div .drd-a{
+        letter-spacing: 3px;
+    }
+}
+#worth .content{
+    max-width: 900px;
+    padding: 3rem;
+    margin: auto;
+    color: rgb(0, 181, 197);
+}
+#worth .content p{
+    color: rgb(0, 181, 197);
+    padding: 1rem;
+}
+#worth .content a{
+    color: rgb(230, 99, 41);
+}
+#worth .content a:hover, #worth .content a em:hover{
+    color: rgb(204, 116, 0);
+}
+#worth .content a:hover:after{
+    background: rgb(204, 116, 0);
+}
+#worth .content ol li{
+    counter-increment: item;
+    margin-bottom: 5px;
+    color: rgb(0, 181, 197);
+    padding-left: 25px;
+}
+#worth .content ol li strong{
+    color: rgb(0, 181, 197);
+    font-weight: 600;
+}
+#worth .content ol li:before{
+    margin-right: 10px;
+    font-family: 'Dancing Script',cursive;
+    content: counter(item);
+    background: rgb(230, 99, 41);
+    border-radius: 100%;
+    color: rgb(255, 248, 240);
+    width: 3rem;
+    text-align: center;
+    display: inline-block;
+}
+#worth .content .signature img{
+    display: inline-block;
+    width: 40px;
+}

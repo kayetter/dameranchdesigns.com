@@ -158,7 +158,7 @@ a {
     @media $xsmall {
       font-size: 2.0rem;
     }
-    &:hover {
+    &:hover, em:hover {
         color: $sand;
     }
     &:after {
@@ -193,14 +193,6 @@ a {
 svg {
   display: block;
 }
-
-.drd {
-  font-family: $font-heading;
-  font-size: 100%;
-  letter-spacing: 3px;
-}
-
-
 
 .footer {
   padding: 3rem 0;

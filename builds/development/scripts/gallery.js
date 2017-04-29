@@ -3,8 +3,12 @@
         $(document).ready(function() {
 
               //gallery slide modal
-            $('#bmb-slide').click(function(){
-              $('#bmb-gallery-article').appendTo("body").modal({fadeDuration: 300, fadeDelay: 1.5});
+            $('.slide-div').click(function(){
+              modal = $(this);
+              modalId = $(modal).attr('id');
+              modalElement = '#' + modalId + '-modal'
+              console.log(modalElement);
+              $(modalElement).appendTo("body").modal({fadeDuration: 300, fadeDelay: 1.5});
             });
 
             // slick carousel call

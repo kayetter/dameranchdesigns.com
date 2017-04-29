@@ -2,8 +2,9 @@
         function textWidth(text) {
             var calc = '<section class = "title-section" style= "height:40px">' + text + '</section>';
             $('body').append(calc);
-            $('body').find('.title-section:last').wrapInner("<p></p>");
-            var width = $('body').find('.title-section p:last').width();
+            $('body').find('.title-section:last').wrapInner("<h2></h2>");
+            $('body').find('.title-section:last h2').css('display', 'inline-block');
+            var width = $('body').find('.title-section:last h2').width();
             $('body').find('.title-section:last').remove();
             $('.nav-elements').css('width', width + 'px');
         }
@@ -14,23 +15,17 @@
         //functions called when document loads
         $(document).ready(function() {
           winWidth = $(window).width();
-           if (winWidth < 380) {
-                $('.nav-elements').css('width', '75%');
-            } else if (winWidth > 380 && winWidth < 760) {
-                textWidth($('#title p').text());
-            } else {
-                width = $('#title').width();
-                $('.nav-elements').css('width', width + 'px');
+          aboutWidth = $('.about p').width();
+
+           if (winWidth > 760) {
+                textWidth($('#learn-more h2').text());
+            } else if (winWidth < 760) {
+                $('.nav-elements').css('width', aboutWidth + 'px');
             }
 
             if (winWidth < 600) {
                 $('.day').css('width', winWidth);
             }
-
-              //gallery slide modal
-            $('#bmb-slide').click(function(){
-              $('#bmb-gallery-article').appendTo("body").modal({fadeDuration: 300, fadeDelay: 1.5});
-            });
 
 
 
@@ -71,18 +66,6 @@
                 .addTo(controller);
 
 
-            // slick carousel call
-
-            $('.carousel-slide').slick({
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              fade: true,
-              dots: true,
-              infinite: true,
-              speed: 500}
-            );
-
-
 /*===============jquery-accordion control ======================*/
             $('.accordion').accordion({
                 "transitionSpeed": 400
@@ -97,14 +80,13 @@
 
         $(window).on('resize orientationchange', (function() {
           winWidth = $(window).width();
-          if (winWidth < 380) {
-               $('.nav-elements').css('width', '75%');
-           } else if (winWidth > 380 && winWidth < 760) {
-               textWidth($('#title p').text());
-           } else {
-               width = $('#title').width();
-               $('.nav-elements').css('width', width + 'px');
-           }
+          aboutWidth = $('.about p').width();
+
+           if (winWidth > 760) {
+                textWidth($('#learn-more h2').text());
+            } else if (winWidth < 760) {
+                $('.nav-elements').css('width', aboutWidth + 'px');
+            }
 
            $('.day').css('width', '600px');
            if (winWidth < 600) {
