@@ -21,6 +21,11 @@
     vertical-align: middle;
   }
 
+  p {
+    text-align: center;
+    margin: auto;
+  }
+
   .footer {
     position: relative;
   }

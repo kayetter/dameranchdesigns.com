@@ -22,8 +22,11 @@
        min-width: 300px;
        max-width: 500px;
        margin: auto;
+       transition: all ease 1s;
+       z-index: 99;
        &:hover {
          cursor: pointer;
+         transform: scale(1.1,1.1);
          }
     }
 

@@ -602,9 +602,14 @@ background-position: fixed;
     min-width: 300px;
     max-width: 500px;
     margin: auto;
+    -webkit-transition: all ease 1s;
+    transition: all ease 1s;
+    z-index: 99;
 }
 .carousel .slide-div img:hover{
     cursor: pointer;
+    -webkit-transform: scale(1.1,1.1);
+            transform: scale(1.1,1.1);
 }
 @media screen and (min-width: 600px){
     .carousel .carousel-div{
@@ -1069,6 +1074,10 @@ background-position: fixed;
 #gallery .image img{
     max-width: 350px;
     vertical-align: middle;
+}
+#gallery p{
+    text-align: center;
+    margin: auto;
 }
 #gallery .footer{
     position: relative;

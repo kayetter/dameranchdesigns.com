@@ -46,7 +46,9 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+#other directories
 node_modules
 .tmp
 npm-debug.log
 image_tobe_processed
+documents
