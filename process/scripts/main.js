@@ -62,7 +62,6 @@
                 })
                 .setClassToggle(".class-change", "z-45")
                 .setTween(tweenLogo)
-                .addIndicators()
                 .addTo(controller);
 
 

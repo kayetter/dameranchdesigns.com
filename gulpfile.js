@@ -38,6 +38,9 @@ var gulp = require('gulp'),
     build,
     cssAssets = [
       'bower_components/slick-carousel/slick/*/*.*',
+      'bower_components/slick-carousel/slick/slick-theme.css',
+      'bower_components/slick-carousel/slick/slick.css'
+
     ];
 
 
@@ -81,7 +84,7 @@ gulp.task('bower-js', function(){
 gulp.task('cssAssets', function(){
   gulp.src(cssAssets)
     .pipe(gulp.dest(dest+'css'))
-    .pipe(gulpif(isProd, gulp.dest(limbo + 'css')));
+    .pipe(gulpif(isProd, gulp.dest(prod + 'css')));
 });
 
 //not used
