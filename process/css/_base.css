@@ -126,7 +126,6 @@ h1 {
   svg {
     display: block;
     margin: auto;
-    fill: $brightorange;
     width: 44px;
     text-align: center;
   }

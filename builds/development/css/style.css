@@ -204,7 +204,6 @@ h3{
 svg{
     display: block;
     margin: auto;
-    fill: rgb(183, 70, 21);
     width: 44px;
     text-align: center;
 }
@@ -731,6 +730,21 @@ background-position: fixed;
     }
 }
 /*end of bee-cluster-3*/
+.social-media-div{
+    padding: 3rem 0;
+}
+.social-media-div h2{
+    padding-top: 3rem;
+}
+.social-media-div .social-group{
+    text-align: center;
+    margin: auto;
+    color: rgb(255, 248, 240);
+}
+.social-media-div .social-group .social{
+    display: inline-block;
+    margin: 0 2rem;
+}
 .nav-elements{
     padding: 0;
     background: rgb(230, 99, 41);
