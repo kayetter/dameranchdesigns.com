@@ -17,7 +17,6 @@
 
     body {
         background: transparent;
-        position: relative;
         margin: 0;
         padding: 0;
         color: black;
@@ -28,9 +27,8 @@
 
         .main {
           position: relative;
-          height: 100vh;
           width: 100%;
-          overflow-y: scroll;
+          /*overflow-y: scroll;*/
           -webkit-overflow-scrolling: touch;
         }
 

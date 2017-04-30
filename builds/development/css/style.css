@@ -101,7 +101,6 @@ html{
 }
 body{
     background: transparent;
-    position: relative;
     margin: 0;
     padding: 0;
     color: black;
@@ -112,9 +111,8 @@ body{
 }
 body .main{
     position: relative;
-    height: 100vh;
     width: 100%;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
     -webkit-overflow-scrolling: touch;
 }
 body .hidden{
@@ -1099,6 +1097,7 @@ background-position: fixed;
 /*end of #gallery*/
 /*styling for modal. Remember this is added to body so cannot be nested within #gallery*/
 .gallery-article{
+    -webkit-overflow-scrolling: touch;
     position: relative;
     padding-top: 2rem;
     width: 95%;

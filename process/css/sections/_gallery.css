@@ -35,6 +35,7 @@
 
 /*styling for modal. Remember this is added to body so cannot be nested within #gallery*/
 .gallery-article {
+  -webkit-overflow-scrolling: touch;
   position: relative;
   padding-top: 2rem;
   width: 95%;
