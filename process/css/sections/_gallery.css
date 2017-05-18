@@ -35,19 +35,18 @@
 
 /*styling for modal. Remember this is added to body so cannot be nested within #gallery*/
 .gallery-article {
-  -webkit-overflow-scrolling: touch;
   position: relative;
   padding-top: 2rem;
   width: 95%;
+  color: $bluedarker;
     .container {
       padding: 0;
       padding-bottom: 3rem;
       .row {
         @media $medium {
-          display: block;
+          display: flex;
         }
         @media $large{
-          display: flex;
           .info-summary {
             margin-left: 2rem;
             margin-right: 1rem;
@@ -88,16 +87,21 @@
         letter-spacing: 2px;
       }
 
+      .picture {
+        width: 100%;
+        max-width: 300px;
+      }
+
 
     .image {
       padding: 1rem;
         img {
           display: block;
           width: 100%;
-          max-width: 400px;
+          max-width: 350px;
           min-width: 250px;
           margin: auto;
         }
     }
   }
-/* end of galler-article styling*/
+/* end of gallery-article styling*/

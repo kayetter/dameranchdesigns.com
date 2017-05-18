@@ -1,7 +1,6 @@
 %bee {
   width: 60px;
   position: absolute;
-  z-index: 1;
 }
 
 #bee-cluster-1 {
@@ -116,6 +115,5 @@
       bottom: 10px;
       width: 45px;
       left: 26%;
-      z-index: 50;
     }
 }/*end of bee-cluster-3*/

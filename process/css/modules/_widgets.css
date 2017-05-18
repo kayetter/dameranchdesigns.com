@@ -1,6 +1,7 @@
 
 /*//styling for jquery modal to get the modal in foreground of window*/
 .blocker {
+  -webkit-overflow-scrolling: touch;
 z-index: 50;
 @mixin backImageGradient '../images/backgrounds/desert_flower_white_2000.jpg', $white-background-color, $yel-background-color;
 /*background-image: url('../images/backgrounds/desert_flower_white_300.jpg');
@@ -29,6 +30,7 @@ background-position: fixed;
 
 
 .modal {
+  -webkit-overflow-scrolling: touch;
   background: $white;
   padding: 1rem 2rem;
   max-width: 960px;
@@ -51,6 +53,13 @@ background-position: fixed;
       color: $sand;
     }
   }
+
+    /*removes after underline for the close button on the modal*/
+    a.close-modal {
+     &:hover:after {
+       width: 0;
+       }
+    }
 } /*end of jquery-modal style*/
 
 

@@ -1,7 +1,7 @@
 .nav-elements {
     padding: 0;
     background: $DRDorange;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
 
     .nav-bar {
         display: block;

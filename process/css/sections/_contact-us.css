@@ -1,6 +1,5 @@
 #contact-us {
-  min-height: 45vh;
-  padding-top: 3em;
+  padding: 0 0 4%;
 
   h3 {
     font-size: 3.0rem;
@@ -21,7 +20,7 @@
       color: $sand;
     }
 
-  
+
 
   }
 }/*end of contact us*/

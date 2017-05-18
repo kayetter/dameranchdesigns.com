@@ -6,7 +6,7 @@
     color: $DRDblue;
 
     p {
-      color: $DRDblue;
+      color: $bluedarker;
       padding: 1rem;
 
     }
@@ -27,7 +27,7 @@
     ol li {
       counter-increment: item;
       margin-bottom: 5px;
-      color: $DRDblue;
+      color: $bluedarker;
       padding-left: 25px;
 
       strong {

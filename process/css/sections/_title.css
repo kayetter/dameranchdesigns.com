@@ -4,6 +4,8 @@
 
 #title-section {
     display: flex;
+    max-height: 760px;
+    height: 100vh;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;

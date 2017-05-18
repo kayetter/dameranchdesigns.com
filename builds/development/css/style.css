@@ -108,12 +108,12 @@ body{
     font-size: 1.8rem;
     line-height: 160%;
     font-weight: 300;
+    -webkit-overflow-scrolling: touch;
 }
 body .main{
     position: relative;
-    width: 100%;
-    /*overflow-y: scroll;*/
     -webkit-overflow-scrolling: touch;
+    width: 100%;
 }
 body .hidden{
     display: none;
@@ -279,8 +279,9 @@ svg{
 }
 .section{
     position: relative;
+    -webkit-overflow-scrolling: touch;
     width: 100%;
-    min-height: 100vh;
+    /*min-height: 100vh;*/
 }
 .container{
     position: relative;
@@ -462,6 +463,7 @@ svg{
 }
 /*//styling for jquery modal to get the modal in foreground of window*/
 .blocker{
+    -webkit-overflow-scrolling: touch;
     z-index: 50;
     background: -webkit-linear-gradient( bottom, rgba(255, 248, 240, 0.8), rgba(255, 173, 66, 0.8)), url('../images/backgrounds/desert_flower_white_2000.jpg');
     background: linear-gradient( to top, rgba(255, 248, 240, 0.8), rgba(255, 173, 66, 0.8)), url('../images/backgrounds/desert_flower_white_2000.jpg');
@@ -492,6 +494,7 @@ background-position: fixed;
   }*/
 }
 .modal{
+    -webkit-overflow-scrolling: touch;
     background: rgb(255, 248, 240);
     padding: 1rem 2rem;
     max-width: 960px;
@@ -510,6 +513,11 @@ background-position: fixed;
 }
 .modal a:hover{
     color: rgb(253, 227, 194);
+}
+/*removes after underline for the close button on the modal*/
+.modal a.close-modal{}
+.modal a.close-modal:hover:after{
+    width: 0;
 }
 /*end of jquery-modal style*/
 /*===========slick carousel styles===============*/
@@ -617,7 +625,6 @@ background-position: fixed;
 #bee-cluster-1 .bee-1, #bee-cluster-1 .bee-2, #bee-cluster-1 .bee-3, #bee-cluster-1 .bee-4, #bee-cluster-1 .bee-5, #bee-cluster-2 .bee-1, #bee-cluster-2 .bee-2, #bee-cluster-2 .bee-3, #bee-cluster-2 .bee-4, #bee-cluster-2 .bee-5, #bee-cluster-3 .bee-1, #bee-cluster-3 .bee-2, #bee-cluster-3 .bee-3, #bee-cluster-3 .bee-4, #bee-cluster-3 .bee-5{
     width: 60px;
     position: absolute;
-    z-index: 1;
 }
 #bee-cluster-1 .bee-1{
     top: 10%;
@@ -720,7 +727,6 @@ background-position: fixed;
     bottom: 10px;
     width: 45px;
     left: 26%;
-    z-index: 50;
 }
 @media screen and (min-width: 760px){
     #bee-cluster-3{
@@ -746,7 +752,7 @@ background-position: fixed;
 .nav-elements{
     padding: 0;
     background: rgb(230, 99, 41);
-    margin: 0 auto;
+    margin: 0 auto 2rem;
     /*nav-bar*/
 }
 .nav-elements .nav-bar{
@@ -767,6 +773,8 @@ background-position: fixed;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    max-height: 760px;
+    height: 100vh;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1050,8 +1058,7 @@ background-position: fixed;
 }
 /*end of #design*/
 #contact-us{
-    min-height: 45vh;
-    padding-top: 3em;
+    padding: 0 0 4%;
 }
 #contact-us h3{
     font-size: 3.0rem;
@@ -1097,10 +1104,10 @@ background-position: fixed;
 /*end of #gallery*/
 /*styling for modal. Remember this is added to body so cannot be nested within #gallery*/
 .gallery-article{
-    -webkit-overflow-scrolling: touch;
     position: relative;
     padding-top: 2rem;
     width: 95%;
+    color: rgb(0, 164, 179);
 }
 .gallery-article .container{
     padding: 0;
@@ -1127,27 +1134,28 @@ background-position: fixed;
     font-weight: 600;
     letter-spacing: 2px;
 }
+.gallery-article .picture{
+    width: 100%;
+    max-width: 300px;
+}
 .gallery-article .image{
     padding: 1rem;
 }
 .gallery-article .image img{
     display: block;
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
     min-width: 250px;
     margin: auto;
 }
 @media screen and (min-width: 760px){
     .gallery-article .container .row{
-        display: block;
-    }
-}
-@media screen and (min-width: 1200px){
-    .gallery-article .container .row{
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
     }
+}
+@media screen and (min-width: 1200px){
     .gallery-article .container .row .info-summary{
         margin-left: 2rem;
         margin-right: 1rem;
@@ -1161,7 +1169,7 @@ background-position: fixed;
         width: 40px;
     }
 }
-/* end of galler-article styling*/
+/* end of gallery-article styling*/
 #about-us .container .row .us{
     display: block;
     max-width: 500px;
@@ -1221,6 +1229,7 @@ background-position: fixed;
 .footer{
     display: block;
     width: 100%;
+    font-size: 80%;
     background: rgb(230, 99, 41);
     padding: 1rem;
     color: rgb(255, 248, 240);
@@ -1271,7 +1280,7 @@ background-position: fixed;
     color: rgb(0, 181, 197);
 }
 #worth .content p{
-    color: rgb(0, 181, 197);
+    color: rgb(0, 164, 179);
     padding: 1rem;
 }
 #worth .content a{
@@ -1286,7 +1295,7 @@ background-position: fixed;
 #worth .content ol li{
     counter-increment: item;
     margin-bottom: 5px;
-    color: rgb(0, 181, 197);
+    color: rgb(0, 164, 179);
     padding-left: 25px;
 }
 #worth .content ol li strong{

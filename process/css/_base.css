@@ -24,12 +24,14 @@
         font-size: 1.8rem;
         line-height: 160%;
         font-weight: $fwt-thin;
+        -webkit-overflow-scrolling: touch;
+
 
         .main {
           position: relative;
-          width: 100%;
-          /*overflow-y: scroll;*/
           -webkit-overflow-scrolling: touch;
+          width: 100%;
+
         }
 
         .hidden {
