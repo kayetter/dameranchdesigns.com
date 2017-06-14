@@ -1,0 +1,33 @@
+table {
+  width: 100%;
+
+  th {
+    background: $sand;
+    color: $bluedark;
+    font-size: 2.0rem;
+    font-weight: 700;
+  }
+
+  td {
+    line-height: .8;
+    border-top: 1px solid $white;
+    padding: 1rem;
+
+      @media $medium {
+        border-top: none;
+        line-height: normal;
+      }
+    }
+
+
+
+  .first-cell {
+    font: inherit;
+    color: black;
+    padding-left: .5rem;
+    border-right: 2px solid $white;
+  }
+  .first-cell + td {
+    padding-left: 2rem;
+  }
+}

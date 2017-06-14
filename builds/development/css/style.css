@@ -749,6 +749,164 @@ background-position: fixed;
     display: inline-block;
     margin: 0 2rem;
 }
+.form-div{
+    max-width: 760px;
+    min-width: 300px;
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    /*end form*/
+}
+.form-div .form-instruction{
+    text-align: center;
+    color: rgb(40, 149, 159);
+    font-weight: 600;
+}
+.form-div .form-instruction a{
+    color: rgb(40, 149, 159);
+    width: 60%;
+    margin: auto;
+}
+.form-div .form-instruction a:hover, .form-div .form-instruction afocus{
+    color: rgb(0, 181, 197);
+}
+.form-div .form-instruction a:after{
+    background-color: rgb(0, 181, 197);
+    /*margin: auto;*/
+}
+.form-div .form-instruction a:hover:after{
+    background-color: rgb(0, 181, 197);
+}
+/*end of form instruction*/
+.form-div .form{
+    width: 100%;
+    /*end of btn*/
+}
+.form-div .form .form-group{
+    margin-bottom: 1rem;
+}
+.form-div .form .form-group .form-control{
+    display: block;
+    width: 100%;
+    font: inherit;
+    padding: .9rem 1.1rem;
+    border-radius: 2px;
+    line-height: 1.6;
+    border: 1px solid #e6e9ec;
+}
+.form-div .form .form-group .form-control[type=checkbox]{
+    display: inline-block;
+    width: auto;
+}
+.form-div .form .form-group .form-label{
+    display: block;
+    color: rgb(40, 149, 159);
+    margin-bottom: 1rem;
+}
+.form-div .form .form-group .form-label.checkbox{
+    display: inline-block;
+}
+.form-div .form .form-group select{
+    font: inherit;
+    color: rgb(0, 181, 197);
+    padding: 1rem;
+    overflow-y: auto;
+    border: none;
+}
+.form-div .form .form-group select option{
+    padding: .5rem;
+}
+.form-div .form .form-group select .selected{
+    background: rgb(230, 99, 41);
+    color: rgb(255, 248, 240);
+}
+/*end form-group*/
+.form-div .form .flex-group{
+    display: block;
+}
+.form-div .form .flex-group div{
+    width: 100%;
+}
+.form-div .form .flex-group div label, .form-div .form .flex-group div select, .form-div .form .flex-group div option{
+    margin: auto;
+    text-align: center;
+}
+.form-div .form .btn{
+    background: transparent;
+    width: 100%;
+    line-height: 1.6;
+    font: inherit;
+    color: rgb(40, 149, 159);
+    font-weight: bold;
+    border-radius: 2px;
+    white-space: normal;
+    display: inline-block;
+    padding: .8rem 1.875rem;
+    border: 2px solid rgb(40, 149, 159);
+    cursor: pointer;
+}
+.form-div .form .btn:hover{
+    border-color: rgb(0, 181, 197);
+    color: rgb(0, 181, 197);
+}
+@media screen and (min-width: 600px){
+    .form-div .form .flex-group{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+    }
+    .form-div .form .flex-group div label{
+        text-align: left;
+    }
+}
+/*end form-div*/
+.error-div{
+    font: inherit;
+    max-width: 500px;
+    margin: auto;
+    color: rgb(230, 99, 41);
+    padding: 1rem;
+    border: 1px solid rgb(230, 99, 41);
+}
+.error-div li{
+    list-style-type: disc;
+    margin-left: 2rem;
+}
+table{
+    width: 100%;
+}
+table th{
+    background: rgb(253, 227, 194);
+    color: rgb(0, 100, 108);
+    font-size: 2.0rem;
+    font-weight: 700;
+}
+table td{
+    line-height: .8;
+    border-top: 1px solid rgb(255, 248, 240);
+    padding: 1rem;
+}
+table .first-cell{
+    font: inherit;
+    color: black;
+    padding-left: .5rem;
+    border-right: 2px solid rgb(255, 248, 240);
+}
+table .first-cell + td{
+    padding-left: 2rem;
+}
+@media screen and (min-width: 760px){
+    table td{
+        border-top: none;
+        line-height: normal;
+    }
+}
 .nav-elements{
     padding: 0;
     background: rgb(230, 99, 41);
@@ -843,7 +1001,7 @@ background-position: fixed;
     width: 100%;
     top: 0;
     z-index: -10;
-    background: url('../images/backgrounds/desert_flower_white_300.jpg');
+    background: url('../images/backgrounds/MT_deadwood_300.jpg');
     background-repeat: no-repeat;
     /*background-attachment: fixed;*/
     background-position: left;
@@ -851,7 +1009,7 @@ background-position: fixed;
 }
 @media screen and (min-width: 600px){
     .background-pic{
-        background: url('../images/backgrounds/desert_flower_white_600.jpg');
+        background: url('../images/backgrounds/MT_deadwood_600.jpg');
         background-repeat: no-repeat;
         /*background-attachment: fixed;*/
         background-position: left;
@@ -860,7 +1018,7 @@ background-position: fixed;
 }
 @media screen and (min-width: 760px){
     .background-pic{
-        background: url('../images/backgrounds/desert_flower_white_800.jpg');
+        background: url('../images/backgrounds/MT_deadwood_800.jpg');
         background-repeat: no-repeat;
         /*background-attachment: fixed;*/
         background-position: left;
@@ -869,7 +1027,7 @@ background-position: fixed;
 }
 @media screen and (min-width: 1200px){
     .background-pic{
-        background: url('../images/backgrounds/desert_flower_white_1000.jpg');
+        background: url('../images/backgrounds/MT_deadwood_1000.jpg');
         background-repeat: no-repeat;
         /*background-attachment: fixed;*/
         background-position: left;
@@ -878,7 +1036,7 @@ background-position: fixed;
 }
 @media screen and (min-width: 1400px){
     .background-pic{
-        background: url('../images/backgrounds/desert_flower_white_2000.jpg');
+        background: url('../images/backgrounds/MT_deadwood_2000.jpg');
         background-repeat: no-repeat;
         /*background-attachment: fixed;*/
         background-position: left;
@@ -1317,3 +1475,50 @@ background-position: fixed;
     display: inline-block;
     width: 40px;
 }
+#login{
+    padding-bottom: 2rem;
+}
+.client-section .title{
+    clear: both;
+}
+.client-section .title .logo{
+    padding-top: 0;
+}
+.logout{
+    float: right;
+    padding: 1rem 1rem 0;
+}
+.logout a{
+    display: block;
+}
+.client-output{
+    margin: 0 auto 2rem;
+    width: 100%;
+    max-width: 80%;
+}
+.client-output a{
+    display: block;
+    text-align: left;
+    color: rgb(0, 100, 108);
+    text-decoration: underline;
+}
+.client-output a:hover{
+    color: rgb(0, 181, 197);
+}
+.client-output a:after{
+    height: 0;
+}
+@media screen and (min-width: 760px){
+    .client-output a{
+        display: inline-block;
+    }
+}
+#view-website a{
+    padding: .5rem 1rem;
+}
+#create-user #create-user-div{
+    max-width: 95%;
+    width: 100%;
+    min-width: 320px;
+}
+/*end of #create-user*/

@@ -13,6 +13,8 @@
 @import "modules/carousel";
 @import "modules/bee-clusters";
 @import "modules/social";
+@import "modules/form";
+@import "modules/table";
 @import "sections/navigation";
 @import "sections/title";
 @import "sections/backgrounds";
@@ -23,3 +25,5 @@
 @import "sections/learn-more";
 @import "sections/footer";
 @import "sections/worth";
+@import "sections/login";
+@import "sections/client";

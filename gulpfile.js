@@ -133,9 +133,9 @@ gulp.task('jsConcat', function(){
 
 //PRODUCTION TASKS
 
-//move .html files to production folder
+//move .html and .php files to production folder
 gulp.task('moveHTML', function() {
-    gulp.src(dest + '*.html')
+    gulp.src(dest + '*.{html, php}')
     .pipe(gulpif(isProd,
       gulp.dest(limbo)));
 });
@@ -161,7 +161,7 @@ gulp.task('jsonminify', function () {
 // make versions of images using gulp-image-resize not in watch list.
 var resizeImageTasks = [];
 
-[400,600,800,1000,2000].forEach(function(size) {
+[300,400,600,800,1000,2000].forEach(function(size) {
   var resizeImageTask = 'resize_' + size;
   gulp.task(resizeImageTask, function() {
     return gulp.src('builds/development/image_tobe_processed/**/*.{jpg,jpeg,png}')
@@ -253,6 +253,8 @@ gulp.task('revcss', ['revreplace'], function(){
 gulp.task('webserver', function() {
    gulp.src(build)
    .pipe(webserver({
+            host: "drd.dev",
+            port: "",
             livereload: true,
             open: true
         }));

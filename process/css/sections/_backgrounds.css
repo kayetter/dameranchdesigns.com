@@ -5,19 +5,19 @@
   width: 100%;
   top: 0;
   z-index: -10;
-  @mixin backImage '../images/backgrounds/desert_flower_white_300.jpg', left;
+  @mixin backImage '../images/backgrounds/MT_deadwood_300.jpg', left;
   @media $small {
-    @mixin backImage '../images/backgrounds/desert_flower_white_600.jpg', left;
+    @mixin backImage '../images/backgrounds/MT_deadwood_600.jpg', left;
   }
   @media $medium {
-    @mixin backImage '../images/backgrounds/desert_flower_white_800.jpg', left;
+    @mixin backImage '../images/backgrounds/MT_deadwood_800.jpg', left;
   }
 
   @media $large {
-    @mixin backImage '../images/backgrounds/desert_flower_white_1000.jpg', left;
+    @mixin backImage '../images/backgrounds/MT_deadwood_1000.jpg', left;
   }
   @media $xlarge {
-    @mixin backImage '../images/backgrounds/desert_flower_white_2000.jpg', left;
+    @mixin backImage '../images/backgrounds/MT_deadwood_2000.jpg', left;
   }
 }
 

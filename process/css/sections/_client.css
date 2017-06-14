@@ -1,0 +1,55 @@
+.client-section {
+  .title {
+    clear: both;
+    .logo {
+      padding-top: 0;
+    }
+  }
+}
+
+.logout {
+  float: right;
+  padding: 1rem 1rem 0;
+  a {
+    display: block;
+  }
+}
+
+.client-output {
+  margin: 0 auto 2rem;
+  width: 100%;
+  max-width: 80%;
+
+  a {
+    display: block;
+    @media $medium {
+      display: inline-block;
+    }
+    text-align: left;
+    color: $bluedark;
+    text-decoration: underline;
+    &:hover {
+      color: $DRDblue;
+      }
+    &:after {
+      height: 0;
+    }
+  }
+}
+
+#view-website {
+  a {
+    padding: .5rem 1rem;
+  }
+}
+
+#create-user {
+
+#create-user-div {
+  max-width: 95%;
+  width: 100%;
+  min-width: 320px;
+
+  
+  }
+}/*end of #create-user*/
