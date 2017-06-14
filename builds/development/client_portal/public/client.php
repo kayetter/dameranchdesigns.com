@@ -83,7 +83,7 @@ $role = ucwords($user_role["role_name"]);
           </div>
 
         </section>
-            <?php } ?>
+
         <section class = "client-section" id="website-admin">
           <h3>Manage Websites</h3>
           <?php
@@ -121,8 +121,18 @@ $role = ucwords($user_role["role_name"]);
             <h3><a href="create_url.php">+Add New Website</a></h3>
           </div>
         </section>
+        <?php } ?>
         <?php if($role_id == 2){ ?>
         <section class="client-section" id="view-website">
+          <div>
+            <?php If(!empty($message)) { ?>
+            <?php   if (!empty($message)) {
+            echo "<div class ='error-div white-background'>" . htmlentities($message) . "</div>";
+            $message = null; $_SESSION["message"] = null;
+              }; ?>
+          </div>
+          <?php } ?>
+          </div>
            <h3>View Your Websites</h3>
            <?php
              $url_set = find_websites_by_user($user_id);
@@ -142,16 +152,7 @@ $role = ucwords($user_role["role_name"]);
              } else {
                echo "<h3>There are no users</h3>";
              } ?>
+             <h3><a href='update_client_profile.php?user_id=<?php echo $user_id ?>'>Update your profile</a></h3>
        </section>
-       <?php } ?>
-        <pre>
-        <?php
-        print_r($_SESSION);
-        print_r($_COOKIE);
-        print_r($user_record);
-        print_r($url);
-
-         ?>
-      </pre>
 
         <?php include("../layouts/footer.php") ?>

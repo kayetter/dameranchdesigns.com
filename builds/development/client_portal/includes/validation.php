@@ -79,7 +79,6 @@ function user_not_in_set(){
 
 }
 
-
 function field_has_no_whitespace($fields_with_no_whitespace){
   global $errors;
     // Expects an assoc. array
@@ -91,7 +90,15 @@ function field_has_no_whitespace($fields_with_no_whitespace){
   }
 }
 
-
+function fields_are_equal($value1, $value2){
+  global $errors;
+	// Expects an assoc. array
+	 $comp1 = trim($_POST[$value1]);
+   $comp2 = trim($_POST[$value2]);
+    if($comp1 != $comp2){
+      $errors["new password confirm"] = "password fields are not equal";
+    }
+}
 
 
 

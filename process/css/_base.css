@@ -62,7 +62,7 @@
     }
 
 
-h1 {
+h1, h1 a{
   @extend %heading;
   font-family: $font-heading;
   letter-spacing: 3px;
@@ -90,7 +90,7 @@ h1 {
 
   }/*end of h1*/
 
-  h2 {
+  h2, h2 a {
     @extend %heading;
     letter-spacing: 3px;
     font-size: 2.0rem;
@@ -106,7 +106,7 @@ h1 {
 
   }/*end h2*/
 
-  h3 {
+  h3, h3 a {
     @extend %heading;
     letter-spacing: normal;
     font-size: 1.8rem;
@@ -119,7 +119,7 @@ h1 {
     }
   }
 
-  h4 {
+  h4, h4 a {
     @extend %heading;
   }
 
