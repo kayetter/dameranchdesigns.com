@@ -62,7 +62,7 @@
     }
 
 
-h1, h1 a{
+h1 {
   @extend %heading;
   font-family: $font-heading;
   letter-spacing: 3px;
@@ -90,7 +90,7 @@ h1, h1 a{
 
   }/*end of h1*/
 
-  h2, h2 a {
+  h2 {
     @extend %heading;
     letter-spacing: 3px;
     font-size: 2.0rem;
@@ -106,7 +106,7 @@ h1, h1 a{
 
   }/*end h2*/
 
-  h3, h3 a {
+  h3 {
     @extend %heading;
     letter-spacing: normal;
     font-size: 1.8rem;
@@ -114,12 +114,12 @@ h1, h1 a{
     @media $xsmall {
       font-size: 2.0rem;
     }
-    @media $small {
+    @media $medium {
       font-size: 2.4rem;
     }
   }
 
-  h4, h4 a {
+  h4 {
     @extend %heading;
   }
 
@@ -187,6 +187,10 @@ a {
   &:hover:after {
     width: 0;
   }
+}
+
+.main {
+  min-height: 100vh;
 }
 
 svg {

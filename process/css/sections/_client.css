@@ -1,4 +1,7 @@
+
+
 .client-section {
+
   .title {
     clear: both;
     .logo {
@@ -38,6 +41,7 @@
 }
 
 #view-website {
+  margin-bottom: 4.5rem;
   a {
     padding: .5rem 1rem;
   }
@@ -50,6 +54,6 @@
   width: 100%;
   min-width: 320px;
 
-  
+
   }
 }/*end of #create-user*/

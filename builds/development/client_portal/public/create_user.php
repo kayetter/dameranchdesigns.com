@@ -2,7 +2,7 @@
 <?php require_once("../includes/db_connection.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php require_once("../includes/validation.php"); ?>
-<?php confirm_admin_login() ?>
+<?php confirm_login() ?>
 
 <?php
 $username = "";

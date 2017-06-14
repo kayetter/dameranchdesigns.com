@@ -249,23 +249,11 @@ function authenticate_user($username, $password){
 
 function logged_in(){
   return isset($_SESSION["user_id"]);
-  }
-function admin(){
-  return isset($_SESSION["role_id"]);
 }
 
 function confirm_login() {
    if(!logged_in()){
     redirect_to("login.php"); }
-}
-
-function confirm_admin_login(){
-  if(!logged_in()){
-   redirect_to("login.php");
- }
- if(admin()!=1){
-   redirect_to("login.php");
- }
 }
 
 

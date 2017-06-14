@@ -93,13 +93,6 @@
         }
       }
      }
-
-     .password-group {
-       border: 2px solid $bluedarker;
-       width: 95%;
-       padding: 1rem;
-       margin: 2rem auto;
-     }
     .btn {
     background: transparent;
     width: 100%;
