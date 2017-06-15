@@ -2,9 +2,9 @@
   // 1. Create a database connection
 
   define('DB_SERVER', 'localhost' );
-  define('DB_USER', 'root');
-  define('DB_PASS', '');
-  define('DB_NAME', 'drdclient');
+  define('DB_USER', 'kayetter_admin');
+  define('DB_PASS', 'a2D^^,9D8BBb');
+  define('DB_NAME', 'kayetter_drdclient');
 
   $connection = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
   // Test if connection succeeded
