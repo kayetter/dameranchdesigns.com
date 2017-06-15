@@ -41,7 +41,7 @@ if(isset($_POST["submit"])) {
     //if attempt = false then need to verify username and password
   $username = $_POST["username"];
   $password = $_POST["password"];
-    if(!($_POST["remember_me"])){
+    if(isset($_POST["remember_me"])){
        $remember_me = true;
     } else {$remember_me = false;}
 

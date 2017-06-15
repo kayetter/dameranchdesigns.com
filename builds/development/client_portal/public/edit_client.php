@@ -179,9 +179,8 @@ if(!empty($_POST["password"])){
           <div class="form-group" id="url-group">
             <label id="url-label" class="form-label" for="url">Select website access:</label>
             <select size="6" class="form-options" id='url' name="urls[]" multiple>
-              <?php $url_set = find_all_websites();
+              <?php $url_set = find_all_websites(1);
               if(!empty($url_set)){
-                $all_websites = website_id_array();
                       $output = "";
                     while($url = mysqli_fetch_assoc($url_set)) {
                       $output .= "<option value='";

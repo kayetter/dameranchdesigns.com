@@ -155,5 +155,8 @@ $role = ucwords($user_role["role_name"]);
              <h3><a href='update_client_profile.php?user_id=<?php echo $user_id ?>'>Update your profile</a></h3>
        </section>
        <?php } ?>
+       <pre>
+         
+       </pre>
 
         <?php include("../layouts/footer.php") ?>
