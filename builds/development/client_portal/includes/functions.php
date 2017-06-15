@@ -323,10 +323,10 @@ function delete_user($user_id){
     $result2 = delete($user_id, "user");
       if($result2 && mysqli_affected_rows($connection) >= 1){
       $_SESSION["message"] = "delete was successful";
-        redirect_to("client.php");
+        redirect_to("client.php#user-admin");
       } else {
       $_SESSION["message"] = "database could not delete record";
-      redirect_to("client.php");
+      redirect_to("client.php#user-admin");
       }
 }
 
@@ -336,10 +336,10 @@ function delete_url($url_id){
     $result2 = delete($url_id, "url");
       if($result2 && mysqli_affected_rows($connection) >= 1){
       $_SESSION["message"] = "delete was successful";
-        redirect_to("client.php");
+        redirect_to("client.php#website-admin");
       } else {
       $_SESSION["message"] = "database could not delete record";
-      redirect_to("client.php");
+      redirect_to("client.php#website-admin");
       }
 }
 
@@ -388,6 +388,7 @@ function website_id_array($active_only){
 //is the array an array of urls or users? need to know which way to make association. $array_type is either user or url
 function create_user_url_assoc($id, $array, $array_type) {
   global $connection;
+  $num_rows = 0;
   if($array_type == 'url'){
     $col1 = 'url_id';
     $col2 = 'user_id';
@@ -397,11 +398,11 @@ function create_user_url_assoc($id, $array, $array_type) {
   }
   foreach($array as $array_field){
     $query = "INSERT into user_url ($col1, $col2) VALUES ($array_field, {$id})";
-
     $result = mysqli_query($connection, $query);
+    $num_rows += mysqli_affected_rows($connection);
     confirm_query_query($result, $query);
   }
-  return $result;
+  return $num_rows;
 }
 
 
@@ -423,6 +424,21 @@ function find_websites_by_user($user_id){
   $query .= "WHERE u.url_id = uu.url_id AND ";
   $query .= "uu.user_id = {$user_id} ";
   $query .= "order by url_name asc";
+  $result = mysqli_query($connection, $query);
+  confirm_query_query($result, $query);
+  if($result){
+    return $result;
+  } else {
+    return null;
+  }
+}
+
+function find_users_by_url($url_id){
+  global $connection;
+  $query = "Select u.* from user u, user_url uu ";
+  $query .= "WHERE u.user_id = uu.user_id AND ";
+  $query .= "uu.url_id = {$url_id} ";
+  $query .= "order by username asc";
   $result = mysqli_query($connection, $query);
   confirm_query_query($result, $query);
   if($result){

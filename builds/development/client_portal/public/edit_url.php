@@ -48,7 +48,7 @@ $url = mysql_prep($_POST["url"]);
       if($result && mysqli_affected_rows($connection)) {
 
         $_SESSION["message"] = "URL updated";
-        redirect_to("client.php");
+        redirect_to("client.php#website-admin");
       } else {
         $message = "URL update failed";
       }
@@ -108,14 +108,34 @@ $url = mysql_prep($_POST["url"]);
         <p class="form-instruction" style="margin-top: 2rem;"><a href="client.php" style="width: auto;">Cancel</a></p>
       </form>
     </div>
+    <div class="client-output white-background" id="user-url-list">
+      <h3>Users associated with this website</h3>
+
+        <?php
+        $user_set = find_users_by_url($current_url_id);
+        if(!empty($user_set)){
+          $output = "<ul>";
+          while ($user = mysqli_fetch_assoc($user_set)){
+            $role = ($user["role_id"] == 1 ? "Admin":"Client");
+            $output .= "<li>";
+            $output .= $user["username"];
+            $output .= " (";
+            $output .= $role;
+            $output .= ")</li>";
+          }
+          $output .= "</ul>";
+          echo $output;
+
+          }
+
+
+         ?>
+      </ul>
+
+    </div>
   </div>
 </section>
-      <pre>
-        <?php
-        print_r($_SESSION);
-        print_r($url_record);
-         ?>
-      </pre>
+
 </main>
 
 <?php include("../layouts/footer.php") ?>

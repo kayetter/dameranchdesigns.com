@@ -7,7 +7,8 @@
 <?php
 $urlname = "";
 $url = "";
-$users = array();
+$client_users = array();
+$admin_users = user_array_by_role(0,1);
 
 
 if(isset($_POST['submit'])){
@@ -15,12 +16,9 @@ if(isset($_POST['submit'])){
 
 $url_name = mysql_prep($_POST["url_name"]);
 $url = mysql_prep($_POST["url"]);
-$client_users = ($_POST["users"]);
-$admin_users = user_array_by_role(0,1);
-
-
-
-
+if(!empty($_POST["users"])){
+  $client_users = ($_POST["users"]);
+}
   //validations
   $required_fields = array("url", "url_name");
 	validate_presences($required_fields);
@@ -34,7 +32,6 @@ $admin_users = user_array_by_role(0,1);
 
   //if errors is not empty redirect to new_subject page
   if(empty($errors)){
-
     $query = "INSERT into url (";
     $query .= "url_name, url";
     $query .= ") values (";
@@ -45,30 +42,42 @@ $admin_users = user_array_by_role(0,1);
       confirm_query_query($connection, $query);
       $new_url_id = mysqli_insert_id($connection);
 
+        if($result && mysqli_affected_rows($connection)>=0) {
+          $_SESSION["message"] = "URL updated";
+        }
+        else {
+          $message = "URL update failed";
+        }
+      //create associations with users
+        if(!empty($client_users)||!empty($admin_users)){
+          //create association with client users
+          if(!empty($client_users)){
+            $num_rows = create_user_url_assoc($new_url_id, $client_users, "user");
+              if($num_rows >= 0){
+              $_SESSION["message"] .= ", and {$num_rows}  client associations created";
+              }
+          }//end of client associations
+          //create admin_users
+          $num_rows = create_user_url_assoc($new_url_id, $admin_users, "user");
 
-      if($result && mysqli_affected_rows($connection)) {
+            if($num_rows >= 0){
+              $_SESSION["message"] .= ", and {$num_rows} admin association created";
+              $_session["urls"] = $urls;
+              redirect_to("client.php");
+            } //end of admin association conditioal
+              else {
+                $message .= "could not create user-url assoc";
+              }
+          } //end of association conditional
 
-        $_SESSION["message"] = "URL updated";
+          else {
+            $message .= ", and there are no users to create associations. Check to make sure there is at least one admin user";
+          }
 
-      } else {
-        $message = "URL update failed";
-      }
-      //create association with client users
-      $assoc_result1 = create_user_url_assoc($new_url_id, $client_users, "user");
-      $assoc_result2 = create_user_url_assoc($new_url_id, $admin_users, "user");
-      if($assoc_result1 && $assoc_result2 && mysqli_affected_rows($connection) > 0){
-        $_SESSION["message"] .= ", and user-url association created";
-        $_session["urls"] = $urls;
-        redirect_to("client.php");
-
-      } else {
-        $message .= "could not create user-url assoc";
-      }
-
-    }
-  } else {
+    } // end of errors conditional
+  } //end of post conditional
+  else {
   //probably a GET request
-
 }
 
  ?>
@@ -147,13 +156,6 @@ $admin_users = user_array_by_role(0,1);
         </div>
       </section>
 
-
-      <pre>
-        <?php
-        print_r($_SESSION);
-        print_r($user_set);
-         ?>
-      </pre>
     </main>
 
     <?php include("../layouts/footer.php") ?>

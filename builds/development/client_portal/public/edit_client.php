@@ -28,7 +28,7 @@ $role_id = (int) $_POST["role_id"];
 if($_POST["role_id"]==2){
   $urls = $_POST["urls"];
 } elseif($_POST["role_id"]==1){
-$urls = website_id_array();
+$urls = website_id_array(0);
 }
 if(!empty($_POST["password"])){
   $password = mysql_prep($_POST['password']);
@@ -93,7 +93,7 @@ if(!empty($_POST["password"])){
         } else {
           $message .=", user url's COULD NOT be deleted";
         }
-        $result2 = create_user_url_assoc($new_user_id, $urls, "url");
+        $result2 = create_user_url_assoc($user_id, $urls, "url");
           if($result2&& mysqli_affected_rows($connection))
           {
             $_SESSION["message"] .=", user url's associated";
@@ -206,9 +206,7 @@ if(!empty($_POST["password"])){
       </form>
     </div>
   </div>
-      <pre>
 
-      </pre>
 </main>
 <script>
 if($('#user-role').val() == 2) {

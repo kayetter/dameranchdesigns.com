@@ -15,18 +15,22 @@
 //if cookie is set, user is assumed to be logged in and authentication is not performed
 if(isset($_COOKIE["user_id"])){
   $user_id = $_COOKIE["user_id"];
-  $user_record = find_user_by_id($_COOKIE["user_id"]);
+  $user_record = find_user_by_id($user_id);
   $username = $user_record["username"];
+  $role_id = $user_record["role_id"];
   $password = "rememberme";
   $remember_me = true;
   $attempt_login = true;
 }
 
 if(isset($_POST["submit"])) {
+  //attempt login = true would mean that there was a cookie set from checking remember me so we will bypass login
   if($attempt_login){
     $_SESSION["user_id"] = $user_id;
     $_SESSION["username"] = $username;
+    $_SESSION["role_id"] = $role_id;
 
+    //set cookie if remember is true
     if($remember_me==true){
       setcookie("user_id", $attempt_login["user_id"], time()+3600,"/client_portal/");
     } elseif (!$remember_me){
@@ -34,9 +38,10 @@ if(isset($_POST["submit"])) {
       }
     redirect_to("client.php");
   } else {
+    //if attempt = false then need to verify username and password
   $username = $_POST["username"];
   $password = $_POST["password"];
-    if(isset($_POST["remember_me"])){
+    if(!($_POST["remember_me"])){
        $remember_me = true;
     } else {$remember_me = false;}
 
@@ -49,12 +54,14 @@ if(isset($_POST["submit"])) {
         $attempt_login = authenticate_user($username, $password);
         $user_id = $attempt_login["user_id"];
         $username = $attempt_login["username"];
+        $role_id = $attempt_login["role_id"];
       }
     }
 
     if($attempt_login) {
       $_SESSION["user_id"] = $user_id;
       $_SESSION["username"] = $username;
+      $_SESSION["role_id"] = $role_id;
       if($remember_me){
         setcookie("user_id", $user_id, time()+3600,"/client_portal/");
       } elseif (!$remember_me){
