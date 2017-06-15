@@ -32,6 +32,7 @@ var gulp = require('gulp'),
     jssource = ['process/scripts/'],
     dest = 'builds/development/',
     prod = 'builds/production/',
+    other_assets = ['builds/development/client_portal/**/*.*'],
     isProd,
     isDev,
     limbo = 'process/limbo/',
@@ -54,8 +55,10 @@ isDev = env === 'development';
 //variable changes in different environments
 if (isDev) {
     build = dest;
+    host = "drd.dev";
 } else {
     build = prod;
+    host = "drd.prod";
 }
 
 
@@ -135,7 +138,7 @@ gulp.task('jsConcat', function(){
 
 //move .html and .php files to production folder
 gulp.task('moveHTML', function() {
-    gulp.src(dest + '*.{html, php}')
+    gulp.src(dest + '**/*.{html, php}')
     .pipe(gulpif(isProd,
       gulp.dest(limbo)));
 });
@@ -147,9 +150,15 @@ gulp.task('moveImages', function(){
     gulp.dest(prod + 'images/')));
 });
 
+gulp.task('moveAssets', function(){
+  gulp.src(other_assets)
+  .pipe(gulpif(isProd,
+    gulp.dest(limbo + "client_portal/")));
+});
 
 
-gulp.task('moveFiles', ['moveHTML', 'moveImages']);
+
+gulp.task('moveFiles', ['moveHTML', 'moveImages', 'moveAssets']);
 
 //if isProd will minify json files and move to limbo
 gulp.task('jsonminify', function () {
@@ -218,11 +227,20 @@ gulp.task('rev', function () {
 });
 
 //replaces all references to the modified file names in PHP files that are sitting in limbo, then moves them to prod run revcss fourth as revreplace is a dependency
-gulp.task('revreplace', function () {
+gulp.task('revreplace1', function () {
     var manifest = gulp.src(prod + 'rev-manifest.json');
-    return gulp.src(limbo + '*.html')
+    return gulp.src(limbo + '*.{html,php}')
         .pipe(revReplace({manifest: manifest,
-                          replaceInExtensions: ['.js', '.css', '.html']
+                          replaceInExtensions: ['.js', '.css', '.html', '.php']
+                         }))
+        .pipe(gulp.dest(prod));
+});
+
+gulp.task('revreplace', ['revreplace1'], function () {
+    var manifest = gulp.src(prod + 'rev-manifest.json');
+    return gulp.src(limbo + '**/*.{html,php}')
+        .pipe(revReplace({manifest: manifest,
+                          replaceInExtensions: ['.js', '.css', '.html', '.php']
                          }))
         .pipe(gulp.dest(prod));
 });
@@ -253,12 +271,12 @@ gulp.task('revcss', ['revreplace'], function(){
 gulp.task('webserver', function() {
    gulp.src(build)
    .pipe(webserver({
-            host: "drd.dev",
+            host: host,
             port: "",
             livereload: true,
             open: true
-        }));
-});
+        }))
+      });
 //4-step process to get to prod 1. gulp cleanProd 2. NODE_ENV=production gulp preProd 3. gulp rev 4. gulp revcss. Step#2 is the only one that needs to be run in NODE_ENV=production
 
 
