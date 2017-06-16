@@ -1,5 +1,6 @@
 <footer class="footer">
   <div id="copyright"  role=contentinfo>
+    <?php date_default_timezone_set('America/Denver'); ?>
       Copyright &copy; <?php echo date('Y'); ?>, Dame Ranch, LLC. <br> All Rights Reserved.
   </div>
   <div id="legal-claims">

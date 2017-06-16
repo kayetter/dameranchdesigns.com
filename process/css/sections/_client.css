@@ -5,6 +5,13 @@
   .title {
     clear: both;
     .logo {
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      @media $small {
+        width: 100px;
+        height: 100px;
+      }
       padding-top: 0;
     }
   }

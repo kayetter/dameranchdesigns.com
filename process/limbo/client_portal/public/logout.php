@@ -19,3 +19,9 @@ redirect_to("../../index.html");
 //   redirect_to("login.php");
 
   ?>
+  <?php
+   if (isset($connection)) {
+     mysqli_close($connection);
+   }
+  
+  ?>

@@ -884,30 +884,88 @@ background-position: fixed;
 table{
     width: 100%;
 }
+/* Force table to not be like tables anymore */
+table thead, table tbody, table th, table td, table tr{
+    display: block;
+}
+/* Hide table headers (but not display: none;, for accessibility) */
+table thead tr{
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
 table th{
     background: rgb(253, 227, 194);
     color: rgb(0, 100, 108);
     font-size: 2.0rem;
     font-weight: 700;
 }
+table tr{
+    border-top: 1px solid rgb(255, 248, 240);
+}
 table td{
     line-height: .8;
-    border-top: 1px solid rgb(255, 248, 240);
     padding: 1rem;
+    font-size: 1.4rem;
+}
+table td a{
+    padding: 1rem 0;
 }
 table .first-cell{
-    font: inherit;
     color: black;
     padding-left: .5rem;
-    border-right: 2px solid rgb(255, 248, 240);
 }
 table .first-cell + td{
     padding-left: 2rem;
+}
+@media screen and (min-width: 600px){
+    table thead{
+        display: table-header-group;
+    }
+    table tbody{
+        display: table-row-group;
+    }
+    table tr{
+        display: table-row;
+    }
+    table th, table td{
+        display: table-cell;
+    }
+}
+@media screen and (min-width: 600px){
+    table thead tr{
+        position: relative;
+    }
+}
+@media screen and (min-width: 600px){
+    table tr{
+        border: none;
+    }
+}
+@media screen and (min-width: 380px){
+    table td{
+        font-size: 1.8rem;
+    }
+}
+@media screen and (min-width: 600px){
+    table td{
+        border-top: 1px solid rgb(255, 248, 240);
+    }
 }
 @media screen and (min-width: 760px){
     table td{
         border-top: none;
         line-height: normal;
+    }
+}
+@media screen and (min-width: 380px){
+    table td a{
+        padding: 0;
+    }
+}
+@media screen and (min-width: 600px){
+    table .first-cell{
+        border-right: 2px solid rgb(255, 248, 240);
     }
 }
 .nav-elements{
@@ -1485,7 +1543,16 @@ table .first-cell + td{
     clear: both;
 }
 .client-section .title .logo{
+    width: 40px;
+    height: 40px;
+    padding: 0;
     padding-top: 0;
+}
+@media screen and (min-width: 600px){
+    .client-section .title .logo{
+        width: 100px;
+        height: 100px;
+    }
 }
 .logout{
     float: right;

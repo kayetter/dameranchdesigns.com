@@ -53,10 +53,10 @@ $role = ucwords($user_role["role_name"]);
         $user_set = find_all_users(0);
         if(!empty($user_set)){
           $output = "<div class='white-background client-output'><table>";
-          $output .= "<tr>
+          $output .= "<thead><tr>
                     <th>Username</th>
                     <th>Action</th>
-                  </tr>";
+                  </tr></thead><tbody>";
           while ($users = mysqli_fetch_assoc($user_set)){
             $active = ($users["is_active"] ? "Inactivate":"Activate");
 
@@ -73,7 +73,7 @@ $role = ucwords($user_role["role_name"]);
             $output .= $active;
             $output .= "</a></td></tr>";
             }
-            $output .= "</table>";
+            $output .= "</tbody></table>";
             echo $output;
         } else {
           echo "<h3>There are no users</h3>";
@@ -90,14 +90,14 @@ $role = ucwords($user_role["role_name"]);
         $url_set = find_all_websites(0);
         if(!empty($url_set)){
           $output = "<div class='white-background client-output'><table>";
-          $output .= "<tr>
+          $output .= "<thead><tr>
                     <th>Website</th>
                     <th>Action</th>
-                  </tr>";
+                  </tr></thead><tbody>";
           while ($url = mysqli_fetch_assoc($url_set)){
             $active = ($url["is_active"] ? "Inactivate":"Activate");
 
-            $output .= "<tr><td class = 'first-cell'><a href='";
+            $output .= "<tr><td class = 'first-cell'><a target='_blank' href='";
             $output .= htmlentities($url["url"]);
             $output .= "' >";
             $output .= htmlentities($url["url_name"]);
@@ -112,7 +112,7 @@ $role = ucwords($user_role["role_name"]);
             $output .= $active;
             $output .= "</a></td></tr>";
             }
-            $output .= "</table>";
+            $output .= "</tbody></table>";
             echo $output;
         } else {
           echo "<h3>There are no urls</h3>";
@@ -141,7 +141,7 @@ $role = ucwords($user_role["role_name"]);
 
                while ($url = mysqli_fetch_assoc($url_set)){
 
-                 $output .= "<li><a href='";
+                 $output .= "<li><a target='_blank' href='";
                  $output .= htmlentities($url["url"]);
                  $output .= "'>";
                  $output .= htmlentities($url["url_name"]);
@@ -156,7 +156,7 @@ $role = ucwords($user_role["role_name"]);
        </section>
        <?php } ?>
        <pre>
-         
+
        </pre>
 
         <?php include("../layouts/footer.php") ?>
