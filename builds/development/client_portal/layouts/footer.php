@@ -14,12 +14,8 @@
   </div>
 </footer>
 <!-- script calls -->
-<script src='../../scripts/lib-scripts.js'></script>
-<script src='../../scripts/main.js'></script>
-<script>
-
-</script>
-
+<script src='js/jquery.js'></script>
+<script src='js/scripts.js'></script>
 
 </body>
 </html>

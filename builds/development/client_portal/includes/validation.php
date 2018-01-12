@@ -79,7 +79,6 @@ function user_not_in_set(){
 
 }
 
-
 function field_has_no_whitespace($fields_with_no_whitespace){
   global $errors;
     // Expects an assoc. array
@@ -99,7 +98,93 @@ function fields_are_equal($value1, $value2){
     if($comp1 != $comp2){
       $errors["new password confirm"] = "password fields are not equal";
     }
+    return $errors;
 }
+
+//==========file upload validations=======/
+function check_file_errors($files){
+  global $errors;
+  foreach($files as $key => $file){
+    if($file["error"]!=0){
+    switch ($file["error"]) {
+            case UPLOAD_ERR_INI_SIZE:
+                $errors["system-error"] = "{$key} - {$file["name"]} exceeds the upload_max_filesize directive in php.ini";
+                break;
+            case UPLOAD_ERR_FORM_SIZE:
+                $errors["system-error"] = "{$key} - {$file["name"]} exceeds the MAX_FILE_SIZE directive that was specified in the HTML form";
+                break;
+            case UPLOAD_ERR_PARTIAL:
+                $errors["system-error"] = "{$key} - {$file["name"]} was only partially uploaded";
+                break;
+            case UPLOAD_ERR_NO_FILE:
+                $errors["system-error"] = "{$key} is missing file";
+                break;
+            case UPLOAD_ERR_NO_TMP_DIR:
+                $errors["system-error"] = "System error: Missing a temporary folder, contact administrator";
+                break;
+            case UPLOAD_ERR_CANT_WRITE:
+                $errors["system-error"] = "System error: Failed to write file to disk, contact administrator";
+                break;
+            case UPLOAD_ERR_EXTENSION:
+                $errors["system-error"] = "System error: File upload stopped by extension, contact administrator";
+                break;
+            default:
+                $errors["system-error"] = "Unknown upload error, contact administrator";
+                break;
+              } //end switch
+      }//end if
+    }//end for each
+
+  } //end function
+
+function validate_extensions($files){
+  global $errors;
+  foreach($files as $key => $file){
+    $fileExt = pathinfo($file["name"], PATHINFO_EXTENSION);
+    $imgExt = array("jpg", "jpeg", "png", "gif", "JPG", "JPEG");
+    if($key == "vcard" && $fileExt!="vcf"){
+      $errors["vcard"] = "{$key} - {$file["name"]} is not a .vcf file";
+    } elseif($key == "bizimage" && !in_array($fileExt, $imgExt)){
+      $errors["bizimage"] = "{$key} - {$file["name"]} is not a .jpg, .jpeg, .png, or .gif file";
+    }
+  }//end for each loop
+
+}
+
+function validate_vcard($vcard){
+  global $errors;
+   $content = trim(file_get_contents($vcard["tmp_name"]));
+   $begin = substr($content, 0, 11 );
+   $end = substr($content, strlen($content)-9, strlen($content));
+   if($begin != "BEGIN:VCARD" || $end != "END:VCARD"){
+     $errors["card-type"] = "{$vcard["name"]} is not a .vcf file";
+   }
+
+}
+
+function validate_image($img){
+  global $errors;
+  $check = getimagesize($img["tmp_name"]);
+  //validate that it is an image
+  if($check !== false) {
+  } else {
+      $errors["img-type"] = "{$img["name"]} is not an image.";
+  }
+
+}
+
+function validate_file_size($files, $size){
+  global $errors;
+  $kbsize = $size/1000;
+  $mbsize = $kbsize/1000;
+  foreach($files as $key => $file){
+    if($file["size"] > $size) {
+    $errors["file-size"] = "{$key} - {$file["name"]} cannot exceed {$mbsize} megabytes";
+    }
+  }
+
+}
+
 
 
 
